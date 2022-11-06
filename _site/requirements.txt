@@ -24,6 +24,8 @@ python-iso639
 iso3166
 storysniffer
 tldextract
+spectra
+spacy
 
 sphinx
 myst-parser
