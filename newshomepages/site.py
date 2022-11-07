@@ -82,6 +82,8 @@ def drudge():
         .sort_values("earliest_date")
         .set_index("earliest_date")
     )
+
+    # Fill in empty days
     date_range = pd.date_range(
         story_df.earliest_date.min(),
         story_df.earliest_date.max(),
@@ -95,7 +97,22 @@ def drudge():
         .sort_values("date")
     )
     backfilled_df.n.fillna(0, inplace=True)
+
+    # Calculate rolling average
     backfilled_df["7_day_rolling_average"] = backfilled_df.n.rolling(7).mean()
+
+    # Cut empty lines at the start and the most recent (often incomplete) date at the end
+    backfilled_df = backfilled_df[
+        (~pd.isnull(backfilled_df["7_day_rolling_average"]))
+        & (backfilled_df.date < backfilled_df.date.max())
+    ]
+
+    # Format for JSON
+    chart_list = backfilled_df.to_dict(orient="records")
+    for d in chart_list:
+        d["date"] = d["date"].strftime("%Y-%m-%d")
+
+    # Get the overall trend
     links_per_day = backfilled_df.n.mean()
 
     # Rank
@@ -107,7 +124,7 @@ def drudge():
         total_sites=len(domain_df),
         total_urls=domain_df.n.sum(),
         days=len(links_df.groupby("earliest_date").url.size()),
-        daily_totals=backfilled_df,
+        chart_json=json.dumps(chart_list),
         links_per_day=links_per_day,
         site_list=domain_df.sort_values("n", ascending=False)
         .head(25)

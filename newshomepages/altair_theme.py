@@ -63,7 +63,6 @@ def theme():
             arc=dict(fill=palette["default"]),
             area=dict(fill=palette["default"]),
             line=dict(stroke=palette["default"], strokeWidth=3),
-            path=dict(stroke=palette["default"]),
             rect=dict(fill=palette["default"]),
             bar=dict(fill=palette["default"]),
             point=dict(stroke=palette["default"]),
