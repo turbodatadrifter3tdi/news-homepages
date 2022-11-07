@@ -73,9 +73,30 @@ def drudge():
     )
     domain_df["percent"] = round((domain_df.n / domain_df.n.sum()) * 100, 1)
 
-    links_per_day = (
-        links_df.groupby("earliest_date").url.size().rename("n").reset_index().n.mean()
+    # Daily totals
+    date_totals = (
+        story_df.groupby("earliest_date")
+        .size()
+        .rename("n")
+        .reset_index()
+        .sort_values("earliest_date")
+        .set_index("earliest_date")
     )
+    date_range = pd.date_range(
+        story_df.earliest_date.min(),
+        story_df.earliest_date.max(),
+        freq="D",
+    )
+    date_index = pd.DatetimeIndex(date_range)
+    backfilled_df = (
+        date_totals.reindex(date_index)
+        .reset_index()
+        .rename(columns={"index": "date"})
+        .sort_values("date")
+    )
+    backfilled_df.n.fillna(0, inplace=True)
+    backfilled_df["7_day_rolling_average"] = backfilled_df.n.rolling(7).mean()
+    links_per_day = backfilled_df.n.mean()
 
     # Rank
     domain_df["rank"] = domain_df.n.rank(ascending=False, method="min").astype(int)
@@ -86,6 +107,7 @@ def drudge():
         total_sites=len(domain_df),
         total_urls=domain_df.n.sum(),
         days=len(links_df.groupby("earliest_date").url.size()),
+        daily_totals=backfilled_df,
         links_per_day=links_per_day,
         site_list=domain_df.sort_values("n", ascending=False)
         .head(25)
