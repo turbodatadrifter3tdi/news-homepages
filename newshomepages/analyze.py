@@ -152,7 +152,7 @@ def drudge_entities():
             "MELONI",
         ]
         if lemma == "COVID":
-            stop_verbs += ["TESTS"]
+            stop_verbs += ["TESTS", "TEST"]
         if lemma == "MUSK":
             stop_verbs += ["SOCIAL"]
 
