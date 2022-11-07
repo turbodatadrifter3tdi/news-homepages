@@ -11,7 +11,7 @@ jobs:
     steps:
       - id: checkout
         name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - id: install
         name: Install
@@ -35,7 +35,7 @@ jobs:
 
       - id: cache-playwright
         name: Cache Playwright
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.cache/ms-playwright/
           key: ${{ runner.os }}-browsers

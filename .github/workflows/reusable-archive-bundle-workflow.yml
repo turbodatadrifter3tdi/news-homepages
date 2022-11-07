@@ -174,7 +174,7 @@ jobs:
 
       - id: cache-playwright
         name: Cache Playwright browsers
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.cache/ms-playwright/
           key: ${{ runner.os }}-browsers
@@ -194,7 +194,7 @@ jobs:
 
       - id: save
         name: Save artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: html
           path: _dist
