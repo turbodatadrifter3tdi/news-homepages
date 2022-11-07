@@ -40,8 +40,8 @@ def drudge():
     print(":abacus: Creating Drudge Dashboard")
 
     # Get the data
-    links_df = pd.read_csv(
-        utils.EXTRACT_DIR / "csv" / "drudge-hyperlinks-analysis.csv",
+    links_df = utils.get_extract_df(
+        "drudge-hyperlinks-analysis.csv",
         usecols=[
             "domain",
             "text",
