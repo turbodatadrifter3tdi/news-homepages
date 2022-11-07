@@ -260,4 +260,4 @@ Field | Description
 `lemma` | The root word
 `n` | How many headlines the word appeared in over the last 90 days
 `top_verb` | The most frequently used verb in headlines containing this word
-`timeseries` | The number of headlines feature this word on each day in our time range
+`timeseries` | The number of headlines featuring this word on each day in our time range
