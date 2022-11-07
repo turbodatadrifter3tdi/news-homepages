@@ -17,6 +17,7 @@ PARENT_DIR = Path(__file__).parent.parent
 TEMPLATE_DIR = PARENT_DIR / "_site" / "_templates/"
 TEMPLATE_LOADER = jinja2.FileSystemLoader(searchpath=TEMPLATE_DIR)
 TEMPLATE_ENV = jinja2.Environment(loader=TEMPLATE_LOADER)
+CHARTS_DIR = utils.SITE_DIR / "_static" / "charts"
 
 
 @click.group()
@@ -122,7 +123,7 @@ def drudge():
             t["color"] = color_scale(n_scaled).hexcode
 
     # Create the chart files
-    out_dir = utils.SITE_DIR / "_static" / "charts" / "drudge" / "top-words"
+    out_dir = CHARTS_DIR / "drudge" / "top-words"
     out_dir.mkdir(parents=True, exist_ok=True)
     for d in track(dict_list):
         _write_template(
@@ -466,7 +467,7 @@ def site_detail_lighthouse_analysis_chart():
     warnings.filterwarnings("ignore")
 
     # Make the out directory
-    out_dir = utils.SITE_DIR / "_extra" / "charts" / "sites" / "lighthouse-analysis"
+    out_dir = CHARTS_DIR / "sites" / "lighthouse-analysis"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     def color_code(val):
@@ -524,7 +525,7 @@ def site_detail_screenshot_chart():
     warnings.filterwarnings("ignore")
 
     # Make the out directory
-    out_dir = utils.SITE_DIR / "_extra" / "charts" / "sites" / "screenshots"
+    out_dir = CHARTS_DIR / "sites" / "screenshots"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Loop through all sites
@@ -557,7 +558,7 @@ def site_detail_hyperlink_chart():
     warnings.filterwarnings("ignore")
 
     # Make the out directory
-    out_dir = utils.SITE_DIR / "_extra" / "charts" / "sites" / "hyperlinks"
+    out_dir = CHARTS_DIR / "sites" / "hyperlinks"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Loop through all sites
@@ -590,7 +591,7 @@ def site_detail_accessibility_chart():
     warnings.filterwarnings("ignore")
 
     # Make the out directory
-    out_dir = utils.SITE_DIR / "_extra" / "charts" / "sites" / "accessibility"
+    out_dir = CHARTS_DIR / "sites" / "accessibility"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Loop through all sites
@@ -623,7 +624,7 @@ def site_detail_lighthouse_chart():
     warnings.filterwarnings("ignore")
 
     # Make the out directory
-    out_dir = utils.SITE_DIR / "_extra" / "charts" / "sites" / "lighthouse"
+    out_dir = CHARTS_DIR / "sites" / "lighthouse"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # Loop through all sites
