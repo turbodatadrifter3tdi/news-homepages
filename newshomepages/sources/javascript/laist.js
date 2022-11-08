@@ -1,2 +1,2 @@
-// current ad campaign for LAist
-document.querySelector(".bankston-campaign").remove()
+// ad campaign for LAist
+document.querySelectorAll(".bankston-campaign").forEach((e) => e.remove())
