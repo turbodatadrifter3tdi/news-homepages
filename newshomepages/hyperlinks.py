@@ -57,22 +57,14 @@ def cli(handle: str, output_dir: str, is_bundle: bool = False):
         context.close()
 
 
-def _write_json(output_path: Path, link_list: typing.List):
-    """Write out the provided handle's link list as json."""
-    # Write it out
-    with open(output_path, "w") as fp:
-        print(f"📥 Saving hyperlinks to {output_path}")
-        json.dump(link_list, fp, indent=2)
-
-
 @retry(tries=3, delay=5, backoff=2)
-def _get_links(context: BrowserContext, data: typing.Dict):
+def _get_links(context: BrowserContext, data: typing.Dict, timeout: int = 60000 * 3):
     print(f":newspaper: Getting hyperlinks for {data['url']}")
     # Open a page
     page = context.new_page()
 
     # Go to the page
-    page.goto(data["url"], timeout=60000 * 3)
+    page.goto(data["url"], timeout=timeout)
 
     # Pull the html
     html = page.content()
@@ -98,6 +90,14 @@ def _get_links(context: BrowserContext, data: typing.Dict):
 
     # Return the result
     return data_list
+
+
+def _write_json(output_path: Path, link_list: typing.List):
+    """Write out the provided handle's link list as json."""
+    # Write it out
+    with open(output_path, "w") as fp:
+        print(f"📥 Saving hyperlinks to {output_path}")
+        json.dump(link_list, fp, indent=2)
 
 
 if __name__ == "__main__":
