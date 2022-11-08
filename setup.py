@@ -55,7 +55,7 @@ setup(
     author_email="b@palewi.re",
     url="https://homepages.news",
     license="GPLv3",
-    packages=find_packages(),
+    packages=find_packages(include=["newshomepages"]),
     include_package_data=True,
     zip_safe=False,
     entry_points={
