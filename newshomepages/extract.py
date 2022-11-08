@@ -226,12 +226,12 @@ def download_hyperlinks(
 @click.option("--days", "days", default=None)
 @click.option("--output-path", "output_path", default=None)
 def download_lighthouse(
-    site: str = None,
-    country: str = None,
-    language: str = None,
-    bundle: str = None,
-    days: str = None,
-    output_path: str = None,
+    site: typing.Optional[str] = None,
+    country: typing.Optional[str] = None,
+    language: typing.Optional[str] = None,
+    bundle: typing.Optional[str] = None,
+    days: typing.Optional[str] = None,
+    output_path: typing.Optional[str] = None,
 ):
     """Download and parse the provided site's Lighthouse files."""
     # Get all lighthouse files
