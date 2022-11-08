@@ -4,6 +4,7 @@ import os
 import pathlib
 import re
 import time
+import typing
 from datetime import datetime
 from urllib.parse import urlparse
 
@@ -41,11 +42,11 @@ def cli():
 @click.option("--output-path", "output_path", default=utils.EXTRACT_DIR / "json")
 def download_items(
     year: str,
-    site: str = None,
-    country: str = None,
-    language: str = None,
-    bundle: str = None,
-    batch: str = None,
+    site: typing.Optional[str] = None,
+    country: typing.Optional[str] = None,
+    language: typing.Optional[str] = None,
+    bundle: typing.Optional[str] = None,
+    batch: typing.Optional[str] = None,
     output_path=utils.EXTRACT_DIR / "json",
 ):
     """Download the full list of Internet Archive items as JSON."""
@@ -149,12 +150,12 @@ def download_accessibility(handle):
 @click.option("--days", "days", default="90")
 @click.option("--output-path", "output_path", default=None)
 def download_hyperlinks(
-    site: str = None,
-    country: str = None,
-    language: str = None,
-    bundle: str = None,
-    days: str = None,
-    output_path: str = None,
+    site: typing.Optional[str] = None,
+    country: typing.Optional[str] = None,
+    language: typing.Optional[str] = None,
+    bundle: typing.Optional[str] = None,
+    days: typing.Optional[str] = None,
+    output_path: typing.Optional[str] = None,
 ):
     """Download and parse the provided site's hyperlinks files."""
     # Get all lighthouse files
