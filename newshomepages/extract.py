@@ -1,20 +1,20 @@
-import os
-import re
 import csv
 import json
-import time
+import os
 import pathlib
+import re
+import time
 from datetime import datetime
 from urllib.parse import urlparse
 
 import click
-import requests
-import pandas as pd
 import internetarchive
-from rich import print
-from retry import retry
-from rich.progress import track
+import pandas as pd
+import requests
 from requests.adapters import HTTPAdapter, Retry
+from retry import retry
+from rich import print
+from rich.progress import track
 
 from . import utils
 
@@ -49,6 +49,7 @@ def download_items(
     output_path=utils.EXTRACT_DIR / "json",
 ):
     """Download the full list of Internet Archive items as JSON."""
+    assert IA_COLLECTION
     print(f"Extracting metadata for the Internet Archive collection `{IA_COLLECTION}`")
     collection = internetarchive.get_item(IA_COLLECTION)
     with open(utils.EXTRACT_DIR / "json" / f"{IA_COLLECTION}.json", "w") as fh:
@@ -63,6 +64,7 @@ def download_items(
             json.dump(item.item_metadata, fh, indent=2)
             time.sleep(0.5)
 
+    @retry(tries=3, delay=30, backoff=2)
     def _site_search(s):
         s = s["handle"].lower()
         # Replace any leading underscores, which don't work on archive.org
@@ -70,26 +72,25 @@ def download_items(
         search = f"collection:{IA_COLLECTION} AND identifier:({s}-{year})"
         return internetarchive.search_items(search).iter_as_items()
 
-    # Go get all the items in the collection from that year
+    # If the user has provided a way to filter to a subset of sites, pull em out
     if site:
-        obj = utils.get_site(site)
-        [_save_item(i) for i in _site_search(obj)]
+        site_list = [utils.get_site(site)]
     elif country:
         site_list = utils.get_sites_in_country(country)
-        for obj in track(site_list):
-            [_save_item(i) for i in _site_search(obj)]
     elif language:
         site_list = utils.get_sites_in_language(language)
-        for obj in track(site_list):
-            [_save_item(i) for i in _site_search(obj)]
     elif bundle:
         site_list = utils.get_sites_in_bundle(bundle)
-        for obj in track(site_list):
-            [_save_item(i) for i in _site_search(obj)]
     elif batch:
         site_list = utils.get_sites_in_batch(int(batch))
+    else:
+        site_list = None
+
+    # If we're filtering go get those
+    if site_list:
         for obj in track(site_list):
             [_save_item(i) for i in _site_search(obj)]
+    # Otherwise, go get all items in the collection from this year
     else:
         search = f"collection:{IA_COLLECTION} AND identifier:(*-{year})"
         item_list = internetarchive.search_items(search).iter_as_items()
