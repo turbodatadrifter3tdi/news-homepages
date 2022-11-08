@@ -5,6 +5,7 @@ from pathlib import Path
 import click
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
+from playwright.sync_api._generated import BrowserContext
 from retry import retry
 from rich import print
 
@@ -30,79 +31,70 @@ def cli(handle: str, output_dir: str, is_bundle: bool = False):
     if is_bundle:
         # Get all the sites
         site_list = utils.get_sites_in_bundle(handle)
+    else:
+        # Get metadata
+        site_list = [utils.get_site(handle)]
 
-        # Loop through them
+    # Start the browser
+    with sync_playwright() as p:
+        # Open a browser
+        browser = p.chromium.launch(channel="chrome")
+
+        context = browser.new_context(user_agent=utils.get_user_agent())
+
+        # Loop through the sites
         for site in site_list:
 
             # Get lnks
-            link_list = _get_links(site)
+            link_list = _get_links(context, site)
 
             # Write out
             _write_json(
                 output_path / f"{site['handle'].lower()}.hyperlinks.json", link_list
             )
-    else:
-        # Get metadata
-        site = utils.get_site(handle)
 
-        # Do it
-        link_list = _get_links(site)
-
-        # Write results
-        _write_json(
-            output_path / f"{site['handle'].lower()}.hyperlinks.json", link_list
-        )
+        # Close the context
+        context.close()
 
 
 def _write_json(output_path: Path, link_list: typing.List):
     """Write out the provided handle's link list as json."""
     # Write it out
     with open(output_path, "w") as fp:
+        print(f"📥 Saving hyperlinks to {output_path}")
         json.dump(link_list, fp, indent=2)
 
 
 @retry(tries=3, delay=5, backoff=2)
-def _get_links(data):
+def _get_links(context: BrowserContext, data: typing.Dict):
     print(f":newspaper: Getting hyperlinks for {data['url']}")
-    # Start the browser
-    with sync_playwright() as p:
-        # Open a browser
-        browser_obj = p.chromium.launch(
-            channel="chrome",
-        )
+    # Open a page
+    page = context.new_page()
 
-        browser_context = browser_obj.new_context(user_agent=utils.get_user_agent())
+    # Go to the page
+    page.goto(data["url"], timeout=60000 * 3)
 
-        # Open a page
-        page = browser_context.new_page()
+    # Pull the html
+    html = page.content()
 
-        # Go to the page
-        page.goto(data["url"], timeout=60000 * 3)
-
-        # Pull the html
-        html = page.content()
-
-        # Parse out all the links
-        soup = BeautifulSoup(html, "html5lib")
-        link_list = soup.find_all("a")
-
-        # Close the browser
-        browser_obj.close()
+    # Parse out all the links
+    soup = BeautifulSoup(html, "html5lib")
+    link_list = soup.find_all("a")
 
     # Parse out the data we want to keep
     data_list = []
     for link in link_list:
         try:
-            d = {
-                "text": link.text,
-                "url": link["href"],
-            }
+            d = dict(text=link.text, url=link["href"])
         except KeyError:
             # If no href, skip it
             continue
 
         # Add to big list
         data_list.append(d)
+
+    # Close the page
+    page.close()
 
     # Return the result
     return data_list
