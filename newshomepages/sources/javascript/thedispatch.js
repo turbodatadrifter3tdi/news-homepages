@@ -1,3 +1,3 @@
-document.querySelector(
-  '.maybe-later'
-).click()
+document.querySelectorAll('.maybe-later').forEach((e) => {
+    e.click()
+})
