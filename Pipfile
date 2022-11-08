@@ -53,6 +53,8 @@ sphinx-click = "*"
 types-retry = "*"
 storysniffer = "*"
 ipywidgets = "*"
+setuptools-scm = "*"
+twine = "*"
 
 [requires]
 python_version = "3.9"
