@@ -7,6 +7,7 @@ _analysis
 _site/drudge.md
 _site/_static/charts
 _site/_build/
+Makefile
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

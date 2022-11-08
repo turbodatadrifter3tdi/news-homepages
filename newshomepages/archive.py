@@ -17,13 +17,27 @@ from . import utils
 @click.command()
 @click.argument("handle")
 @click.option("-i", "--input-dir", "input_dir", default="./")
-def cli(handle: str, input_dir: str):
+@click.option(
+    "--bundle",
+    "is_bundle",
+    is_flag=True,
+    default=False,
+    help="The provided handle is a bundle",
+)
+def cli(handle: str, input_dir: str, is_bundle: bool = False):
     """Save a webpage screenshot to an archive.org collection."""
-    # Pull the source’s metadata
-    site = utils.get_site(handle)
+    if is_bundle:
+        # Get all the sites
+        site_list = utils.get_sites_in_bundle(handle)
+        for site in site_list:
+            _upload(site, input_dir)
 
-    # Upload it
-    _upload(site, input_dir)
+    else:
+        # Pull the source’s metadata
+        site = utils.get_site(handle)
+
+        # Upload it
+        _upload(site, input_dir)
 
 
 def _clean_handle(s):

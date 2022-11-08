@@ -1,4 +1,5 @@
 import json
+import typing
 from pathlib import Path
 
 import click
@@ -13,21 +14,50 @@ from . import utils
 @click.command()
 @click.argument("handle")
 @click.option("-o", "--output-dir", "output_dir", default="./")
-def cli(handle: str, output_dir: str):
+@click.option(
+    "--bundle",
+    "is_bundle",
+    is_flag=True,
+    default=False,
+    help="The provided handle is a bundle",
+)
+def cli(handle: str, output_dir: str, is_bundle: bool = False):
     """Save all hyperlinks as JSON for a single site."""
-    # Get metadata
-    site = utils.get_site(handle)
-
-    # Do it
-    link_list = _get_links(site)
-
     # Set the output path
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
+    if is_bundle:
+        # Get all the sites
+        site_list = utils.get_sites_in_bundle(handle)
+
+        # Loop through them
+        for site in site_list:
+
+            # Get lnks
+            link_list = _get_links(site)
+
+            # Write out
+            _write_json(
+                output_path / f"{site['handle'].lower()}.hyperlinks.json", link_list
+            )
+    else:
+        # Get metadata
+        site = utils.get_site(handle)
+
+        # Do it
+        link_list = _get_links(site)
+
+        # Write results
+        _write_json(
+            output_path / f"{site['handle'].lower()}.hyperlinks.json", link_list
+        )
+
+
+def _write_json(output_path: Path, link_list: typing.List):
+    """Write out the provided handle's link list as json."""
     # Write it out
-    slug = site["handle"].lower()
-    with open(output_path / f"{slug}.hyperlinks.json", "w") as fp:
+    with open(output_path, "w") as fp:
         json.dump(link_list, fp, indent=2)
 
 

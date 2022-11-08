@@ -12,13 +12,25 @@ from . import utils
 @click.command()
 @click.argument("handle")
 @click.option("-o", "--output-dir", "output_dir", default="./")
-def cli(handle: str, output_dir: str):
+@click.option(
+    "--bundle",
+    "is_bundle",
+    is_flag=True,
+    default=False,
+    help="The provided handle is a bundle",
+)
+def cli(handle: str, output_dir: str, is_bundle: bool = False):
     """Save the accessiblity JSON of a single site."""
-    # Get metadata
-    site = utils.get_site(handle)
+    if is_bundle:
+        site_list = utils.get_sites_in_bundle(handle)
+        for site in site_list:
+            _get_accessibility(site, output_dir)
+    else:
+        # Get metadata
+        site = utils.get_site(handle)
 
-    # Do the thing
-    _get_accessibility(site, output_dir)
+        # Do the thing
+        _get_accessibility(site, output_dir)
 
 
 @retry(tries=3, delay=5, backoff=2)

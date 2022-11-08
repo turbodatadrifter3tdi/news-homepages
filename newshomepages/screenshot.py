@@ -23,6 +23,13 @@ from . import utils
     default=False,
     help="Screenshot the whole page",
 )
+@click.option(
+    "--bundle",
+    "is_bundle",
+    is_flag=True,
+    default=False,
+    help="The provided handle is a bundle",
+)
 def cli(
     handle: str,
     output_dir: str = "./",
@@ -30,18 +37,24 @@ def cli(
     width: str = "1300",
     height: str = "1600",
     full_page: bool = False,
+    is_bundle: bool = False,
 ):
     """Screenshot the provided homepage."""
-    site = utils.get_site(handle)
     output_path = Path(output_dir)
-    _screenshot(
-        site,
-        output_path,
-        wait=int(wait),
-        width=int(width),
-        height=int(height),
-        full_page=bool(full_page),
-    )
+    if is_bundle:
+        site_list = utils.get_sites_in_bundle(handle)
+    else:
+        site_list = [utils.get_site(handle)]
+
+    for site in site_list:
+        _screenshot(
+            site,
+            output_path,
+            wait=int(wait),
+            width=int(width),
+            height=int(height),
+            full_page=full_page,
+        )
 
 
 @retry(tries=3, delay=5, backoff=2)
