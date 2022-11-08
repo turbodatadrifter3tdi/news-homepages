@@ -85,7 +85,7 @@ def _screenshot(
     page = utils._load_new_page_disable_javascript(
         context=context,
         url=site["url"],
-        wait_seconds=int((site["wait"] or wait) / 1000),
+        wait_seconds=int((int(site["wait"]) or wait) / 1000),
         handle=site["handle"],
         full_page=full_page,
     )
