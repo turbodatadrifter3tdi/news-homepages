@@ -62,7 +62,7 @@ def cli(
                 context,
                 site,
                 output_path,
-                wait=int(wait),
+                wait=int(site["wait"] or wait),
                 full_page=full_page,
             )
 
@@ -82,10 +82,11 @@ def _screenshot(
     print(f":camera: Screenshotting {site['name']}")
 
     # Open the page
+
     page = utils._load_new_page_disable_javascript(
         context=context,
         url=site["url"],
-        wait_seconds=int((int(site["wait"]) or wait) / 1000),
+        wait_seconds=int(wait / 1000),
         handle=site["handle"],
         full_page=full_page,
     )

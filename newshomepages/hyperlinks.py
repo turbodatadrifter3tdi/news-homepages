@@ -23,7 +23,7 @@ from . import utils
     help="The provided handle is a bundle",
 )
 def cli(handle: str, output_dir: str, is_bundle: bool = False):
-    """Save all hyperlinks as JSON for a single site."""
+    """Save all hyperlinks as JSON for a site or bundle."""
     # Set the output path
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
