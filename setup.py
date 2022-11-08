@@ -1,6 +1,6 @@
 import os
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 
 def read(file_name):
@@ -47,7 +47,7 @@ def local_version(version):
 
 
 setup(
-    name="newshompages",
+    name="newshomepages",
     description="A template for open-source Python software repositories",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
@@ -55,7 +55,46 @@ setup(
     author_email="b@palewi.re",
     url="https://homepages.news",
     license="GPLv3",
-    packages=("newshomepages",),
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+    entry_points={
+        "console_scripts": [
+            "newshomepages-screenshot=newshomepages.screenshot:cli",
+            "newshomepages-hyperlinks=newshomepages.hyperlinks:cli",
+            "newshomepages-archive=newshomepages.archive:cli",
+        ],
+    },
+    install_requires=[
+        "python-twitter",
+        "click",
+        "pytz",
+        "internetarchive",
+        "python-slugify",
+        "python-telegram-bot",
+        "discord.py",
+        "playwright",
+        "savepagenow",
+        "bs4",
+        "html5lib",
+        "jinja2",
+        "shot-scraper",
+        "pillow",
+        "pandas",
+        "altair",
+        "jupyterlab",
+        "altair-saver",
+        "selenium<4.3.0",
+        "rich",
+        "iso3166",
+        "python-iso639",
+        "certifi",
+        "requests",
+        "retry",
+        "storysniffer",
+        "spacy",
+        "spectra",
+    ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python",
