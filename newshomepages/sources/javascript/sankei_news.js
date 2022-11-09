@@ -1,1 +1,1 @@
-document.querySelector('.CookieConsent').remove()
+document.querySelectorAll('.CookieConsent').forEach((e) => e.remove());

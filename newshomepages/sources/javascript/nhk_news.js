@@ -1,3 +1,3 @@
 document.documentElement.style.overflowY = 'hidden'
 
-document.querySelector('#bottom_optout_announce').remove()
+document.querySelectorAll('#bottom_optout_announce').forEach((e) => e.remove());

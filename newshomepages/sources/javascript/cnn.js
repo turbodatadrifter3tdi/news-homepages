@@ -1,7 +1,9 @@
-document.querySelector('#scrollover-ad-wrap').remove()
+document.querySelectorAll('#scrollover-ad-wrap').forEach((e) => e.remove());
 
 document.querySelectorAll(
   '.ad,.ad--epic'
 ).forEach(el => el.remove())
 
-document.querySelector('body').style.paddingTop = 0;
+document.querySelectorAll('body').forEach((e) => {
+  e.style.paddingTop = 0;
+})

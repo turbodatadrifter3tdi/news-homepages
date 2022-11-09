@@ -1,1 +1,1 @@
-document.querySelector('.modalStyle_modrqv7').remove()
+document.querySelectorAll('.modalStyle_modrqv7').forEach((e) => e.remove());

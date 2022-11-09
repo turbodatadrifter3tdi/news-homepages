@@ -3,4 +3,4 @@ document.querySelectorAll(
 ).forEach(el => el.style.display = 'none')
 
 
-document.querySelector('#site-container').style.marginTop = 0;
+document.querySelectorAll('#site-container').forEach((e) => e.remove());

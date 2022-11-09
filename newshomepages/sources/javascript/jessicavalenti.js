@@ -1,3 +1,3 @@
-document.querySelector(
+document.querySelectorAll(
   '.maybe-later'
-).click()
+).forEach((e) => e.click());

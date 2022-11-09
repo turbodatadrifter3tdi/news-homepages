@@ -1,1 +1,1 @@
-document.querySelector('#befb-cmp-dialog').remove()
+document.querySelectorAll('#befb-cmp-dialog').forEach((e) => e.remove());

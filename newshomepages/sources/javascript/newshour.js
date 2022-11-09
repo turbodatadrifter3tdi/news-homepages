@@ -1,1 +1,1 @@
-document.querySelector('#pbs-confirm-station').remove()
+document.querySelectorAll('#pbs-confirm-station').forEach((e) => e.remove());

@@ -1,1 +1,1 @@
-document.querySelector('#popup-interstitial-dialog').remove()
+document.querySelectorAll('#popup-interstitial-dialog').forEach((e) => e.remove());

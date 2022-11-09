@@ -1,1 +1,1 @@
-document.querySelector('#iubenda-cs-banner').remove()
+document.querySelectorAll('#iubenda-cs-banner').forEach((e) => e.remove());
