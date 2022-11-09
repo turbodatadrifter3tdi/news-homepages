@@ -24,20 +24,30 @@ from . import utils
     default=False,
     help="The provided handle is a bundle",
 )
-def cli(handle: str, input_dir: str, is_bundle: bool = False):
+@click.option(
+    "--verbose",
+    "verbose",
+    is_flag=True,
+    default=False,
+    help="Display the upload progress to archive.org",
+)
+def cli(handle: str, input_dir: str, is_bundle: bool = False, verbose: bool = False):
     """Save a webpage screenshot to an archive.org collection."""
+    input_path = Path(input_dir).absolute()
+    assert input_path.exists()
+
     if is_bundle:
         # Get all the sites
         site_list = utils.get_sites_in_bundle(handle)
         for site in site_list:
-            _upload(site, input_dir)
+            _upload(site, input_path, verbose)
 
     else:
         # Pull the source’s metadata
         site = utils.get_site(handle)
 
         # Upload it
-        _upload(site, input_dir)
+        _upload(site, input_path, verbose)
 
 
 def _clean_handle(s):
@@ -48,15 +58,14 @@ def _clean_handle(s):
 
 
 @retry(tries=3, delay=5, backoff=2)
-def _upload(data: dict, input_dir: str):
+def _upload(data: dict, input_dir: Path, verbose: bool = False):
     # Set the input paths
     handle = _clean_handle(data["handle"])
-    input_path = Path(input_dir).absolute()
-    image_path = input_path / f"{handle}.jpg"
-    a11y_path = input_path / f"{handle}.accessibility.json"
-    hyperlinks_path = input_path / f"{handle}.hyperlinks.json"
-    lighthouse_path = input_path / f"{handle}.lighthouse.json"
-    wayback_path = input_path / f"{handle}.wayback.json"
+    image_path = input_dir / f"{handle}.jpg"
+    a11y_path = input_dir / f"{handle}.accessibility.json"
+    hyperlinks_path = input_dir / f"{handle}.hyperlinks.json"
+    lighthouse_path = input_dir / f"{handle}.lighthouse.json"
+    wayback_path = input_dir / f"{handle}.wayback.json"
 
     # Get the timestamp
     now = datetime.now()
@@ -110,9 +119,13 @@ def _upload(data: dict, input_dir: str):
             publisher=data["url"],
             date=now_local.strftime("%Y"),
             contributor="https://homepages.news",
+            retries=2,
+            retries_sleep=10,
         ),
         # Metadata about the image file
         files=file_dict,
+        # Other options
+        verbose=verbose,
     )
 
     # Upload it
