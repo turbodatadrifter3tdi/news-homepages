@@ -194,7 +194,7 @@ jobs:
     name: Post to Discord
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    needs: [mosaic,publish]
+    needs: [mosaic,upload]
     steps:
       - id: checkout
         name: Checkout
@@ -211,7 +211,7 @@ jobs:
     name: Post to Twitter
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    needs: [mosaic,publish]
+    needs: [mosaic,upload]
     steps:
       - id: checkout
         name: Checkout
@@ -231,7 +231,7 @@ jobs:
     name: Post to Telegram
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    needs: [mosaic,publish]
+    needs: [mosaic,upload]
     steps:
       - id: checkout
         name: Checkout
