@@ -369,10 +369,11 @@ def us_right_wing_hyperlinks():
     )
 
     # Make some corrections
-    blacklist = [
-        "/privacy/",
+    text_black_list = [
+        "COMMENTS",
+        "COMMENT",
     ]
-    links_df.loc[links_df.url.isin(blacklist), "is_story"] = False
+    links_df.loc[links_df.text.str.upper().isin(text_black_list), "is_story"] = False
     whitelist = [
         r"\.(substack|theankler|commonsense|thedispatch).(com|news)/p/",
         r"^https://time.com/\d{5,}/*",
