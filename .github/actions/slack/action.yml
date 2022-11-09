@@ -3,10 +3,10 @@ description: Post an archive artifact to Slack
 
 inputs:
   handle:
-    description: “The site handle to post”
+    description: The site handle to post
     required: true
   webhook-url:
-    description: "The Slack webhook to post"
+    description: The Slack webhook to post
     required: true
 
 runs:

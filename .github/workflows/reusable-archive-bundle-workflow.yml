@@ -1,10 +1,10 @@
-name: "Reusable workflow: Archive bundle"
+name: 'Reusable workflow: Archive bundle'
 
 on:
   workflow_call:
     inputs:
       bundle:
-        description: "The slug of the bundle to archive"
+        description: 'The slug of the bundle to archive'
         required: true
         type: string
 

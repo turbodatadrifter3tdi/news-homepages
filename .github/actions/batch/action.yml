@@ -3,15 +3,15 @@ description: Return a batch of site handles as JSON
 
 inputs:
   command:
-    description: "The batch.py command to run"
+    description: The batch.py command to run
     required: true
 outputs:
   site-list:
-    description: "A list of site handles"
+    description: A list of site handles
     value: ${{ steps.set-output.outputs.site-list }}
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - id: install
       name: Install Python dependencies

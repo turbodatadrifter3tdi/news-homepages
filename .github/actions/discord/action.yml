@@ -3,7 +3,7 @@ description: Post screenshots to a Discord channel
 
 inputs:
   command:
-    description: "The telegrammer.py command to run"
+    description: The telegrammer.py command to run
     required: true
   bot-token:
     description: A bot token with permission to post to Discord

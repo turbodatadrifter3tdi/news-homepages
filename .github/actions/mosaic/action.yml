@@ -3,7 +3,7 @@ description: Create image mosaics from the latest screenshots
 
 inputs:
   command:
-    description: "The mosaic.py command to run"
+    description: The mosaic.py command to run
     required: true
 
 runs:

@@ -3,7 +3,7 @@ description: Save the provided sites to the Wayback Machine at archive.org
 
 inputs:
   source:
-    description: “The site handle to screenshot”
+    description: The site handle to screenshot
     required: true
   access-key:
     description: An API key with permission to post to archive.org

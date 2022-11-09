@@ -3,7 +3,7 @@ description: Upload screenshots to an archive.org collection
 
 inputs:
   source:
-    description: “The site handle to screenshot”
+    description: The site handle to screenshot
     required: true
   access-key:
     description: An API key with permission to post to archive.org

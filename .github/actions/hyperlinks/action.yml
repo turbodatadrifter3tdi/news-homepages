@@ -1,6 +1,9 @@
+name: Hyperlinks
+description: Download all hyperlinks on a site
+
 inputs:
   source:
-    description: “The site handle to screenshot”
+    description: The site handle to screenshot
     required: true
 
 runs:

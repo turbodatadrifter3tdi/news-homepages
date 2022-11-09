@@ -3,7 +3,7 @@ description: Audit the provided site with Lighthouse
 
 inputs:
   source:
-    description: “The site handle to screenshot”
+    description: The site handle to screenshot
     required: true
 
 runs:
@@ -29,8 +29,7 @@ runs:
 
     - id: mv
       name: Move report
-      run: |
-        mv ${{ steps.audit.outputs.resultsPath }}/manifest.json ./${{ inputs.source }}.lighthouse.json
+      run: mv ${{ steps.audit.outputs.resultsPath }}/manifest.json ./${{ inputs.source }}.lighthouse.json
       shell: bash
 
     - name: Upload results as an artifact

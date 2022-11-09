@@ -1,4 +1,4 @@
-name: "Archive a bundle"
+name: 'Archive a bundle'
 
 on:
   workflow_dispatch:

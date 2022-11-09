@@ -3,15 +3,15 @@ description: Snap a JPG of the provided site
 
 inputs:
   source:
-    description: “The command config spelling out what to screenshot”
+    description: The command config spelling out what to screenshot
     required: true
   artifact:
-    description: “The name of the artifact to upload”
+    description: The name of the artifact to upload
     required: false
     default: "screenshots"
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - id: install
       name: Install Python dependencies

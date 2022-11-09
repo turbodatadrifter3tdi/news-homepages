@@ -3,7 +3,7 @@ description: Download the a11y tree for the provided site
 
 inputs:
   source:
-    description: “The site handle to screenshot”
+    description: The site handle to screenshot
     required: true
 
 runs:

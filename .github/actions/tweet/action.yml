@@ -15,7 +15,7 @@ inputs:
     description: The Twitter access token secret
     required: true
   command:
-    description: "The tweet.py command to run"
+    description: The command to run
     required: true
 
 runs:

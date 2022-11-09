@@ -3,7 +3,7 @@ description: Post screenshots to Telegram of the provided site
 
 inputs:
   command:
-    description: "The telegrammer.py command to run"
+    description: The telegrammer.py command to run
     required: true
   api-key:
     description: An API key with permission to post to Telegram
