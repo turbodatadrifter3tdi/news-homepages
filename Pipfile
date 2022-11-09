@@ -33,7 +33,6 @@ retry = "*"
 storysniffer = "*"
 spacy = "*"
 spectra = "*"
-xlwt = "*"
 
 [dev-packages]
 pre-commit = "*"
@@ -56,6 +55,7 @@ storysniffer = "*"
 ipywidgets = "*"
 setuptools-scm = "*"
 twine = "*"
+xlwt = "*"
 
 [requires]
 python_version = "3.9"
