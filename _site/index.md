@@ -58,4 +58,5 @@ reference
 - Discord: [#news-homepages](https://discord.gg/xkTMPMHM)
 - Code: [github.com/palewire/news-homepages](https://github.com/palewire/news-homepages)
 - Task runner: [github.com/palewire/news-homepages/actions](https://github.com/palewire/news-homepages/actions)
+- Packaging: [pypi.org/project/newshomepages](https://pypi.org/project/newshomepages/)
 - Issues: [github.com/palewire/news-homepages/issues](https://github.com/palewire/news-homepages/issues)
