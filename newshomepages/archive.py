@@ -1,4 +1,3 @@
-import json
 import os
 import re
 import typing
@@ -130,13 +129,6 @@ def _upload(data: dict, input_dir: Path, verbose: bool = False):
 
     # Upload it
     internetarchive.upload(identifier, **kwargs)
-
-    # Dump them out
-    url_list = []
-    for key in file_dict.keys():
-        url = f"https://archive.org/download/{identifier}/{key}"
-        url_list.append(url)
-    click.echo(json.dumps(url_list, indent=2))
 
 
 if __name__ == "__main__":
