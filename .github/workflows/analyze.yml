@@ -114,3 +114,39 @@ jobs:
           name: extracts
           path: ./extracts
           if-no-files-found: error
+
+  us-right-wing-hyperlinks:
+    name: U.S. right wing hyperlinks
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v3
+
+      - id: install
+        name: Install
+        uses: ./.github/actions/install
+
+      - id: analyze
+        name: Analyze Drudge hyperlinks
+        run: pipenv run python -m newshomepages.analyze us-right-wing-hyperlinks;
+        shell: bash
+
+      - id: commit
+        name: Commit
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git config pull.rebase false
+          git pull origin $GITHUB_REF
+          git add ./extracts
+          git commit -m "Update U.S. right wing hyperlinks analysis" --author="palewire <palewire@users.noreply.github.com>" && git push || true
+        shell: bash
+
+      - id: save
+        name: Save artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: extracts
+          path: ./extracts
+          if-no-files-found: error
