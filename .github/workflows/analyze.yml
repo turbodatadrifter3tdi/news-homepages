@@ -2,7 +2,7 @@ name: Analyze
 
 on:
   schedule:
-    - cron: "0 10 * * *"
+    - cron: '0 10 * * *'
   workflow_dispatch:
 
 concurrency:
@@ -11,8 +11,10 @@ concurrency:
 
 jobs:
   lighthouse:
-    name: Lighthouse
+    name: Lighthouse audits
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    continue-on-error: true
     steps:
       - id: checkout
         name: Checkout
@@ -24,23 +26,22 @@ jobs:
 
       - id: analyze
         name: Analyze Lighthouse audits
-        run: pipenv run python -m newshomepages.analyze lighthouse;
+        run: pipenv run python -m newshomepages.analyze lighthouse
         shell: bash
 
-      - id: commit
-        name: Commit
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git config pull.rebase false
-          git pull origin $GITHUB_REF
-          git add ./extracts
-          git commit -m "Update lighthouse analysis" --author="palewire <palewire@users.noreply.github.com>" && git push || true
-        shell: bash
+      - id: save
+        name: Save artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: extracts
+          path: ./extracts
+          if-no-files-found: error
 
   drudge-hyperlinks:
     name: Drudge hyperlinks
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    continue-on-error: true
     steps:
       - id: checkout
         name: Checkout
@@ -52,18 +53,7 @@ jobs:
 
       - id: analyze
         name: Analyze Drudge hyperlinks
-        run: pipenv run python -m newshomepages.analyze drudge-hyperlinks;
-        shell: bash
-
-      - id: commit
-        name: Commit
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git config pull.rebase false
-          git pull origin $GITHUB_REF
-          git add ./extracts
-          git commit -m "Update Drudge hyperlinks analysis" --author="palewire <palewire@users.noreply.github.com>" && git push || true
+        run: pipenv run python -m newshomepages.analyze drudge-hyperlinks
         shell: bash
 
       - id: save
@@ -77,6 +67,8 @@ jobs:
   drudge-entities:
     name: Drudge entities
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    continue-on-error: true
     steps:
       - id: checkout
         name: Checkout
@@ -92,19 +84,8 @@ jobs:
         shell: bash
 
       - id: analyze
-        name: Analyze Drudge hyperlinks
-        run: pipenv run python -m newshomepages.analyze drudge-entities;
-        shell: bash
-
-      - id: commit
-        name: Commit
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git config pull.rebase false
-          git pull origin $GITHUB_REF
-          git add ./extracts
-          git commit -m "Update Drudge entities analysis" --author="palewire <palewire@users.noreply.github.com>" && git push || true
+        name: Analyze Drudge entities
+        run: pipenv run python -m newshomepages.analyze drudge-entities
         shell: bash
 
       - id: save
@@ -118,6 +99,8 @@ jobs:
   us-right-wing-hyperlinks:
     name: U.S. right wing hyperlinks
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    continue-on-error: true
     steps:
       - id: checkout
         name: Checkout
@@ -128,19 +111,8 @@ jobs:
         uses: ./.github/actions/install
 
       - id: analyze
-        name: Analyze Drudge hyperlinks
-        run: pipenv run python -m newshomepages.analyze us-right-wing-hyperlinks;
-        shell: bash
-
-      - id: commit
-        name: Commit
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git config pull.rebase false
-          git pull origin $GITHUB_REF
-          git add ./extracts
-          git commit -m "Update U.S. right wing hyperlinks analysis" --author="palewire <palewire@users.noreply.github.com>" && git push || true
+        name: Analyze U.S. right wing hyperlinks
+        run: pipenv run python -m newshomepages.analyze us-right-wing-hyperlinks
         shell: bash
 
       - id: save
@@ -150,3 +122,23 @@ jobs:
           name: extracts
           path: ./extracts
           if-no-files-found: error
+
+  upload:
+    name: Upload extracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs: [lighthouse, drudge-hyperlinks, drudge-entities, us-right-wing-hyperlinks]
+    steps:
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v3
+
+      - id: upload
+        name: Upload
+        uses: ./.github/actions/upload
+        with:
+          artifact: extracts
+          destination: extracts
+          s3-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          s3-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          s3-bucket-name: ${{ secrets.AWS_BUCKET_NAME }}
