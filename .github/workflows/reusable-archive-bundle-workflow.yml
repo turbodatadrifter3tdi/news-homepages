@@ -223,8 +223,8 @@ jobs:
           secret-key: ${{ secrets.IA_SECRET_KEY }}
           collection: ${{ secrets.IA_COLLECTION }}
 
-  publish:
-    name: Publish
+  upload:
+    name: Upload
     runs-on: ubuntu-latest
     timeout-minutes: 60
     needs: [jpg]

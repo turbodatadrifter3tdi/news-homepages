@@ -155,8 +155,8 @@ jobs:
           secret-key: ${{ secrets.IA_SECRET_KEY }}
           collection: ${{ secrets.IA_COLLECTION }}
 
-  publish:
-    name: Publish
+  upload:
+    name: Upload
     runs-on: ubuntu-latest
     timeout-minutes: 60
     needs: [archive]
@@ -220,7 +220,8 @@ jobs:
           path: ./extracts
           if-no-files-found: error
 
-      - id: upload-docs
+      - id: upload-extract
+        name: Upload extracts
         uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
