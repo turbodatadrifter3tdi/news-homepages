@@ -33,6 +33,7 @@ retry = "*"
 storysniffer = "*"
 spacy = "*"
 spectra = "*"
+xlwt = "*"
 
 [dev-packages]
 pre-commit = "*"
