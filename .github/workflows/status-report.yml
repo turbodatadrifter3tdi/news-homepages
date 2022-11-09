@@ -7,19 +7,26 @@ on:
 
 jobs:
   calculate:
-    name: Calculate and Tweet
+    name: Analyze and tweet
     runs-on: ubuntu-latest
     steps:
       - id: checkout
         name: Checkout
         uses: actions/checkout@v3
 
-      - id: install-chromedriver
-        name: Install chromedriver
-        run: |
-          sudo apt update
-          sudo apt --only-upgrade install google-chrome-stable
-          sudo apt -yqq install chromium-chromedriver
+      - id: apt-update
+        name: apt update
+        run: sudo apt update
+        shell: bash
+
+      - id: install-google-chrome-stable
+        name: Install google-chrome-stable
+        run: sudo apt --only-upgrade install google-chrome-stable
+        shell: bash
+
+      - id: install-chromium-chromedriver
+        name: Install chromium-chromedriver
+        run: sudo apt -yqq install chromium-chromedriver
         shell: bash
 
       - id: install
@@ -29,18 +36,6 @@ jobs:
       - id: run-notebook
         name: Run notebook
         run: pipenv run jupyter execute notebooks/status-report.ipynb
-        shell: bash
-
-      - id: commit
-        name: Commit
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git config pull.rebase false
-          git status
-          git pull origin $GITHUB_REF
-          git add ./notebooks
-          git commit -m "Status report data update" --author="palewire <palewire@users.noreply.github.com>" && git push || true
         shell: bash
 
       - id: tweet
