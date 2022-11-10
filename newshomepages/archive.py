@@ -33,14 +33,14 @@ from . import utils
     help="Display the upload progress to archive.org",
 )
 @click.option(
-    "--wait", "wait", default=0, help="How many seconds to pause after a request"
+    "--wait", "wait", default=0.0, help="How many seconds to pause after a request"
 )
 def cli(
     handle: str,
     input_dir: str,
     is_bundle: bool = False,
     verbose: bool = False,
-    wait: int = 0,
+    wait: float = 0.0,
 ):
     """Save a webpage screenshot to an archive.org collection."""
     # Get the input path and make sure it exists
