@@ -174,8 +174,8 @@ def drudge():
 def accessibility_ranking():
     """Create page ranking sites by Lighthouse accessibility score."""
     # Get the data
-    accessibility_df = pd.read_csv(
-        utils.EXTRACT_DIR / "csv" / "lighthouse-analysis.csv",
+    accessibility_df = utils.get_extract_df(
+        "lighthouse-analysis.csv",
         usecols=[
             "handle",
             "accessibility_median",
@@ -232,8 +232,8 @@ def accessibility_ranking():
 def performance_ranking():
     """Create page ranking sites by Lighthouse performance score."""
     # Read in our dataset
-    performance_df = pd.read_csv(
-        utils.EXTRACT_DIR / "csv" / "lighthouse-analysis.csv",
+    performance_df = utils.get_extract_df(
+        "lighthouse-analysis.csv",
         usecols=[
             "handle",
             "performance_median",
@@ -395,15 +395,12 @@ def site_detail():
     print(f":newspaper: Creating {len(site_list)} site detail pages")
 
     # Get all screenshots and items
-    csv_dir = utils.EXTRACT_DIR / "csv"
-    lighthouse_analysis_df = pd.read_csv(
-        utils.EXTRACT_DIR / "csv" / "lighthouse-analysis.csv"
-    )
+    lighthouse_analysis_df = utils.get_extract_df("lighthouse-analysis.csv")
     screenshot_df = utils.get_screenshot_df()
     hyperlink_df = utils.get_hyperlink_df()
     accessibility_df = utils.get_accessibility_df()
     lighthouse_df = utils.get_lighthouse_df()
-    item_df = pd.read_csv(csv_dir / "items.csv", dtype=str)
+    item_df = utils.get_extract_df("items.csv", dtype=str)
 
     # For each site ...
     for site in track(site_list):
@@ -496,8 +493,8 @@ def site_detail_lighthouse_analysis_chart():
     )
 
     # Get lighthouse data we need
-    lighthouse_sample_df = pd.read_csv(
-        utils.EXTRACT_DIR / "csv" / "lighthouse-sample.csv",
+    lighthouse_sample_df = utils.get_extract_df(
+        "lighthouse-sample.csv",
         parse_dates=["date"],
     ).drop(["identifier", "file_name", "pwa"], axis=1)
     lighthouse_sample_df.handle = lighthouse_sample_df.handle.str.lower()
