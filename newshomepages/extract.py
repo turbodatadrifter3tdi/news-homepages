@@ -40,6 +40,7 @@ def cli():
 @click.option("--bundle", "bundle", default=None)
 @click.option("--batch", "batch", default=None)
 @click.option("--output-path", "output_path", default=utils.EXTRACT_DIR / "json")
+@click.option("--wait", "wait", default=5, help="How long to pause between requests")
 def download_items(
     year: str,
     site: typing.Optional[str] = None,
@@ -48,6 +49,7 @@ def download_items(
     bundle: typing.Optional[str] = None,
     batch: typing.Optional[str] = None,
     output_path=utils.EXTRACT_DIR / "json",
+    wait: float = 5,
 ):
     """Download the full list of Internet Archive items as JSON."""
     assert IA_COLLECTION
@@ -63,7 +65,7 @@ def download_items(
         output_obj.mkdir(parents=True, exist_ok=True)
         with open(output_obj / f"{item.identifier}.json", "w") as fh:
             json.dump(item.item_metadata, fh, indent=2)
-            time.sleep(0.5)
+            time.sleep(wait)
 
     @retry(tries=3, delay=30, backoff=2)
     def _site_search(s):
