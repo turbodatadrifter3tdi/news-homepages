@@ -1,5 +1,7 @@
+import logging
 import os
 import re
+import time
 import typing
 from datetime import datetime
 from pathlib import Path
@@ -30,34 +32,55 @@ from . import utils
     default=False,
     help="Display the upload progress to archive.org",
 )
-def cli(handle: str, input_dir: str, is_bundle: bool = False, verbose: bool = False):
+@click.option(
+    "--wait", "wait", default=0, help="How many seconds to pause after a request"
+)
+def cli(
+    handle: str,
+    input_dir: str,
+    is_bundle: bool = False,
+    verbose: bool = False,
+    wait: int = 0,
+):
     """Save a webpage screenshot to an archive.org collection."""
+    # Get the input path and make sure it exists
     input_path = Path(input_dir).absolute()
     assert input_path.exists()
 
+    # If the user wants a bundle ...
     if is_bundle:
-        # Get all the sites
+        # ... get all the sites
         site_list = utils.get_sites_in_bundle(handle)
-        for site in site_list:
-            _upload(site, input_path, verbose)
-
+    # Otherwise pull a single source using the handle
     else:
-        # Pull the source’s metadata
-        site = utils.get_site(handle)
+        site_list = [utils.get_site(handle)]
 
-        # Upload it
+    # Upload everything we got
+    for site in site_list:
         _upload(site, input_path, verbose)
+        # Take a pause if the user asked for it
+        if wait:
+            print(f"😴 Waiting {wait} seconds")
+            time.sleep(wait)
 
 
 def _clean_handle(s):
+    """Santize a handle so its safe to use as an archive.org slug."""
+    # Take it down
     s = s.lower()
+
     # Replace any leading underscores, which don't work on archive.org
     s = re.sub("^(_+)", "", s)
+
+    # Pass it back
     return s
 
 
-@retry(tries=3, delay=5, backoff=2)
+@retry(tries=3, delay=10, backoff=2, jitter=1)
 def _upload(data: dict, input_dir: Path, verbose: bool = False):
+    """Upload the provided data to archive.org."""
+    print(f"📚 Saving {data['handle']} assets to archive.org")
+
     # Set the input paths
     handle = _clean_handle(data["handle"])
     image_path = input_dir / f"{handle}.jpg"
@@ -126,6 +149,9 @@ def _upload(data: dict, input_dir: Path, verbose: bool = False):
         # Other options
         verbose=verbose,
     )
+
+    if verbose:
+        logging.basicConfig()
 
     # Upload it
     internetarchive.upload(identifier, **kwargs)
