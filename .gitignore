@@ -10,6 +10,7 @@ _site/drudge.md
 _site/_static/charts
 _site/_build/
 Makefile
+extracts/csv/us-right-wing-hyperlinks-sample.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
