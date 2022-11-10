@@ -20,7 +20,7 @@ TEMPLATE_ENV = jinja2.Environment(loader=TEMPLATE_LOADER)
 CHARTS_DIR = utils.SITE_DIR / "_static" / "charts"
 
 
-@click.group()
+@click.group(chain=True)
 def cli():
     """Update templated documentation pages."""
     pass
