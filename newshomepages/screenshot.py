@@ -92,12 +92,16 @@ def _screenshot(
     )
 
     # Take the screenshot
-    jpeg_file_path = output_path / f"{site['handle'].lower()}.jpg"
-    print(f"📥 Saving image to {jpeg_file_path}")
+    slug = site["handle"].lower()
+    if full_page:
+        jpg_path = output_path / f"{slug}.fullpage.jpg"
+    else:
+        jpg_path = output_path / f"{slug}.jpg"
+    print(f"📥 Saving image to {jpg_path}")
     page.screenshot(
         quality=80,
         type="jpeg",
-        path=str(jpeg_file_path),
+        path=str(jpg_path),
         full_page=full_page,
     )
 
