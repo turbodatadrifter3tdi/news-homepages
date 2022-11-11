@@ -18,7 +18,7 @@ runs:
 
     - id: install
       name: Install Python dependencies
-      uses: palewire/news-homepages/.github/actions/install
+      uses: ./.github/actions/install
 
     - uses: actions/download-artifact@v3
       with:
