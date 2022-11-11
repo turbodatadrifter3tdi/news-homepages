@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
 
       - id: get-site-list
-        uses: ./.github/actions/batch
+        uses: palewire/news-homepages/.github/actions/batch
         with:
           command: sites-by-bundle ${{ inputs.bundle }}
     outputs:
@@ -41,7 +41,7 @@ jobs:
 
       - id: screenshot
         name: Screenshot
-        uses: ./.github/actions/screenshot
+        uses: palewire/news-homepages/.github/actions/screenshot
         with:
           source: ${{ matrix.source }}
 
@@ -62,7 +62,7 @@ jobs:
 
       - id: screenshot
         name: Screenshot
-        uses: ./.github/actions/screenshot
+        uses: palewire/news-homepages/.github/actions/screenshot
         with:
           source: "${{ matrix.source }} --full-page"
           artifact: full-page-screenshots
@@ -84,7 +84,7 @@ jobs:
 
       - id: save-page
         name: Save the accessibility tree
-        uses: ./.github/actions/accessibility
+        uses: palewire/news-homepages/.github/actions/accessibility
         with:
           source: ${{ matrix.source }}
 
@@ -105,7 +105,7 @@ jobs:
 
       - id: save-page
         name: Save hyperlinks
-        uses: ./.github/actions/hyperlinks
+        uses: palewire/news-homepages/.github/actions/hyperlinks
         with:
           source: ${{ matrix.source }}
 
@@ -126,7 +126,7 @@ jobs:
 
       - id: save-page
         name: Save in Wayback Machine
-        uses: ./.github/actions/wayback
+        uses: palewire/news-homepages/.github/actions/wayback
         with:
           source: ${{ matrix.source }}
           access-key: ${{ secrets.IA_ACCESS_KEY }}
@@ -149,7 +149,7 @@ jobs:
 
       - id: audit
         name: Audit
-        uses: ./.github/actions/lighthouse
+        uses: palewire/news-homepages/.github/actions/lighthouse
         with:
           source: ${{ matrix.source }}
 
@@ -170,7 +170,7 @@ jobs:
 
       - id: install
         name: Install Python dependencies
-        uses: ./.github/actions/install
+        uses: palewire/news-homepages/.github/actions/install
 
       - id: cache-playwright
         name: Cache Playwright browsers
@@ -216,7 +216,7 @@ jobs:
 
       - id: archive
         name: Post
-        uses: ./.github/actions/archive
+        uses: palewire/news-homepages/.github/actions/archive
         with:
           source: ${{ matrix.source }}
           access-key: ${{ secrets.IA_ACCESS_KEY }}
@@ -235,7 +235,7 @@ jobs:
 
       - id: upload
         name: Upload
-        uses: ./.github/actions/upload
+        uses: palewire/news-homepages/.github/actions/upload
         with:
           artifact: screenshots
           destination: latest-screenshots
@@ -255,7 +255,7 @@ jobs:
 
       - id: mosaic
         name: Mosaic
-        uses: ./.github/actions/mosaic
+        uses: palewire/news-homepages/.github/actions/mosaic
         with:
           command: jpg
 
@@ -271,7 +271,7 @@ jobs:
 
       - id: discord
         name: Discord
-        uses: ./.github/actions/discord
+        uses: palewire/news-homepages/.github/actions/discord
         with:
           bot-token: ${{ secrets.DISCORD_BOT_TOKEN }}
           command: bundle ${{ inputs.bundle }}
@@ -288,7 +288,7 @@ jobs:
 
       - id: tweet
         name: Tweet
-        uses: ./.github/actions/tweet
+        uses: palewire/news-homepages/.github/actions/tweet
         with:
           consumer-key: ${{ secrets.TWITTER_CONSUMER_KEY }}
           consumer-secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}

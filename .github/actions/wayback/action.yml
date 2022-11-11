@@ -17,7 +17,7 @@ runs:
   steps:
     - id: install
       name: Install Python dependencies
-      uses: ./.github/actions/install
+      uses: palewire/news-homepages/.github/actions/install
 
     - id: save-page
       name: Save in Wayback Machine

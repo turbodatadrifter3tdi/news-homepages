@@ -11,7 +11,7 @@ runs:
   steps:
     - id: install
       name: Install Python dependencies
-      uses: ./.github/actions/install
+      uses: palewire/news-homepages/.github/actions/install
 
     - id: geturl
       name: Get URL
