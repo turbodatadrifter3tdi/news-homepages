@@ -3,7 +3,7 @@ name: Update website
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: '0 */6 * * *'
 
 concurrency:
   group: site
@@ -28,7 +28,7 @@ jobs:
         shell: bash
 
       - id: build-docs
-        build: Build
+        name: Build
         uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "_site/"
