@@ -26,13 +26,8 @@ def cli(handle: str, output_dir: str):
     assert IA_SECRET_KEY
 
     # Ask for a capture
-    print(
-        f"Requesting a capture in the archive.org Wayback Machine of {site['url']} via the Save Page Now API"
-    )
-    capture_response = _post(site["url"])
-
-    # Get the response
-    capture_data = capture_response.json()
+    print(f"🏛 Requesting a Wayback Machine capture of {site['url']}")
+    capture_data = _post(site["url"])
 
     # If we've got a message, we need to just give up now. They're not going to do it.
     if "message" in capture_data:
@@ -88,7 +83,7 @@ def _get(url: str):
 
 @retry(tries=3, delay=10, backoff=2)
 def _post(url: str):
-    return requests.post(
+    r = requests.post(
         "https://web.archive.org/save",
         headers={
             "Authorization": f"LOW {IA_ACCESS_KEY}:{IA_SECRET_KEY}",
@@ -101,6 +96,7 @@ def _post(url: str):
             "capture_all": "1",
         },
     )
+    return r.json()
 
 
 if __name__ == "__main__":
