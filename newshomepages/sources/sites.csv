@@ -1,5 +1,5 @@
 handle,url,name,location,timezone,country,language,bundle,wait
-signalcleveland,https://signalcleveland.org/,Signal Cleveland,America/New_York,US,en,,
+signalcleveland,https://signalcleveland.org/,Signal Cleveland,Cleveland,America/New_York,US,en,,
 100Reporters,http://100r.org/,100Reporters,Washington,America/New_York,US,en,,
 11AliveNews,https://www.11alive.com,11Alive News,Atlanta,America/New_York,US,en,georgia,
 12NewsNow,https://www.12newsnow.com/,12 News Now,Beaumont,America/Chicago,US,en,texas,
