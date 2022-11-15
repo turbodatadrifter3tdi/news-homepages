@@ -22,23 +22,14 @@ def cli(handle: str, output_dir: str):
     # Pull the source’s metadata
     site = utils.get_site(handle)
 
+    assert IA_ACCESS_KEY
+    assert IA_SECRET_KEY
+
     # Ask for a capture
     print(
         f"Requesting a capture in the archive.org Wayback Machine of {site['url']} via the Save Page Now API"
     )
-    capture_response = requests.post(
-        "https://web.archive.org/save",
-        headers={
-            "Authorization": f"LOW {IA_ACCESS_KEY}:{IA_SECRET_KEY}",
-            "Accept": "application/json",
-        },
-        data={
-            "url": site["url"],
-            "capture_screenshot": "1",
-            "skip_first_archive": "1",
-            "capture_all": "1",
-        },
-    )
+    capture_response = _post(site["url"])
 
     # Get the response
     capture_data = capture_response.json()
@@ -56,7 +47,7 @@ def cli(handle: str, output_dir: str):
 
             # Check in our capture
             status_url = f"https://web.archive.org/save/status/{capture_data['job_id']}"
-            status_data = _request(status_url)
+            status_data = _get(status_url)
 
             # If it's a success, we're done
             if status_data["status"] == "success":
@@ -88,11 +79,28 @@ def cli(handle: str, output_dir: str):
 
 
 @retry(tries=3, delay=5, backoff=2)
-def _request(url):
+def _get(url: str):
     r = requests.get(url)
     assert r.ok
     j = r.json()
     return j
+
+
+@retry(tries=3, delay=10, backoff=2)
+def _post(url: str):
+    return requests.post(
+        "https://web.archive.org/save",
+        headers={
+            "Authorization": f"LOW {IA_ACCESS_KEY}:{IA_SECRET_KEY}",
+            "Accept": "application/json",
+        },
+        data={
+            "url": url,
+            "capture_screenshot": "1",
+            "skip_first_archive": "1",
+            "capture_all": "1",
+        },
+    )
 
 
 if __name__ == "__main__":
