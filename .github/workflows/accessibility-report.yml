@@ -1,8 +1,8 @@
 name: Accessibility report
 
 on:
-  schedule:
-    - cron: "0 16 * * 2"
+  # schedule:
+  #   - cron: "0 16 * * 2"
   workflow_dispatch:
 
 jobs:
