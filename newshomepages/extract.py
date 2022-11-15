@@ -39,7 +39,7 @@ def cli():
 @click.option("--language", "language", default=None)
 @click.option("--bundle", "bundle", default=None)
 @click.option("--batch", "batch", default=None)
-@click.option("--output-path", "output_path", default=utils.EXTRACT_DIR / "json")
+@click.option("-o", "--output-path", "output_path", default=utils.EXTRACT_DIR / "json")
 @click.option("--wait", "wait", default=5, help="How long to pause between requests")
 def download_items(
     year: str,
@@ -53,10 +53,6 @@ def download_items(
 ):
     """Download the full list of Internet Archive items as JSON."""
     assert IA_COLLECTION
-    print(f"Extracting metadata for the Internet Archive collection `{IA_COLLECTION}`")
-    collection = internetarchive.get_item(IA_COLLECTION)
-    with open(utils.EXTRACT_DIR / "json" / f"{IA_COLLECTION}.json", "w") as fh:
-        json.dump(collection.item_metadata, fh, indent=2)
 
     @retry(tries=3, delay=30, backoff=2)
     def _save_item(item):
