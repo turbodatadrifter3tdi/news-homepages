@@ -64,7 +64,7 @@ def parse_archive_artifact(url_list: typing.List) -> typing.Dict:
 
 def get_extract_df(name: str, **kwargs) -> pd.DataFrame:
     """Read in the requests extracts CSV as a dataframe."""
-    base_url = "https://github.com/palewire/news-homepages/raw/main/extracts/csv/"
+    base_url = "https://news-homepages.s3.us-west-1.amazonaws.com/extracts/csv/"
     return pd.read_csv(f"{base_url}{name}", **kwargs)
 
 
@@ -338,8 +338,9 @@ def get_wayback_df() -> pd.DataFrame:
 
 
 def _get_extract_files_df(name) -> pd.DataFrame:
+    base_url = "https://news-homepages.s3.us-west-1.amazonaws.com/extracts/csv/"
     df = pd.read_csv(
-        EXTRACT_DIR / "csv" / name,
+        f"{base_url}{name}",
         parse_dates=["mtime"],
         usecols=[
             "identifier",
