@@ -21,7 +21,8 @@ def cli():
 
 
 @cli.command()
-def drudge_entities():
+@click.option("-o", "--output-dir", "output_dir", default=utils.EXTRACT_DIR / "csv")
+def drudge_entities(output_dir=utils.EXTRACT_DIR / "csv"):
     """Analyze Drudge entities."""
     print(":abacus: Analyzing Drudge entities")
 
@@ -237,13 +238,12 @@ def drudge_entities():
     top_words["timeseries"] = top_words.lemma.apply(get_timeseries)
 
     # Write the result
-    top_words.to_csv(
-        utils.EXTRACT_DIR / "csv" / "drudge-entities-analysis.csv", index=False
-    )
+    top_words.to_csv(output_dir / "drudge-entities-analysis.csv", index=False)
 
 
 @cli.command()
-def drudge_hyperlinks():
+@click.option("-o", "--output-dir", "output_dir", default=utils.EXTRACT_DIR / "csv")
+def drudge_hyperlinks(output_dir=utils.EXTRACT_DIR / "csv"):
     """Analyze Drudge hyperlinks."""
     print(":abacus: Analyzing Drudge hyperlinks")
     warnings.simplefilter("ignore")
@@ -322,11 +322,12 @@ def drudge_hyperlinks():
     # Write the result
     links_df.sort_values(
         ["domain", "earliest_date", "text"], ascending=[True, False, True]
-    ).to_csv(utils.EXTRACT_DIR / "csv" / "drudge-hyperlinks-analysis.csv", index=False)
+    ).to_csv(output_dir / "drudge-hyperlinks-analysis.csv", index=False)
 
 
 @cli.command()
-def us_right_wing_hyperlinks():
+@click.option("-o", "--output-dir", "output_dir", default=utils.EXTRACT_DIR / "csv")
+def us_right_wing_hyperlinks(output_dir=utils.EXTRACT_DIR / "csv"):
     """Analyze U.S. Right Wing hyperlinks."""
     print(":abacus: Analyzing U.S. Right Wing hyperlinks")
     warnings.simplefilter("ignore")
@@ -408,13 +409,12 @@ def us_right_wing_hyperlinks():
     # Write the result
     links_df.sort_values(
         ["domain", "earliest_date", "text"], ascending=[True, False, True]
-    ).to_csv(
-        utils.EXTRACT_DIR / "csv" / "us-right-wing-hyperlinks-analysis.csv", index=False
-    )
+    ).to_csv(output_dir / "us-right-wing-hyperlinks-analysis.csv", index=False)
 
 
 @cli.command()
-def lighthouse():
+@click.option("-o", "--output-dir", "output_dir", default=utils.EXTRACT_DIR / "csv")
+def lighthouse(output_dir=utils.EXTRACT_DIR / "csv"):
     """Analyze Lighthouse scores."""
     print(":abacus: Analyzing Lighthouse scores")
 
@@ -486,7 +486,7 @@ def lighthouse():
     )
 
     # Write the results
-    output_path = utils.EXTRACT_DIR / "csv" / "lighthouse-analysis.csv"
+    output_path = output_dir / "lighthouse-analysis.csv"
     print(f":pencil: Writing to {output_path}")
     flat_df.reset_index().to_csv(output_path, index=False)
 
