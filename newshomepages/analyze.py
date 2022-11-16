@@ -29,9 +29,8 @@ def drudge_entities():
     nlp = spacy.load("en_core_web_lg")
 
     # Read in data
-    drudge_df = pd.read_csv(
-        "https://github.com/palewire/news-homepages/raw/main/extracts/csv/drudge-hyperlinks-analysis.csv",
-        parse_dates=["earliest_date"],
+    drudge_df = utils.get_extract_df(
+        "drudge-hyperlinks-analysis.csv", parse_dates=["earliest_date"]
     )
 
     # Filter down to stories
@@ -250,8 +249,8 @@ def drudge_hyperlinks():
     warnings.simplefilter("ignore")
 
     # Read in our 90 day sample of hyperlinks
-    df = pd.read_csv(
-        utils.EXTRACT_DIR / "csv" / "drudge-hyperlinks-sample.csv",
+    df = utils.get_extract_df(
+        "drudge-hyperlinks-sample.csv",
         usecols=[
             "handle",
             "file_name",
@@ -333,8 +332,8 @@ def us_right_wing_hyperlinks():
     warnings.simplefilter("ignore")
 
     # Read in our 90 day sample of hyperlinks
-    df = pd.read_csv(
-        utils.EXTRACT_DIR / "csv" / "us-right-wing-hyperlinks-sample.csv",
+    df = utils.get_extract_df(
+        "us-right-wing-hyperlinks-sample.csv",
         usecols=[
             "handle",
             "file_name",
@@ -420,8 +419,8 @@ def lighthouse():
     print(":abacus: Analyzing Lighthouse scores")
 
     # Read in our seven day sample for all sites
-    df = pd.read_csv(
-        utils.EXTRACT_DIR / "csv" / "lighthouse-sample.csv",
+    df = utils.get_extract_df(
+        "lighthouse-sample.csv",
         usecols=[
             "handle",
             "file_name",
