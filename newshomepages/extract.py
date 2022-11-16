@@ -474,7 +474,6 @@ def consolidate():
                     md5=file["md5"],
                     sha1=file["sha1"],
                 )
-                # https://archive.org/download/lehuffpost-2022/lehuffpost-2022-04-09T15%3A43%3A17.585783%2B02%3A00.jpg
                 if file["format"] == "JPEG":
                     screenshot_output.append(file_dict)
                 elif "accessibility" in file["name"]:
@@ -491,6 +490,14 @@ def consolidate():
                     )
 
     # Write out the data
+    def _write_csv(dict_list, name):
+        csv_dir = utils.EXTRACT_DIR / "csv"
+        with open(csv_dir / name, "w") as fh:
+            fieldnames = dict_list[0].keys()
+            writer = csv.DictWriter(fh, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(dict_list)
+
     _write_csv(site_output, "sites.csv")
     _write_csv(utils.get_bundle_list(), "bundles.csv")
     _write_csv(site2bundle_output, "site-bundle-relationships.csv")
@@ -538,15 +545,6 @@ def _get_json_url(url):
 
     # Return dataframe
     return df
-
-
-def _write_csv(dict_list, name):
-    csv_dir = utils.EXTRACT_DIR / "csv"
-    with open(csv_dir / name, "w") as fh:
-        fieldnames = dict_list[0].keys()
-        writer = csv.DictWriter(fh, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(dict_list)
 
 
 if __name__ == "__main__":

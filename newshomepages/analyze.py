@@ -2,6 +2,7 @@ import json
 import typing
 import warnings
 from collections import Counter
+from pathlib import Path
 
 import click
 import pandas as pd
@@ -21,10 +22,14 @@ def cli():
 
 
 @cli.command()
-@click.option("-o", "--output-dir", "output_dir", default=utils.EXTRACT_DIR / "csv")
-def drudge_entities(output_dir=utils.EXTRACT_DIR / "csv"):
+@click.option("-o", "--output-dir", "output_dir", default="./")
+def drudge_entities(output_dir: str = "./"):
     """Analyze Drudge entities."""
     print(":abacus: Analyzing Drudge entities")
+
+    # Set the output path
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
 
     # Import NLP library
     nlp = spacy.load("en_core_web_lg")
@@ -238,15 +243,19 @@ def drudge_entities(output_dir=utils.EXTRACT_DIR / "csv"):
     top_words["timeseries"] = top_words.lemma.apply(get_timeseries)
 
     # Write the result
-    top_words.to_csv(output_dir / "drudge-entities-analysis.csv", index=False)
+    top_words.to_csv(output_path / "drudge-entities-analysis.csv", index=False)
 
 
 @cli.command()
-@click.option("-o", "--output-dir", "output_dir", default=utils.EXTRACT_DIR / "csv")
-def drudge_hyperlinks(output_dir=utils.EXTRACT_DIR / "csv"):
+@click.option("-o", "--output-dir", "output_dir", default="./")
+def drudge_hyperlinks(output_dir: str = "./"):
     """Analyze Drudge hyperlinks."""
     print(":abacus: Analyzing Drudge hyperlinks")
     warnings.simplefilter("ignore")
+
+    # Set the output path
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
 
     # Read in our 90 day sample of hyperlinks
     df = utils.get_extract_df(
@@ -322,15 +331,19 @@ def drudge_hyperlinks(output_dir=utils.EXTRACT_DIR / "csv"):
     # Write the result
     links_df.sort_values(
         ["domain", "earliest_date", "text"], ascending=[True, False, True]
-    ).to_csv(output_dir / "drudge-hyperlinks-analysis.csv", index=False)
+    ).to_csv(output_path / "drudge-hyperlinks-analysis.csv", index=False)
 
 
 @cli.command()
-@click.option("-o", "--output-dir", "output_dir", default=utils.EXTRACT_DIR / "csv")
-def us_right_wing_hyperlinks(output_dir=utils.EXTRACT_DIR / "csv"):
+@click.option("-o", "--output-dir", "output_dir", default="./")
+def us_right_wing_hyperlinks(output_dir: str = "./"):
     """Analyze U.S. Right Wing hyperlinks."""
     print(":abacus: Analyzing U.S. Right Wing hyperlinks")
     warnings.simplefilter("ignore")
+
+    # Set the output path
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
 
     # Read in our 90 day sample of hyperlinks
     df = utils.get_extract_df(
@@ -409,14 +422,18 @@ def us_right_wing_hyperlinks(output_dir=utils.EXTRACT_DIR / "csv"):
     # Write the result
     links_df.sort_values(
         ["domain", "earliest_date", "text"], ascending=[True, False, True]
-    ).to_csv(output_dir / "us-right-wing-hyperlinks-analysis.csv", index=False)
+    ).to_csv(output_path / "us-right-wing-hyperlinks-analysis.csv", index=False)
 
 
 @cli.command()
-@click.option("-o", "--output-dir", "output_dir", default=utils.EXTRACT_DIR / "csv")
-def lighthouse(output_dir=utils.EXTRACT_DIR / "csv"):
+@click.option("-o", "--output-dir", "output_dir", default="./")
+def lighthouse(output_dir: str = "./"):
     """Analyze Lighthouse scores."""
     print(":abacus: Analyzing Lighthouse scores")
+
+    # Set the output path
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
 
     # Read in our seven day sample for all sites
     df = utils.get_extract_df(
@@ -486,9 +503,7 @@ def lighthouse(output_dir=utils.EXTRACT_DIR / "csv"):
     )
 
     # Write the results
-    output_path = output_dir / "lighthouse-analysis.csv"
-    print(f":pencil: Writing to {output_path}")
-    flat_df.reset_index().to_csv(output_path, index=False)
+    flat_df.reset_index().to_csv(output_path / "lighthouse-analysis.csv", index=False)
 
 
 def _color_code(val):
