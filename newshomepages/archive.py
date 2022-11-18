@@ -1,7 +1,6 @@
 import logging
 import os
 import re
-import time
 import typing
 from datetime import datetime
 from pathlib import Path
@@ -15,16 +14,14 @@ from rich import print
 from . import utils
 
 
+IA_ACCESS_KEY = os.getenv("IA_ACCESS_KEY")
+IA_SECRET_KEY = os.getenv("IA_SECRET_KEY")
+IA_COLLECTION = os.getenv("IA_COLLECTION")
+
+
 @click.command()
 @click.argument("handle")
 @click.option("-i", "--input-dir", "input_dir", default="./")
-@click.option(
-    "--bundle",
-    "is_bundle",
-    is_flag=True,
-    default=False,
-    help="The provided handle is a bundle",
-)
 @click.option(
     "--verbose",
     "verbose",
@@ -32,36 +29,62 @@ from . import utils
     default=False,
     help="Display the upload progress to archive.org",
 )
-@click.option(
-    "--wait", "wait", default=0.0, help="How many seconds to pause after a request"
-)
 def cli(
     handle: str,
     input_dir: str,
-    is_bundle: bool = False,
     verbose: bool = False,
-    wait: float = 0.0,
 ):
     """Save a webpage screenshot to an archive.org collection."""
+    # Verify we have all the credentials
+    assert IA_ACCESS_KEY
+    assert IA_SECRET_KEY
+    assert IA_COLLECTION
+    
     # Get the input path and make sure it exists
     input_path = Path(input_dir).absolute()
     assert input_path.exists()
 
-    # If the user wants a bundle ...
-    if is_bundle:
-        # ... get all the sites
-        site_list = utils.get_sites_in_bundle(handle)
-    # Otherwise pull a single source using the handle
-    else:
-        site_list = [utils.get_site(handle)]
+    # Get the user
+    data = utils.get_site(handle)
 
-    # Upload everything we got
-    for site in site_list:
-        _upload(site, input_path, verbose)
-        # Take a pause if the user asked for it
-        if wait:
-            print(f"😴 Waiting {wait} seconds")
-            time.sleep(wait)
+    # Turn on verbose logging, if the user asked for it
+    if verbose:
+        logging.basicConfig()
+
+    # If there are no file, squawk but move on
+    file_dict = _get_file_dict(data, input_path)
+    if not file_dict:
+        print(f"No files found for {data['handle']}")
+        return
+
+    # Upload it
+    handle = data['handle']
+    local_now = _get_now_local(data)
+    site_identifier = f"{_clean_handle(handle)}-{local_now.strftime('%Y')}"
+    site_metadata = _get_item_metadata(data)
+    print(f"📚 Saving timestamped `{handle}` assets to archive.org `{IA_COLLECTION}` collection's `{site_identifier}`")
+
+    # We will post into an "item" keyed to the site's handle and year
+    _upload(data, site_identifier, site_metadata, file_dict, verbose)
+
+    # Once that finishes, if there's a JPG file let's symlink it as the latest image
+    image_path = input_path / f"{handle}.jpg"
+    if image_path.exists():
+        latest_identifier = "latest-homepages"
+        print(f"📚 Saving latest `{handle}` assets to archive.org `{IA_COLLECTION}` collection's `{latest_identifier}` item")
+        latest_metadata = dict(
+            title="Latest homepages",
+            collection=IA_COLLECTION,
+            mediatype="image",
+            publisher="https://homepages.news",
+            contributor="https://homepages.news",
+            retries=2,
+            retries_sleep=30,
+        )
+        latest_dict = {
+            f"{_clean_handle(handle)}.jpg": image_path
+        }
+        _upload(data, latest_identifier, latest_metadata, latest_dict, verbose)
 
 
 def _clean_handle(s):
@@ -76,11 +99,37 @@ def _clean_handle(s):
     return s
 
 
-@retry(tries=3, delay=10, backoff=2, jitter=1)
-def _upload(data: dict, input_dir: Path, verbose: bool = False):
-    """Upload the provided data to archive.org."""
-    print(f"📚 Saving {data['handle']} assets to archive.org")
+def _get_now_local(data: typing.Dict) -> datetime:
+    """Get the current time in the provided site's timezone."""
+    now = datetime.now()
+    tz = pytz.timezone(data["timezone"])
+    return now.astimezone(tz)
 
+
+def _get_item_metadata(data: typing.Dict) -> typing.Dict:
+    """Convert a site's metadata into the format we'll use in its archive.org item."""
+    # Verify we have an archive.org collection 
+    assert IA_COLLECTION
+
+    # Get the current year where the site is based,
+    # since we segment each site's items by calendar year.
+    now_year = _get_now_local(data).strftime('%Y')
+
+    # Format a metadata dictionary ready to post to the archive.org upload method
+    return dict(
+        title=f"{data['name']} homepages in {now_year}",
+        collection=IA_COLLECTION,
+        mediatype="image",
+        publisher=data["url"],
+        date=now_year,
+        contributor="https://homepages.news",
+        retries=2,
+        retries_sleep=30,
+    )
+
+
+def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
+    """Get a dictionary of timestamped files to upload to our archive.org collection.""" 
     # Set the input paths
     handle = _clean_handle(data["handle"])
     image_path = input_dir / f"{handle}.jpg"
@@ -89,18 +138,13 @@ def _upload(data: dict, input_dir: Path, verbose: bool = False):
     lighthouse_path = input_dir / f"{handle}.lighthouse.json"
     wayback_path = input_dir / f"{handle}.wayback.json"
 
-    # Get the timestamp
-    now = datetime.now()
+    # Get the local time where the site is based
+    now_local = _get_now_local(data)
 
-    # Convert it to local time
-    tz = pytz.timezone(data["timezone"])
-    now_local = now.astimezone(tz)
+    # Convert it to ISO format for timestamping our files
     now_iso = now_local.isoformat()
 
-    # We will post into an "item" keyed to the site's handle and year
-    identifier = f"{handle}-{now_local.strftime('%Y')}"
-
-    # Grab the files that exist
+    # Grab the files that exist and timestamp them
     file_dict = {}
     if image_path.exists():
         file_dict[f"{handle}-{now_iso}.jpg"] = image_path
@@ -113,45 +157,38 @@ def _upload(data: dict, input_dir: Path, verbose: bool = False):
     if wayback_path.exists():
         file_dict[f"{handle}-{now_iso}.wayback.json"] = wayback_path
 
-    # If there are no file, squawk but move on
-    if not file_dict:
-        print(f"No files found for {data['handle']}")
-        return
+    # Return it
+    return file_dict
 
-    # Get secrets
-    access_key: typing.Optional[str] = os.getenv("IA_ACCESS_KEY")
-    secret_key: typing.Optional[str] = os.getenv("IA_SECRET_KEY")
-    collection: typing.Optional[str] = os.getenv("IA_COLLECTION")
 
+@retry(tries=3, delay=10, backoff=2, jitter=1)
+def _upload(
+    data: typing.Dict,
+    identifier: str,
+    metadata: typing.Dict,
+    files: typing.Dict,
+    verbose: bool = False
+):
+    """Upload the provided data to archive.org."""
     # Make sure secrets are there
-    assert access_key
-    assert secret_key
-    assert collection
+    assert IA_ACCESS_KEY
+    assert IA_SECRET_KEY
 
-    # Set all the arguments
+    # Set all the keyword arguments
     kwargs = dict(
         # Authentication
-        access_key=access_key,
-        secret_key=secret_key,
+        access_key=IA_ACCESS_KEY,
+        secret_key=IA_SECRET_KEY,
+
         # Metadata about the item
-        metadata=dict(
-            title=f"{data['name']} homepages in {now_local.strftime('%Y')}",
-            collection=collection,
-            mediatype="image",
-            publisher=data["url"],
-            date=now_local.strftime("%Y"),
-            contributor="https://homepages.news",
-            retries=2,
-            retries_sleep=10,
-        ),
-        # Metadata about the image file
-        files=file_dict,
+        metadata=metadata,
+
+        # The items we'll upload
+        files=files,
+
         # Other options
         verbose=verbose,
     )
-
-    if verbose:
-        logging.basicConfig()
 
     # Upload it
     internetarchive.upload(identifier, **kwargs)

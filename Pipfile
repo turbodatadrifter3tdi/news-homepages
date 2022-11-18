@@ -56,6 +56,7 @@ ipywidgets = "*"
 setuptools-scm = "*"
 twine = "*"
 xlwt = "*"
+pytest-env = "*"
 
 [requires]
 python_version = "3.9"
