@@ -2,8 +2,8 @@ name: "Archive and Slack: Atlanta Journal-Constitution"
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 12,19,1 * * *"
+#   schedule:
+#     - cron: "0 12,19,1 * * *"
 
 jobs:
   archive-site:
