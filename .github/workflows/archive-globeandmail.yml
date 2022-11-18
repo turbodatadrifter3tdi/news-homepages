@@ -2,8 +2,8 @@ name: "Archive and Slack: Toronto Globe and Mail"
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 10,16,22 * * *"
+#   schedule:
+#     - cron: "0 10,16,22 * * *"
 
 jobs:
   archive-site:
