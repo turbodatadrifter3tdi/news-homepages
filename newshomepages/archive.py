@@ -8,7 +8,6 @@ from pathlib import Path
 import click
 import internetarchive
 import pytz
-from retry import retry
 from rich import print
 
 from . import utils
@@ -56,7 +55,7 @@ def cli(
         print(f"No files found for {data['handle']}")
         return
 
-    # Upload it
+    # Upload into an "item" keyed to the site's handle and year
     handle = data["handle"]
     local_now = _get_now_local(data)
     site_identifier = f"{_clean_handle(handle)}-{local_now.strftime('%Y')}"
@@ -64,11 +63,9 @@ def cli(
     print(
         f"📚 Saving timestamped `{handle}` assets to archive.org `{IA_COLLECTION}` collection's `{site_identifier}`"
     )
-
-    # We will post into an "item" keyed to the site's handle and year
     _upload(data, site_identifier, site_metadata, file_dict, verbose)
 
-    # Once that finishes, if there's a JPG file let's symlink it as the latest image
+    # Once that finishes, if there's a JPG file, symlink it as the latest image
     image_path = input_path / f"{handle}.jpg"
     if image_path.exists():
         latest_identifier = "latest-homepages"
@@ -162,7 +159,6 @@ def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
     return file_dict
 
 
-@retry(tries=3, delay=10, backoff=2, jitter=1)
 def _upload(
     data: typing.Dict,
     identifier: str,
