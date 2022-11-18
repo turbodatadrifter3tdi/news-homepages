@@ -48,7 +48,7 @@ def local_version(version):
 
 setup(
     name="newshomepages",
-    description="A template for open-source Python software repositories",
+    description="An open-source archive that gathers, saves, shares and analyzes news homepages",
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
     author="Ben Welsh",
@@ -116,7 +116,9 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+        "Topic :: System :: Archiving",
+        "Topic :: Internet :: WWW/HTTP :: Dynamic Content :: News/Diary",
     ],
     setup_requires=["setuptools_scm"],
     use_scm_version={"version_scheme": version_scheme, "local_scheme": local_version},
