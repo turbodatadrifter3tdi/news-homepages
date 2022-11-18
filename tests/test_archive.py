@@ -1,6 +1,6 @@
 import os
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 
 from newshomepages import archive, utils
 
@@ -8,7 +8,10 @@ from newshomepages import archive, utils
 def test_archive_clean_handle():
     """Test archive handle cleaning."""
     assert archive._clean_handle(utils.get_site("latimes")["handle"]) == "latimes"
-    assert archive._clean_handle(utils.get_site("_fiquemsabendo")["handle"]) == "fiquemsabendo"
+    assert (
+        archive._clean_handle(utils.get_site("_fiquemsabendo")["handle"])
+        == "fiquemsabendo"
+    )
 
 
 def test_archive_now_local():
