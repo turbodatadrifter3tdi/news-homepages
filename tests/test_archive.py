@@ -12,7 +12,6 @@ def test_archive_clean_handle():
         return utils.safe_ia_handle(utils.get_site(x)["handle"])
 
     assert _get_handle("latimes") == "latimes"
-    assert _get_handle("_fiquemsabendo") == "fiquemsabendo"
     assert _get_handle("CNN") == "cnn"
 
 
