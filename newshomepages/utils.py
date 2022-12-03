@@ -44,6 +44,16 @@ def safe_ia_handle(s):
     return s
 
 
+def write_csv(dict_list, path):
+    """Write a list of dictionaries to a CSV file."""
+    print(f"📥 Writing CSV to {path}")
+    fieldnames = dict_list[0].keys()
+    with open(path, "w") as fh:
+        writer = csv.DictWriter(fh, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(dict_list)
+
+
 def write_json(data: typing.Any, path: Path, indent: int = 2):
     """Write JSON data to the provided path."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -64,6 +74,16 @@ def get_json_url(url: str):
     """Get JSON data from the provided URL."""
     r = get_url(url)
     return r.json()
+
+
+@retry(tries=3, delay=15, backoff=2)
+def download_url(url: str, output_path: Path, timeout: int = 180):
+    """Download the provided URL to the provided path."""
+    with requests.get(url, stream=True, timeout=timeout) as r:
+        r.raise_for_status()
+        with open(output_path, "wb") as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                f.write(chunk)
 
 
 def get_local_time(data: typing.Dict) -> datetime:

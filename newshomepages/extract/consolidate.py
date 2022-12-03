@@ -1,6 +1,7 @@
-import csv
 import json
+import zipfile
 from datetime import datetime
+from pathlib import Path
 
 import click
 from rich import print
@@ -16,34 +17,18 @@ def cli():
 
 
 @cli.command()
-def consolidate():
+@click.option("-o", "--output-dir", "output_dir", default="./")
+def consolidate(
+    output_dir: str = "./",
+):
     """Consolidate Internet Archive metadata into CSV files."""
-    print("🪢 Consolidating extracts")
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
 
-    # Get all of the JSON files
-    json_dir = utils.EXTRACT_DIR / "json"
-    json_list = list(json_dir.glob("*.json"))
-
-    # Set up some stuff for outputs later on
-    site_output = []
-    site2bundle_output = []
-    items_output = []
-    (
-        screenshot_output,
-        a11y_output,
-        hyperlinks_output,
-        lighthouse_output,
-        wayback_output,
-    ) = (
-        [],
-        [],
-        [],
-        [],
-        [],
-    )
-
+    print("🪢 Extracting sites")
+    site_list = []
     # Loop through all the sites
-    for site in track(utils.get_site_list()):
+    for site in utils.get_site_list():
         # Pull out the data we like
         site_dict = dict(
             handle=site["handle"],
@@ -55,9 +40,15 @@ def consolidate():
             language=site["language"],
         )
         # Add to the output list
-        site_output.append(site_dict)
+        site_list.append(site_dict)
+    utils.write_csv(site_list, output_path / "sites.csv")
 
-        # Normalize the links between sites and bundles
+    print("🪢 Extracting bundles")
+    utils.write_csv(utils.get_bundle_list(), output_path / "bundles.csv")
+
+    print("🪢 Extracting site-to-bundle relationships")
+    site2bundle_list = []
+    for site in utils.get_site_list():
         for b in site["bundle_list"]:
             if not b.strip():
                 continue
@@ -65,87 +56,92 @@ def consolidate():
                 site_handle=site["handle"],
                 bundle_slug=b,
             )
-            site2bundle_output.append(d)
+            site2bundle_list.append(d)
+    utils.write_csv(site2bundle_list, output_path / "site-bundle-relationships.csv")
 
-        # Get all the items for this site
-        site_json_list = [
+    print("⬇️ Downloading latest data")
+    zip_url = "https://archive.org/compress/latest-homepages/formats=JSON,JPEG,ITEM%20TILE,ARCHIVE%20BITTORRENT,METADATA"
+    zip_path = output_path / "latest.zip"
+    utils.download_url(zip_url, zip_path)
+
+    print("🪆 Extracting items")
+    zf = zipfile.ZipFile(zip_path)
+    json_list = [f for f in zf.namelist() if f.endswith(".json")]
+    item_list = []
+    file_list = []
+    for file_name in track(json_list):
+        # Read the data out of the zip file
+        with zf.open(file_name) as fp:
+            item_data = json.loads(fp.read())
+
+        # Pull out the data we want to keep
+        identifier = file_name.replace(".json", "")
+        handle = identifier[:-5]
+        item_dict = dict(
+            identifier=item_data["metadata"]["identifier"],
+            handle=handle,
+            file_name=file_name,
+            url=f"https://archive.org/details/{item_data['metadata']['identifier']}",
+            title=item_data["metadata"]["title"],
+            date=item_data["metadata"]["date"],
+            publicdate=item_data["metadata"]["publicdate"],
+            addeddate=item_data["metadata"]["addeddate"],
+        )
+
+        # Add to the output list
+        item_list.append(item_dict)
+
+        # Pull out the files
+        qualified_files = [
             p
-            for p in json_list
-            if site["handle"].lower() == p.name.split("-")[0].lower()
+            for p in item_data["files"]
+            if (handle.lower() in p["name"].lower() and p["format"] in ["JSON", "JPEG"])
         ]
 
-        # Parse out the data
-        for site_json in site_json_list:
-            # Open the file
-            item_data = json.load(open(site_json))
-
-            # Pull out the data we want to keep
-            item_dict = dict(
+        # Loop through them
+        for f in qualified_files:
+            file_dict = dict(
                 identifier=item_data["metadata"]["identifier"],
-                handle=site["handle"],
-                file_name=site_json.name,
-                url=f"https://archive.org/details/{item_data['metadata']['identifier']}",
-                title=item_data["metadata"]["title"],
-                date=item_data["metadata"]["date"],
-                publicdate=item_data["metadata"]["publicdate"],
-                addeddate=item_data["metadata"]["addeddate"],
+                handle=handle,
+                file_name=f["name"],
+                url=f"https://archive.org/download/{item_data['metadata']['identifier']}/{f['name']}",
+                mtime=datetime.fromtimestamp(int(f["mtime"])),
+                size=f["size"],
+                md5=f["md5"],
+                sha1=f["sha1"],
             )
+            file_list.append(file_dict)
 
-            # Add to the output list
-            items_output.append(item_dict)
+    # Write out items
+    utils.write_csv(item_list, output_path / "items.csv")
 
-            # Get the files in this item
-            file_list = [
-                p
-                for p in item_data["files"]
-                if (
-                    site["handle"].lower() in p["name"].lower()
-                    and p["format"] in ["JSON", "JPEG"]
-                )
-            ]
+    # Split up the file list and write different types out separately
+    screenshot_list = []
+    a11y_list = []
+    hyperlinks_list = []
+    lighthouse_list = []
+    wayback_list = []
+    print("🪆 Extracting files")
+    for f in track(file_list):
+        if f["file_name"].endswith(".jpg"):
+            screenshot_list.append(f)
+        elif "accessibility" in f["file_name"]:
+            a11y_list.append(f)
+        elif "hyperlinks" in f["file_name"]:
+            hyperlinks_list.append(f)
+        elif "lighthouse" in f["file_name"]:
+            lighthouse_list.append(f)
+        elif "wayback" in f["file_name"]:
+            wayback_list.append(f)
+        else:
+            raise ValueError(f"File name {f['file_name']} doesn't have an output file")
 
-            # Loop through all of the files in the item
-            for file in file_list:
-                file_dict = dict(
-                    identifier=item_data["metadata"]["identifier"],
-                    handle=site["handle"],
-                    file_name=file["name"],
-                    url=f"https://archive.org/download/{item_data['metadata']['identifier']}/{file['name']}",
-                    mtime=datetime.fromtimestamp(int(file["mtime"])),
-                    size=file["size"],
-                    md5=file["md5"],
-                    sha1=file["sha1"],
-                )
-                if file["format"] == "JPEG":
-                    screenshot_output.append(file_dict)
-                elif "accessibility" in file["name"]:
-                    a11y_output.append(file_dict)
-                elif "hyperlinks" in file["name"]:
-                    hyperlinks_output.append(file_dict)
-                elif "lighthouse" in file["name"]:
-                    lighthouse_output.append(file_dict)
-                elif "wayback" in file["name"]:
-                    wayback_output.append(file_dict)
-                else:
-                    raise ValueError(
-                        f"File name {file['name']} doesn't have an output file"
-                    )
+    # Write those out too
+    utils.write_csv(screenshot_list, output_path / "screenshot-files.csv")
+    utils.write_csv(a11y_list, output_path / "accessibility-files.csv")
+    utils.write_csv(hyperlinks_list, output_path / "hyperlink-files.csv")
+    utils.write_csv(lighthouse_list, output_path / "lighthouse-files.csv")
+    utils.write_csv(wayback_list, output_path / "wayback-files.csv")
 
-    # Write out the data
-    def _write_csv(dict_list, name):
-        csv_dir = utils.EXTRACT_DIR / "csv"
-        with open(csv_dir / name, "w") as fh:
-            fieldnames = dict_list[0].keys()
-            writer = csv.DictWriter(fh, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(dict_list)
-
-    _write_csv(site_output, "sites.csv")
-    _write_csv(utils.get_bundle_list(), "bundles.csv")
-    _write_csv(site2bundle_output, "site-bundle-relationships.csv")
-    _write_csv(items_output, "items.csv")
-    _write_csv(screenshot_output, "screenshot-files.csv")
-    _write_csv(a11y_output, "accessibility-files.csv")
-    _write_csv(hyperlinks_output, "hyperlink-files.csv")
-    _write_csv(lighthouse_output, "lighthouse-files.csv")
-    _write_csv(wayback_output, "wayback-files.csv")
+    # Delete the zip file
+    zip_path.unlink()
