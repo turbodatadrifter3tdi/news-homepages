@@ -52,6 +52,7 @@ def update_list(number):
         "johncombest",
         "nepalkhabar24",
         "cbs46",
+        "_fiquemsabendo",
     ]
 
     # Add what's missing
