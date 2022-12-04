@@ -31,7 +31,7 @@ def accessibility(handle):
     print(f"{len(site_df)} accessibility files found")
 
     # Read in the output file
-    output_path = utils.ANALYSIS_DIR / f"{handle.lower()}-accessibility.csv"
+    output_path = utils.THIS_DIR / f"{handle.lower()}-accessibility.csv"
     try:
         output_df = pd.read_csv(output_path)
         downloaded_files = set(output_df.file_url.unique())

@@ -16,6 +16,7 @@ import requests
 import tldextract
 from playwright.sync_api._generated import BrowserContext, Playwright
 from retry import retry
+from rich import print
 
 # Set paths for key files
 THIS_DIR = Path(__file__).parent.absolute()
@@ -26,7 +27,6 @@ EXTENSIONS_PATH = THIS_DIR / "extensions"
 EXTRACT_DIR = THIS_DIR.parent / "extracts"
 NOTEBOOKS_DIR = THIS_DIR.parent / "notebooks"
 SITE_DIR = THIS_DIR.parent / "_site"
-ANALYSIS_DIR = THIS_DIR.parent / "_analysis"
 
 # Regular expressions
 LEADING_UNDERSCORES = re.compile("^(_+)")
@@ -129,10 +129,13 @@ def parse_archive_artifact(url_list: typing.List) -> typing.Dict:
     return d
 
 
+@retry(tries=3, delay=15, backoff=2)
 def get_extract_df(name: str, **kwargs) -> pd.DataFrame:
     """Read in the requests extracts CSV as a dataframe."""
-    base_url = "https://news-homepages.s3.us-west-1.amazonaws.com/extracts/csv/"
-    return pd.read_csv(f"{base_url}{name}", **kwargs)
+    base_url = "https://archive.org/download/news-homepages-extracts/"
+    url = f"{base_url}{name}"
+    print(f"Fetching {url}")
+    return pd.read_csv(url, **kwargs)
 
 
 def get_user_agent() -> str:
@@ -404,10 +407,13 @@ def get_wayback_df() -> pd.DataFrame:
     return _get_extract_files_df("wayback-files.csv")
 
 
+@retry(tries=3, delay=15, backoff=2)
 def _get_extract_files_df(name) -> pd.DataFrame:
-    base_url = "https://news-homepages.s3.us-west-1.amazonaws.com/extracts/csv/"
+    base_url = "https://archive.org/download/news-homepages-extracts/"
+    url = f"{base_url}{name}"
+    print(f"Fetching {url}")
     df = pd.read_csv(
-        f"{base_url}{name}",
+        url,
         parse_dates=["mtime"],
         usecols=[
             "identifier",

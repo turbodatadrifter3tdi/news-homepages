@@ -21,14 +21,14 @@ def cli():
 @click.option("--language", "language", default=None)
 @click.option("--bundle", "bundle", default=None)
 @click.option("--days", "days", default=None)
-@click.option("--output-path", "output_path", default=None)
+@click.option("-o", "--output-path", "output_path", default=None)
 def lighthouse(
     site: typing.Optional[str] = None,
     country: typing.Optional[str] = None,
     language: typing.Optional[str] = None,
     bundle: typing.Optional[str] = None,
     days: typing.Optional[str] = None,
-    output_path: typing.Optional[str] = None,
+    output_path: typing.Optional[typing.Any] = None,
 ):
     """Download and parse the provided site's Lighthouse files."""
     # Get all lighthouse files
@@ -123,8 +123,9 @@ def lighthouse(
 
     # Write out the file
     if output_path is None:
-        output_path_obj = utils.ANALYSIS_DIR / f"{slug}-lighthouse.csv"
+        output_path = f"{slug}-lighthouse.csv"
     else:
-        output_path_obj = pathlib.Path(output_path)
-    print(f":pencil: Writing {len(trimmed_df)} rows to {output_path_obj}")
-    trimmed_df.to_csv(output_path_obj, index=False)
+        output_path = pathlib.Path(output_path)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+    print(f":pencil: Writing {len(trimmed_df)} rows to {output_path}")
+    trimmed_df.to_csv(output_path, index=False)

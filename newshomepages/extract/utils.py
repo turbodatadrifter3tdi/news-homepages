@@ -2,8 +2,6 @@ import time
 from urllib.parse import urlparse
 
 import pandas as pd
-import requests
-from requests.adapters import HTTPAdapter, Retry
 from rich import print
 
 from .. import utils
@@ -21,12 +19,7 @@ def _get_json_url(url):
         return pd.read_json(output_path)
     else:
         # Get the URL
-        print(f":link: Downloading {url}")
-        s = requests.Session()
-        retries = Retry(total=3, backoff_factor=1)
-        s.mount("https://", HTTPAdapter(max_retries=retries))
-        r = s.get(url)
-        data = r.json()
+        data = utils.get_json_url(url)
 
         # Parse as a dataframe
         df = pd.DataFrame(data)
