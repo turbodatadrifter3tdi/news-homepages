@@ -2,6 +2,7 @@ An open-source archive that gathers, saves, shares and analyzes news homepages
 
 ## Links
 
+- Task runner: [github.com/palewire/news-homepages-runner](https://github.com/palewire/news-homepages-runner)
 - Internet Archive: [archive.org/details/news-homepages](https://archive.org/details/news-homepages)
 - Discord: [#news-homepages](https://discord.gg/xkTMPMHM)
 - Twitter: [@newshomepages](https://twitter.com/newshomepages)
