@@ -63,8 +63,7 @@ def test_url_parse():
 
 def test_get_extract():
     """Test the method to pull in an extract CSV."""
-    utils.get_extract_df("drudge-entities-analysis.csv")
-    utils.get_extract_df("drudge-entities-analysis.csv", dtype={"n": int})
+    utils.get_extract_df("sites.csv")
 
 
 def test_get_url():
