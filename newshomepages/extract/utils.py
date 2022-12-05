@@ -9,7 +9,7 @@ from .. import utils
 
 def _get_json_url(url):
     # Prepare a cache
-    cache_dir = utils.THIS_DIR.parent / ".cache"
+    cache_dir = Path("~/.cache").expanduser()
     cache_dir.mkdir(parents=True, exist_ok=True)
 
     # Check if the file has been downloaded
