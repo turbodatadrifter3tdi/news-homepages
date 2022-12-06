@@ -85,7 +85,7 @@ def cli(
     if not latest:
         return
 
-    image_path = input_path / f"{handle}.jpg"
+    image_path = input_path / f"{utils.safe_ia_handle(handle)}.jpg"
     if not image_path.exists():
         return
 
