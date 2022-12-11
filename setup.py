@@ -1,4 +1,4 @@
-"""Package for deployment."""
+"""Package for distribution."""
 import os
 import time
 
