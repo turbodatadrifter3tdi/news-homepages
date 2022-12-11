@@ -1,6 +1,9 @@
+"""Package for deployment."""
 import os
+import time
 
 from setuptools import find_packages, setup
+from setuptools_scm.version import guess_next_version
 
 
 def read(file_name):
@@ -20,14 +23,11 @@ def read(file_name):
 def version_scheme(version):
     """Version scheme hack for setuptools_scm.
 
-    Appears to be necessary to due to the bug documented here: https://github.com/pypa/setuptools_scm/issues/342
+    Appears to be necessary to due to the bug documented at
+    https://github.com/pypa/setuptools_scm/issues/342
 
     If that issue is resolved, this method can be removed.
     """
-    import time
-
-    from setuptools_scm.version import guess_next_version
-
     if version.exact:
         return version.format_with("{tag}")
     else:
@@ -39,7 +39,8 @@ def version_scheme(version):
 def local_version(version):
     """Local version scheme hack for setuptools_scm.
 
-    Appears to be necessary to due to the bug documented here: https://github.com/pypa/setuptools_scm/issues/342
+    Appears to be necessary to due to the bug documented at
+    https://github.com/pypa/setuptools_scm/issues/342
 
     If that issue is resolved, this method can be removed.
     """
