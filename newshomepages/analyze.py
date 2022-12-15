@@ -155,6 +155,7 @@ def drudge_entities(output_dir: str = "./"):
             "SAY",
             "HAVE",
             "MELONI",
+            "ZERO",
         ]
         if lemma == "COVID":
             stop_verbs += ["TESTS", "TEST"]
