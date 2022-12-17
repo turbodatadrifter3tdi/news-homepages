@@ -4,8 +4,8 @@ from datetime import datetime
 from pathlib import Path
 
 import click
-from rich import print
 from retry import retry
+from rich import print
 from rich.progress import track
 
 from .. import utils
