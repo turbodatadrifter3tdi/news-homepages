@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pytz
 
 from newshomepages import utils
@@ -11,6 +13,15 @@ def test_safe_ia_handle():
         utils.safe_ia_handle("white space")
     except ValueError:
         pass
+
+
+def test_write_json(tmpdir):
+    """Test write_json."""
+    p = Path(tmpdir / "write_json")
+    utils.write_json({"foo": "bar"}, p)
+    utils.write_json([{"foo": "bar"}], p)
+    utils.write_json({"foo": "bar"}, p, indent=4)
+    utils.write_json({"foo": "bar"}, p, verbose=False)
 
 
 def test_sites():

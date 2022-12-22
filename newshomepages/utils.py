@@ -69,12 +69,29 @@ def write_csv(dict_list, path):
         writer.writerows(dict_list)
 
 
-def write_json(data: typing.Any, path: Path, indent: int = 2):
-    """Write JSON data to the provided path."""
+def write_json(
+    data: typing.Any, path: Path, indent: int = 2, verbose: bool = True
+) -> None:
+    """Write JSON data to the provided path.
+
+    Args:
+        data (Any): Any Python object ready to be serialized as JSON.
+        path (Path): The filesystem Path where the object should be written.
+        indent (int): The number of identations to include in the JSON. (Default: 2)
+        verbose (bool): Whether or not to log the action prior to execution. (Default: True)
+
+    Returns nothing.
+    """
+    # Log
+    if verbose:
+        print(f"📥 Writing JSON to {path}")
+
+    # Make the parent directory, if it doesn't already exist
     path.parent.mkdir(parents=True, exist_ok=True)
-    print(f"📥 Writing JSON to {path}")
+
+    # Write out the data as JSON
     with open(path, "w") as fh:
-        json.dump(data, fh, indent=2)
+        json.dump(data, fh, indent=indent)
 
 
 @retry(tries=3, delay=15, backoff=2)
