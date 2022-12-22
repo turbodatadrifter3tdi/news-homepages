@@ -15,6 +15,13 @@ def test_safe_ia_handle():
         pass
 
 
+def test_write_csv(tmpdir):
+    """Test write_csv."""
+    p = Path(tmpdir / "write_csv")
+    utils.write_csv([{"foo": "bar"}], p)
+    utils.write_csv([{"foo": "bar"}], p, verbose=False)
+
+
 def test_write_json(tmpdir):
     """Test write_json."""
     p = Path(tmpdir / "write_json")

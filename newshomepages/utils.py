@@ -59,13 +59,34 @@ def safe_ia_handle(handle: str) -> str:
     return s
 
 
-def write_csv(dict_list, path):
-    """Write a list of dictionaries to a CSV file."""
-    print(f"📥 Writing CSV to {path}")
-    fieldnames = dict_list[0].keys()
+def write_csv(
+    dict_list: typing.List[typing.Dict], path: Path, verbose: bool = True
+) -> None:
+    """Write a list of dictionaries to a CSV file at the provided path.
+
+    Args:
+        data (Any): Any Python object ready to be serialized as JSON.
+        path (Path): The filesystem Path where the object should be written.
+        verbose (bool): Whether or not to log the action prior to execution. (Default: True)
+
+    Returns nothing.
+    """
+    # Log it
+    if verbose:
+        print(f"📥 Writing CSV with {len(dict_list)} records to {path}")
+
+    # Open a file
     with open(path, "w") as fh:
+        # Pop out the field names we'll use as the header
+        fieldnames = dict_list[0].keys()
+
+        # Fire up a writer
         writer = csv.DictWriter(fh, fieldnames=fieldnames)
+
+        # Write out the header
         writer.writeheader()
+
+        # Write out the data
         writer.writerows(dict_list)
 
 
