@@ -1,3 +1,4 @@
+from datetime import datetime
 from pathlib import Path
 
 import pytz
@@ -90,11 +91,12 @@ def test_numoji():
 
 def test_url_parse():
     """Test the URL parser."""
-    utils.parse_archive_url(
-        "https://archive.org/download/100reporters-2022/100reporters-2022-07-08T23:55:17.494439-04:00.hyperlinks.json"
-    )
-    utils.parse_archive_url(
-        "https://archive.org/download/appalachia100-2022/appalachia100-2022-07-29T19:59:50.561493-04:00.jpg"
+    url = "https://archive.org/download/100reporters-2022/100reporters-2022-07-08T23:55:17.494439-04:00.hyperlinks.json"
+    data = utils.parse_archive_url(url)
+    assert data["handle"] == "100reporters"
+    assert data["identifier"] == "100reporters-2022"
+    assert data["timestamp"] == datetime.fromisoformat(
+        "2022-07-08T23:55:17.494439-04:00"
     )
 
 

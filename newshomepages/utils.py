@@ -157,14 +157,29 @@ def get_local_time(site: typing.Dict) -> datetime:
     return now.astimezone(tz)
 
 
-def parse_archive_url(url: str):
-    """Parse the handle and timestamp from an archive.org URL."""
+def parse_archive_url(url: str) -> typing.Dict:
+    """Parse the handle and timestamp from an archive.org URL.
+
+    Args:
+        url (str): An archive.org URL
+
+    Returns a dictinary with the identifier, handle and timestamp parsed out.
+    """
+    # Parse the URL
     o = urlparse(url)
+
+    # Split it into pieces
     path_list = o.path.split("/")
+
+    # Pull out the bits we know to look for
     identifier = path_list[-2]
     handle = identifier[:-5]
+
+    # The time is a little tricky
     time_string = ".".join(path_list[-1].replace(f"{handle}-", "").split(".")[:2])
     timestamp = datetime.fromisoformat(time_string)
+
+    # Return it as a tidy dict
     return dict(identifier=identifier, handle=handle, timestamp=timestamp)
 
 
