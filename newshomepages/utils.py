@@ -200,7 +200,7 @@ def get_user_agent() -> str:
     return "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 
 
-def get_site_list():
+def get_site_list() -> typing.List[typing.Dict]:
     """Get the full list of supported sites.
 
     Returns a list of dictionaries.

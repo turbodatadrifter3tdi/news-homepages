@@ -46,6 +46,11 @@ def test_get_user_agent():
     assert utils.get_user_agent()
 
 
+def test_get_site_list():
+    """Test get_site_list."""
+    assert len(utils.get_site_list()) > 0
+
+
 def test_sites():
     """Test sites utils."""
     # Read in the list
