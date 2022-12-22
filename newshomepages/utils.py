@@ -32,10 +32,25 @@ SITE_DIR = THIS_DIR.parent / "_site"
 LEADING_UNDERSCORES = re.compile("^(_+)")
 
 
-def safe_ia_handle(s):
-    """Santize a handle so its safe to use as an archive.org slug."""
+def safe_ia_handle(handle: str) -> str:
+    """Santize a handle so its safe to use as an archive.org slug.
+
+    Args:
+        handle (str): The unique string identifier of the site.
+
+    Returns a lowercase string that's ready to use.
+    """
     # Take it down
-    s = s.lower()
+    s = handle.lower()
+
+    # Trim it
+    s = s.strip()
+
+    # If there is whitespace in the handle, throw an error
+    if " " in s:
+        raise ValueError(
+            f"Site handles cannot contain whitespace. You submitted: '{handle}'"
+        )
 
     # Replace any leading underscores, which don't work on archive.org
     s = LEADING_UNDERSCORES.sub("", s)

@@ -3,6 +3,16 @@ import pytz
 from newshomepages import utils
 
 
+def test_safe_ia_handle():
+    """Test safe_ia_handle."""
+    assert utils.safe_ia_handle("_leadingunderscore") == "leadingunderscore"
+    assert utils.safe_ia_handle("CamelCase") == "camelcase"
+    try:
+        utils.safe_ia_handle("white space")
+    except ValueError:
+        pass
+
+
 def test_sites():
     """Test sites utils."""
     # Read in the list
@@ -61,16 +71,16 @@ def test_url_parse():
     )
 
 
-def test_get_extract():
-    """Test the method to pull in an extract CSV."""
-    utils.get_extract_df("sites.csv")
+# def test_get_extract():
+#    """Test the method to pull in an extract CSV."""
+#    utils.get_extract_df("sites.csv")
 
 
-def test_get_url():
-    """Test utils for getting data off the web."""
-    utils.get_json_url(
-        "https://archive.org/download/signalcleveland-2022/signalcleveland-2022-11-17T02%3A50%3A58.280867-05%3A00.wayback.json"
-    )
+# def test_get_url():
+#    """Test utils for getting data off the web."""
+#    utils.get_json_url(
+#        "https://archive.org/download/signalcleveland-2022/signalcleveland-2022-11-17T02%3A50%3A58.280867-05%3A00.wayback.json"
+#    )
 
 
 def test_get_local_time():
