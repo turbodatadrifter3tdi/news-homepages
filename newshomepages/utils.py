@@ -183,31 +183,6 @@ def parse_archive_url(url: str) -> typing.Dict:
     return dict(identifier=identifier, handle=handle, timestamp=timestamp)
 
 
-def parse_archive_artifact(url_list: typing.List) -> typing.Dict:
-    """Parse the archive artifacts saved as JSON during our update runs."""
-    d = dict(
-        screenshot_url=None,
-        hyperlinks_url=None,
-        accessibility_url=None,
-        lighthouse_url=None,
-        wayback_url=None,
-    )
-    for url in url_list:
-        if url.endswith(".jpg"):
-            d["screenshot_url"] = url
-        elif "accessibility" in url:
-            d["accessibility_url"] = url
-        elif "hyperlinks" in url:
-            d["hyperlinks_url"] = url
-        elif "lighthouse" in url:
-            d["lighthouse_url"] = url
-        elif "wayback" in url:
-            d["wayback_url"] = url
-        else:
-            raise ValueError(url)
-    return d
-
-
 @retry(tries=3, delay=15, backoff=2)
 def get_extract_df(name: str, **kwargs) -> pd.DataFrame:
     """Read in the requests extracts CSV as a dataframe."""
