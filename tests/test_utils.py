@@ -41,6 +41,11 @@ def test_get_local_time():
     assert utils.get_local_time(bbc).tzname() == "GMT"
 
 
+def test_get_user_agent():
+    """Test get_user_agent."""
+    assert utils.get_user_agent()
+
+
 def test_sites():
     """Test sites utils."""
     # Read in the list

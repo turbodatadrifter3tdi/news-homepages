@@ -193,7 +193,10 @@ def get_extract_df(name: str, **kwargs) -> pd.DataFrame:
 
 
 def get_user_agent() -> str:
-    """Return a user agent string ready to pass to a browser."""
+    """Provide a user-agent string.
+
+    Returns a string ready to use as a header in web request.
+    """
     return "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 
 
