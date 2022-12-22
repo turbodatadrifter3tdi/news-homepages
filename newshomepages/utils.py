@@ -32,10 +32,25 @@ SITE_DIR = THIS_DIR.parent / "_site"
 LEADING_UNDERSCORES = re.compile("^(_+)")
 
 
-def safe_ia_handle(s):
-    """Santize a handle so its safe to use as an archive.org slug."""
+def safe_ia_handle(handle: str) -> str:
+    """Santize a handle so its safe to use as an archive.org slug.
+
+    Args:
+        handle (str): The unique string identifier of the site.
+
+    Returns a lowercase string that's ready to use.
+    """
     # Take it down
-    s = s.lower()
+    s = handle.lower()
+
+    # Trim it
+    s = s.strip()
+
+    # If there is whitespace in the handle, throw an error
+    if " " in s:
+        raise ValueError(
+            f"Site handles cannot contain whitespace. You submitted: '{handle}'"
+        )
 
     # Replace any leading underscores, which don't work on archive.org
     s = LEADING_UNDERSCORES.sub("", s)
@@ -44,22 +59,60 @@ def safe_ia_handle(s):
     return s
 
 
-def write_csv(dict_list, path):
-    """Write a list of dictionaries to a CSV file."""
-    print(f"📥 Writing CSV to {path}")
-    fieldnames = dict_list[0].keys()
+def write_csv(
+    dict_list: typing.List[typing.Dict], path: Path, verbose: bool = True
+) -> None:
+    """Write a list of dictionaries to a CSV file at the provided path.
+
+    Args:
+        data (Any): Any Python object ready to be serialized as JSON.
+        path (Path): The filesystem Path where the object should be written.
+        verbose (bool): Whether or not to log the action prior to execution. (Default: True)
+
+    Returns nothing.
+    """
+    # Log it
+    if verbose:
+        print(f"📥 Writing CSV with {len(dict_list)} records to {path}")
+
+    # Open a file
     with open(path, "w") as fh:
+        # Pop out the field names we'll use as the header
+        fieldnames = dict_list[0].keys()
+
+        # Fire up a writer
         writer = csv.DictWriter(fh, fieldnames=fieldnames)
+
+        # Write out the header
         writer.writeheader()
+
+        # Write out the data
         writer.writerows(dict_list)
 
 
-def write_json(data: typing.Any, path: Path, indent: int = 2):
-    """Write JSON data to the provided path."""
+def write_json(
+    data: typing.Any, path: Path, indent: int = 2, verbose: bool = True
+) -> None:
+    """Write JSON data to the provided path.
+
+    Args:
+        data (Any): Any Python object ready to be serialized as JSON.
+        path (Path): The filesystem Path where the object should be written.
+        indent (int): The number of identations to include in the JSON. (Default: 2)
+        verbose (bool): Whether or not to log the action prior to execution. (Default: True)
+
+    Returns nothing.
+    """
+    # Log
+    if verbose:
+        print(f"📥 Writing JSON to {path}")
+
+    # Make the parent directory, if it doesn't already exist
     path.parent.mkdir(parents=True, exist_ok=True)
-    print(f"📥 Writing JSON to {path}")
+
+    # Write out the data as JSON
     with open(path, "w") as fh:
-        json.dump(data, fh, indent=2)
+        json.dump(data, fh, indent=indent)
 
 
 @retry(tries=3, delay=15, backoff=2)
@@ -86,47 +139,48 @@ def download_url(url: str, output_path: Path, timeout: int = 180):
                 f.write(chunk)
 
 
-def get_local_time(data: typing.Dict) -> datetime:
-    """Get the current time in the provided site's timezone."""
+def get_local_time(site: typing.Dict) -> datetime:
+    """Get the current time in the provided site's timezone.
+
+    Args:
+        site (dict): A site's data dictionary.
+
+    Returns the current item as a timezone-aware datetime object.
+    """
+    # Get the current time
     now = datetime.now()
-    tz = pytz.timezone(data["timezone"])
+
+    # Get the site's timezone
+    tz = pytz.timezone(site["timezone"])
+
+    # Cast the timestamp into the site's timezone and return it
     return now.astimezone(tz)
 
 
-def parse_archive_url(url: str):
-    """Parse the handle and timestamp from an archive.org URL."""
+def parse_archive_url(url: str) -> typing.Dict:
+    """Parse the handle and timestamp from an archive.org URL.
+
+    Args:
+        url (str): An archive.org URL
+
+    Returns a dictinary with the identifier, handle and timestamp parsed out.
+    """
+    # Parse the URL
     o = urlparse(url)
+
+    # Split it into pieces
     path_list = o.path.split("/")
+
+    # Pull out the bits we know to look for
     identifier = path_list[-2]
     handle = identifier[:-5]
+
+    # The time is a little tricky
     time_string = ".".join(path_list[-1].replace(f"{handle}-", "").split(".")[:2])
     timestamp = datetime.fromisoformat(time_string)
+
+    # Return it as a tidy dict
     return dict(identifier=identifier, handle=handle, timestamp=timestamp)
-
-
-def parse_archive_artifact(url_list: typing.List) -> typing.Dict:
-    """Parse the archive artifacts saved as JSON during our update runs."""
-    d = dict(
-        screenshot_url=None,
-        hyperlinks_url=None,
-        accessibility_url=None,
-        lighthouse_url=None,
-        wayback_url=None,
-    )
-    for url in url_list:
-        if url.endswith(".jpg"):
-            d["screenshot_url"] = url
-        elif "accessibility" in url:
-            d["accessibility_url"] = url
-        elif "hyperlinks" in url:
-            d["hyperlinks_url"] = url
-        elif "lighthouse" in url:
-            d["lighthouse_url"] = url
-        elif "wayback" in url:
-            d["wayback_url"] = url
-        else:
-            raise ValueError(url)
-    return d
 
 
 @retry(tries=3, delay=15, backoff=2)
@@ -139,11 +193,14 @@ def get_extract_df(name: str, **kwargs) -> pd.DataFrame:
 
 
 def get_user_agent() -> str:
-    """Return a user agent string ready to pass to a browser."""
+    """Provide a user-agent string.
+
+    Returns a string ready to use as a header in web request.
+    """
     return "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 
 
-def get_site_list():
+def get_site_list() -> typing.List[typing.Dict]:
     """Get the full list of supported sites.
 
     Returns a list of dictionaries.
@@ -152,27 +209,52 @@ def get_site_list():
 
 
 def get_site_df() -> pd.DataFrame:
-    """Get the full list of supported sites.
+    """Get the full list of sites.
 
     Returns a DataFrame.
     """
-    df = pd.read_csv(SITES_PATH, dtype={"wait": str}).sort_values("handle")
+    # Read in our data file
+    df = pd.read_csv(
+        SITES_PATH,
+        dtype={
+            "handle": str,
+            "url": str,
+            "name": str,
+            "location": str,
+            "timezone": str,
+            "country": str,
+            "language": str,
+            "bundle": str,
+            "wait": str,
+        },
+    ).sort_values("handle")
+
+    # Fill in the empty wait with strings
     df["wait"].fillna("", inplace=True)
 
+    # Split the bundle lists using the '|' in the CSV
     def _split_bundle(row):
         if not pd.isnull(row["bundle"]):
             return row["bundle"].split("|")
         else:
             return []
 
+    df["bundle_list"] = df.apply(_split_bundle, axis=1)
+
+    # Extract the domain from the URL
     df["domain"] = df.url.apply(
         lambda x: f"{tldextract.extract(x).domain}.{tldextract.extract(x).suffix}"
     )
-    df["bundle_list"] = df.apply(_split_bundle, axis=1)
+
+    # Use the country ISO code to pull the country name
     df["country_name"] = df.country.apply(lambda x: iso3166.countries.get(x).name)
+
+    # Do the same for the language
     df["language_name"] = df.language.apply(
         lambda x: iso639.Language.from_part1(x).name
     )
+
+    # Pass it out
     return df
 
 
@@ -535,10 +617,15 @@ def chunk(iterable: typing.List, length: int) -> typing.List[typing.List]:
     return chunk_list
 
 
-def intcomma(value):
+def intcomma(value: typing.Union[int, str]) -> str:
     """Convert an integer to a string containing commas every three digits.
 
     For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
+
+    Args:
+        value (int): The integer to format
+
+    Returns a string with the result.
     """
     orig = str(value)
     new = re.sub(r"^(-?\d+)(\d{3})", r"\g<1>,\g<2>", orig)
