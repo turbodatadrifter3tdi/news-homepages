@@ -209,27 +209,52 @@ def get_site_list() -> typing.List[typing.Dict]:
 
 
 def get_site_df() -> pd.DataFrame:
-    """Get the full list of supported sites.
+    """Get the full list of sites.
 
     Returns a DataFrame.
     """
-    df = pd.read_csv(SITES_PATH, dtype={"wait": str}).sort_values("handle")
+    # Read in our data file
+    df = pd.read_csv(
+        SITES_PATH,
+        dtype={
+            "handle": str,
+            "url": str,
+            "name": str,
+            "location": str,
+            "timezone": str,
+            "country": str,
+            "language": str,
+            "bundle": str,
+            "wait": str,
+        },
+    ).sort_values("handle")
+
+    # Fill in the empty wait with strings
     df["wait"].fillna("", inplace=True)
 
+    # Split the bundle lists using the '|' in the CSV
     def _split_bundle(row):
         if not pd.isnull(row["bundle"]):
             return row["bundle"].split("|")
         else:
             return []
 
+    df["bundle_list"] = df.apply(_split_bundle, axis=1)
+
+    # Extract the domain from the URL
     df["domain"] = df.url.apply(
         lambda x: f"{tldextract.extract(x).domain}.{tldextract.extract(x).suffix}"
     )
-    df["bundle_list"] = df.apply(_split_bundle, axis=1)
+
+    # Use the country ISO code to pull the country name
     df["country_name"] = df.country.apply(lambda x: iso3166.countries.get(x).name)
+
+    # Do the same for the language
     df["language_name"] = df.language.apply(
         lambda x: iso639.Language.from_part1(x).name
     )
+
+    # Pass it out
     return df
 
 
@@ -592,17 +617,22 @@ def chunk(iterable: typing.List, length: int) -> typing.List[typing.List]:
     return chunk_list
 
 
-def intcomma(value):
+def intcomma(value: int) -> str:
     """Convert an integer to a string containing commas every three digits.
 
     For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
+
+    Args:
+        value (int): The integer to format
+
+    Returns a string with the result.
     """
     orig = str(value)
     new = re.sub(r"^(-?\d+)(\d{3})", r"\g<1>,\g<2>", orig)
     if orig == new:
         return new
     else:
-        return intcomma(new)
+        return intcomma(int(new))
 
 
 def _load_persistent_context(

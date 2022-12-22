@@ -48,30 +48,32 @@ def test_get_user_agent():
 
 def test_get_site_list():
     """Test get_site_list."""
-    assert len(utils.get_site_list()) > 0
-
-
-def test_sites():
-    """Test sites utils."""
-    # Read in the list
     site_list = utils.get_site_list()
     assert len(site_list) > 0
+
+    # Pull a name
     assert utils.get_site("latimes")["name"] == "Los Angeles Times"
+
+    # Verify there are no duplicate handles
     unique_handles = {i["handle"].lower() for i in site_list}
     assert len(site_list) == len(unique_handles)
 
-    # Make sure all the required fields are filled in
+
+def test_get_site_df():
+    """Test get_site_df."""
     site_df = utils.get_site_df()
+
+    # Make sure all the required fields are filled in
     assert not site_df.handle.isnull().any()
     assert not site_df.url.isnull().any()
     assert not site_df.name.isnull().any()
     assert not site_df.location.isnull().any()
+    assert not site_df.wait.isnull().any()
     assert not site_df.timezone.isnull().any()
     assert not site_df.country.isnull().any()
 
     # Test timezones
-    for s in site_list:
-        pytz.timezone(s["timezone"])
+    site_df.timezone.apply(lambda tz: pytz.timezone(tz))
 
 
 def test_bundles():
@@ -97,6 +99,12 @@ def test_javascript():
 def test_numoji():
     """Test numoji util."""
     assert utils.numoji("1") == "1️⃣"
+
+
+def test_intcomma():
+    """Test intcomma."""
+    assert utils.intcomma(1_000) == "1,000"
+    assert utils.intcomma(1_000_000) == "1,000,000"
 
 
 def test_url_parse():
