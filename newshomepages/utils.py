@@ -617,7 +617,7 @@ def chunk(iterable: typing.List, length: int) -> typing.List[typing.List]:
     return chunk_list
 
 
-def intcomma(value: int) -> str:
+def intcomma(value: typing.Union[int, str]) -> str:
     """Convert an integer to a string containing commas every three digits.
 
     For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
@@ -632,7 +632,7 @@ def intcomma(value: int) -> str:
     if orig == new:
         return new
     else:
-        return intcomma(int(new))
+        return intcomma(new)
 
 
 def _load_persistent_context(
