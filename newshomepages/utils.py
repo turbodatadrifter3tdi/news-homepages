@@ -139,10 +139,21 @@ def download_url(url: str, output_path: Path, timeout: int = 180):
                 f.write(chunk)
 
 
-def get_local_time(data: typing.Dict) -> datetime:
-    """Get the current time in the provided site's timezone."""
+def get_local_time(site: typing.Dict) -> datetime:
+    """Get the current time in the provided site's timezone.
+
+    Args:
+        site (dict): A site's data dictionary.
+
+    Returns the current item as a timezone-aware datetime object.
+    """
+    # Get the current time
     now = datetime.now()
-    tz = pytz.timezone(data["timezone"])
+
+    # Get the site's timezone
+    tz = pytz.timezone(site["timezone"])
+
+    # Cast the timestamp into the site's timezone and return it
     return now.astimezone(tz)
 
 

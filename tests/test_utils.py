@@ -31,6 +31,15 @@ def test_write_json(tmpdir):
     utils.write_json({"foo": "bar"}, p, verbose=False)
 
 
+def test_get_local_time():
+    """Test get_local_time."""
+    latimes = utils.get_site("latimes")
+    assert latimes["timezone"] == "America/Los_Angeles"
+    assert utils.get_local_time(latimes).tzinfo is not None
+    bbc = utils.get_site("bbc")
+    assert utils.get_local_time(bbc).tzname() == "GMT"
+
+
 def test_sites():
     """Test sites utils."""
     # Read in the list
@@ -99,9 +108,3 @@ def test_url_parse():
 #    utils.get_json_url(
 #        "https://archive.org/download/signalcleveland-2022/signalcleveland-2022-11-17T02%3A50%3A58.280867-05%3A00.wayback.json"
 #    )
-
-
-def test_get_local_time():
-    """Test method to get the local time."""
-    utils.get_local_time(utils.get_site("latimes"))
-    utils.get_local_time(utils.get_bundle("us-national"))
