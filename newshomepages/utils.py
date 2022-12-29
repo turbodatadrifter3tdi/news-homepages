@@ -22,7 +22,6 @@ from rich import print
 THIS_DIR = Path(__file__).parent.absolute()
 SOURCES_PATH = THIS_DIR / "sources"
 SITES_PATH = SOURCES_PATH / "sites.csv"
-BUNDLES_PATH = SOURCES_PATH / "bundles.csv"
 EXTENSIONS_PATH = THIS_DIR / "extensions"
 EXTRACT_DIR = THIS_DIR.parent / "extracts"
 NOTEBOOKS_DIR = THIS_DIR.parent / "notebooks"
@@ -263,13 +262,13 @@ def get_bundle_list() -> typing.List[typing.Dict]:
 
     Returns a list of dictionaries.
     """
-    with open(BUNDLES_PATH) as fh:
+    with open(SOURCES_PATH / "bundles.csv") as fh:
         bundle_reader = csv.DictReader(fh)
         bundle_list = list(bundle_reader)
     return bundle_list
 
 
-def get_country_list():
+def get_country_list() -> typing.List[typing.Dict]:
     """Get the full list of countries.
 
     Returns a list of dictionaries.
@@ -289,7 +288,7 @@ def get_country_df() -> pd.DataFrame:
     return country_df
 
 
-def get_language_list():
+def get_language_list() -> typing.List[typing.Dict]:
     """Get the list of languages.
 
     Returns a list of dictionaries.
