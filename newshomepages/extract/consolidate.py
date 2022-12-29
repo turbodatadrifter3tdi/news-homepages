@@ -4,6 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 import click
+from retry import retry
 from rich import print
 from rich.progress import track
 
@@ -59,13 +60,8 @@ def consolidate(
             site2bundle_list.append(d)
     utils.write_csv(site2bundle_list, output_path / "site-bundle-relationships.csv")
 
-    print("⬇️ Downloading latest data")
-    zip_url = "https://archive.org/compress/latest-homepages/formats=JSON,JPEG,ITEM%20TILE,ARCHIVE%20BITTORRENT,METADATA"
-    zip_path = output_path / "latest.zip"
-    utils.download_url(zip_url, zip_path)
-
     print("🪆 Extracting items")
-    zf = zipfile.ZipFile(zip_path)
+    zf = _get_zip_archive(output_path)
     json_list = [f for f in zf.namelist() if f.endswith(".json")]
     item_list = []
     file_list = []
@@ -144,4 +140,14 @@ def consolidate(
     utils.write_csv(wayback_list, output_path / "wayback-files.csv")
 
     # Delete the zip file
+    zip_path = output_path / "latest.zip"
     zip_path.unlink()
+
+
+@retry(tries=3, delay=15, backoff=2)
+def _get_zip_archive(output_dir: Path):
+    print("⬇️ Downloading latest data")
+    zip_url = "https://archive.org/compress/latest-homepages/formats=JSON,JPEG,ITEM%20TILE,ARCHIVE%20BITTORRENT,METADATA"
+    zip_path = output_dir / "latest.zip"
+    utils.download_url(zip_url, zip_path)
+    return zipfile.ZipFile(zip_path)
