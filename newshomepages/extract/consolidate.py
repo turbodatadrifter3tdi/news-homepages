@@ -144,7 +144,7 @@ def consolidate(
     zip_path.unlink()
 
 
-@retry(tries=3, delay=15, backoff=2)
+@retry(tries=3, delay=180, backoff=2)
 def _get_zip_archive(output_dir: Path):
     print("⬇️ Downloading latest data")
     zip_url = "https://archive.org/compress/latest-homepages/formats=JSON,JPEG,ITEM%20TILE,ARCHIVE%20BITTORRENT,METADATA"
