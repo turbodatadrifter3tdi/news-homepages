@@ -214,10 +214,14 @@ def accessibility_ranking():
         accessibility_df.accessibility_median.astype(int)
     )
     site_df = utils.get_site_df()
+    site_df.handle = site_df.handle.str.lower()
+    accessibility_df.handle = accessibility_df.handle.str.lower()
     merged_df = site_df.merge(accessibility_df, on="handle", how="inner")
 
     # Create the page
-    print(":abacus: Creating accessibility ranking page")
+    print(
+        f":abacus: Creating accessibility ranking page for {len(merged_df)} qualified sites"
+    )
     context = dict(
         median=median,
         histogram_json=json.dumps(histogram_df.to_dict(orient="records")),
@@ -270,16 +274,21 @@ def performance_ranking():
     performance_df.performance_median = performance_df.performance_median * 100
     performance_df.performance_median = performance_df.performance_median.astype(int)
     site_df = utils.get_site_df()
+    site_df.handle = site_df.handle.str.lower()
+    performance_df.handle = performance_df.handle.str.lower()
     merged_df = site_df.merge(performance_df, on="handle", how="inner")
 
     # Create the page
-    print(":abacus: Creating performance ranking page")
+    site_list = merged_df.sort_values(["performance_rank", "name"]).to_dict(
+        orient="records"
+    )
+    print(
+        f":abacus: Creating performance ranking page for {len(site_list)} qualified sites"
+    )
     context = dict(
         median=median,
         histogram_json=json.dumps(histogram_df.to_dict(orient="records")),
-        site_list=merged_df.sort_values(["performance_rank", "name"]).to_dict(
-            orient="records"
-        ),
+        site_list=site_list,
     )
     _write_template("performance.md", context)
 
