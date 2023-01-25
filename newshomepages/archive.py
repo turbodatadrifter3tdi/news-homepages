@@ -141,6 +141,7 @@ def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
     hyperlinks_path = input_dir / f"{handle}.hyperlinks.json"
     lighthouse_path = input_dir / f"{handle}.lighthouse.json"
     wayback_path = input_dir / f"{handle}.wayback.json"
+    html_path = input_dir / f"{handle}.html"
 
     # Get the local time where the site is based
     now_local = utils.get_local_time(data)
@@ -148,20 +149,25 @@ def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
     # Convert it to ISO format for timestamping our files
     now_iso = now_local.isoformat()
 
+    # Set an ID that will be the prefix to all files
+    prefix = f"{handle}-{now_iso}"
+
     # Grab the files that exist and timestamp them
     file_dict = {}
     if image_path.exists():
-        file_dict[f"{handle}-{now_iso}.jpg"] = image_path
+        file_dict[f"{prefix}.jpg"] = image_path
     if image_fullpage_path.exists():
-        file_dict[f"{handle}-{now_iso}.fullpage.jpg"] = image_fullpage_path
+        file_dict[f"{prefix}.fullpage.jpg"] = image_fullpage_path
     if a11y_path.exists():
-        file_dict[f"{handle}-{now_iso}.accessibility.json"] = a11y_path
+        file_dict[f"{prefix}.accessibility.json"] = a11y_path
     if hyperlinks_path.exists():
-        file_dict[f"{handle}-{now_iso}.hyperlinks.json"] = hyperlinks_path
+        file_dict[f"{prefix}.hyperlinks.json"] = hyperlinks_path
     if lighthouse_path.exists():
-        file_dict[f"{handle}-{now_iso}.lighthouse.json"] = lighthouse_path
+        file_dict[f"{prefix}.lighthouse.json"] = lighthouse_path
     if wayback_path.exists():
-        file_dict[f"{handle}-{now_iso}.wayback.json"] = wayback_path
+        file_dict[f"{prefix}.wayback.json"] = wayback_path
+    if html_path.exists():
+        file_dict[f"{prefix}.html"] = html_path
 
     # Return it
     return file_dict
