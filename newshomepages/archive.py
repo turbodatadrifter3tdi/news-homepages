@@ -136,6 +136,7 @@ def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
     # Set the input paths
     handle = utils.safe_ia_handle(data["handle"])
     image_path = input_dir / f"{handle}.jpg"
+    image_fullpage_path = input_dir / f"{handle}.fullpage.jpg"
     a11y_path = input_dir / f"{handle}.accessibility.json"
     hyperlinks_path = input_dir / f"{handle}.hyperlinks.json"
     lighthouse_path = input_dir / f"{handle}.lighthouse.json"
@@ -151,6 +152,8 @@ def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
     file_dict = {}
     if image_path.exists():
         file_dict[f"{handle}-{now_iso}.jpg"] = image_path
+    if image_fullpage_path.exists():
+        file_dict[f"{handle}-{now_iso}.fullpage.jpg"] = image_fullpage_path
     if a11y_path.exists():
         file_dict[f"{handle}-{now_iso}.accessibility.json"] = a11y_path
     if hyperlinks_path.exists():
