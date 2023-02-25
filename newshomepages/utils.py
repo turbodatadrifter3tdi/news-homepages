@@ -794,7 +794,7 @@ def _load_new_page_disable_javascript(
         current_iter = 0
         max_iterations = 200
         amount_to_scroll = 200
-        while (current_pos < scroll_height) or (current_iter > max_iterations):
+        while (current_pos < scroll_height) and (current_iter < max_iterations):
             current_pos += amount_to_scroll
             page.evaluate(f"scroll(0, {current_pos})")
             time.sleep(1)
