@@ -427,7 +427,8 @@ def site_detail():
 
         # Get the screenshots for this site
         screenshots = screenshot_df[
-            screenshot_df.handle.str.lower() == site["handle"].lower()
+            (screenshot_df.handle.str.lower() == site["handle"].lower()) &
+            (screenshot_df['type'] == 'cropped')
         ]
         most_recent_screenshots = screenshots.sort_values(
             "mtime", ascending=False
@@ -577,7 +578,8 @@ def site_detail_screenshot_chart():
     for site in track(site_list):
         # Get the screenshots for this site
         site_df = screenshots_df[
-            screenshots_df.handle.str.lower() == site["handle"].lower()
+            (screenshots_df.handle.str.lower() == site["handle"].lower()) &
+            (screenshot_df['type'] == 'cropped')
         ]
 
         # Do the math
