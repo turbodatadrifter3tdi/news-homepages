@@ -493,28 +493,33 @@ def _get_extract_files_df(name) -> pd.DataFrame:
     base_url = "https://archive.org/download/news-homepages-extracts/"
     url = f"{base_url}{name}"
     print(f"Fetching {url}")
+    usecols = [
+        "identifier",
+        "handle",
+        "file_name",
+        "url",
+        "mtime",
+        "size",
+        "md5",
+        "sha1",
+    ]
+    dtype = {
+        "identifier": str,
+        "handle": str,
+        "file_name": str,
+        "url": str,
+        "size": int,
+        "md5": str,
+        "sha1": str,
+    }
+    if name == "screenshot-files.csv":
+        usecols.append("type")
+        dtype["type"] = str
     df = pd.read_csv(
         url,
         parse_dates=["mtime"],
-        usecols=[
-            "identifier",
-            "handle",
-            "file_name",
-            "url",
-            "mtime",
-            "size",
-            "md5",
-            "sha1",
-        ],
-        dtype={
-            "identifier": str,
-            "handle": str,
-            "file_name": str,
-            "url": str,
-            "size": int,
-            "md5": str,
-            "sha1": str,
-        },
+        usecols=usecols,
+        dtype=dtype,
     )
     df["mtime"] = df.mtime.dt.tz_localize(pytz.utc)
     df["date"] = pd.to_datetime(df.mtime.dt.date)
