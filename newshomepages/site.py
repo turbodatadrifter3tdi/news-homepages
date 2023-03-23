@@ -411,8 +411,12 @@ def site_detail():
     lighthouse_df = utils.get_lighthouse_df()
     item_df = utils.get_extract_df("items.csv", dtype=str)
 
+    print(screenshot_df.info())
+
     # For each site ...
     for site in track(site_list):
+        print(f"Building page for {site['handle']}")
+
         # Get all the bundles linked to this site
         site["bundle_list"] = [utils.get_bundle(b) for b in site["bundle_list"] if b]
 
@@ -427,8 +431,8 @@ def site_detail():
 
         # Get the screenshots for this site
         screenshots = screenshot_df[
-            (screenshot_df.handle.str.lower() == site["handle"].lower()) &
-            (screenshot_df['type'] == 'cropped')
+            (screenshot_df.handle.str.lower() == site["handle"].lower())
+            & (screenshot_df["type"] == "cropped")
         ]
         most_recent_screenshots = screenshots.sort_values(
             "mtime", ascending=False
@@ -578,8 +582,8 @@ def site_detail_screenshot_chart():
     for site in track(site_list):
         # Get the screenshots for this site
         site_df = screenshots_df[
-            (screenshots_df.handle.str.lower() == site["handle"].lower()) &
-            (screenshot_df['type'] == 'cropped')
+            (screenshots_df.handle.str.lower() == site["handle"].lower())
+            & (screenshots_df["type"] == "cropped")
         ]
 
         # Do the math
