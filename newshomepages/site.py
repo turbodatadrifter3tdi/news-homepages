@@ -257,6 +257,11 @@ def performance_ranking():
         },
     )
 
+    # Filter out nulls
+    performance_df = performance_df[
+        ~pd.isnull(performance_df.performance_median)
+    ].copy()
+
     # Calculate the grand total
     median = performance_df.performance_median.median() * 100
 
