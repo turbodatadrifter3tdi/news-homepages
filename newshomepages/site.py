@@ -182,6 +182,12 @@ def accessibility_ranking():
             "accessibility_color",
             "accessibility_rank",
         ],
+        dtype={
+            "handle": str,
+            "accessibility_median": float,
+            "accessibility_color": str,
+            "accessibility_rank": float,
+        },
     )
 
     # Calculate the grand total
@@ -238,6 +244,12 @@ def performance_ranking():
             "performance_color",
             "performance_rank",
         ],
+        dtype={
+            "handle": str,
+            "performance_median": float,
+            "performance_color": str,
+            "performance_rank": float,
+        },
     )
 
     # Calculate the grand total
