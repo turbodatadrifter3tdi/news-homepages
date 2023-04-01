@@ -38,7 +38,7 @@ def test_get_local_time():
     assert latimes["timezone"] == "America/Los_Angeles"
     assert utils.get_local_time(latimes).tzinfo is not None
     bbc = utils.get_site("bbc")
-    assert utils.get_local_time(bbc).tzname() == "GMT"
+    assert utils.get_local_time(bbc).tzname() == "BST"
 
 
 def test_get_user_agent():
