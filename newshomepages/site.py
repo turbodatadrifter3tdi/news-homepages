@@ -186,7 +186,7 @@ def accessibility_ranking():
             "handle": str,
             "accessibility_median": float,
             "accessibility_color": str,
-            "accessibility_rank": int,
+            "accessibility_rank": float,
         },
     )
 
@@ -248,7 +248,7 @@ def performance_ranking():
             "handle": str,
             "performance_median": float,
             "performance_color": str,
-            "performance_rank": int,
+            "performance_rank": float,
         },
     )
 
