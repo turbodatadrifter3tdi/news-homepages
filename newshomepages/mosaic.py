@@ -48,7 +48,7 @@ def jpg(input_dir: str, output_dir: str):
         width, height = size
         images = [
             ImageOps.fit(image, size, Image.Resampling.LANCZOS, centering=(0.5, 0))
-            for image in map(Image.open, selected_images)
+            for image in Image.open(selected_images)
         ]
 
         # Create canvas for the final image with total size
@@ -110,14 +110,14 @@ def gif(input_dir: str, output_dir: str, maximium_slides: int = 15):
     for i, image_chunk in enumerate(utils.chunk(sorted_images, n * n)):
         print(f"Creating slide {i+1}")
 
-        size = list(map(math.floor, (1200 / n, 675 / n)))
+        size = [math.floor(1200 / n), math.floor(675 / n)]
         shape = (n, n)
 
         # Open images and resize them
         width, height = size
         images = [
             ImageOps.fit(image, size, Image.Resampling.LANCZOS, centering=(0.5, 0))
-            for image in map(Image.open, image_chunk)
+            for image in Image.open(image_chunk)
         ]
 
         # Create canvas for the final image with total size
