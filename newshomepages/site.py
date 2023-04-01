@@ -190,6 +190,11 @@ def accessibility_ranking():
         },
     )
 
+    # Filter out nulls
+    accessibility_df = accessibility_df[
+        ~pd.isnull(accessibility_df.accessibility_median)
+    ].copy()
+
     # Calculate the grand total
     median = accessibility_df.accessibility_median.median() * 100
 
