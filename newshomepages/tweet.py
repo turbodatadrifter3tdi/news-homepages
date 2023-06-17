@@ -53,6 +53,7 @@ def update_list(number):
         "nepalkhabar24",
         "cbs46",
         "_fiquemsabendo",
+        "izvestia_ru",
     ]
 
     # Add what's missing
