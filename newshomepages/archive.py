@@ -177,7 +177,7 @@ def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
     return file_dict
 
 
-@retry(tries=5, delay=30, backoff=2)
+@retry(tries=5, delay=90, jitter=(-30, 30))
 def _upload(
     data: typing.Dict,
     identifier: str,
