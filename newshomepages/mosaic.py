@@ -48,7 +48,7 @@ def jpg(input_dir: str, output_dir: str):
         width, height = size
         images = [
             ImageOps.fit(image, size, Image.Resampling.LANCZOS, centering=(0.5, 0))
-            for image in Image.open(selected_images)
+            for image in list(map(Image.open, selected_images))
         ]
 
         # Create canvas for the final image with total size
