@@ -128,7 +128,6 @@ def country(code: str, input_dir: str):
 
 @retry(tries=3, delay=5, backoff=2)
 def _post(image_path: Path, caption: str):
-
     # Connect to Telegram
     assert isinstance(TELEGRAM_API_KEY, str)
     bot = Bot(token=TELEGRAM_API_KEY)

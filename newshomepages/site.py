@@ -156,7 +156,7 @@ def drudge():
     for d in dict_list:
         for t in d["timeseries"]:
             if t["7_day_rolling_average"] > max_n:
-                n_scaled = max_n
+                n_scaled = 1
             else:
                 n_scaled = t["7_day_rolling_average"] / max_n
             t["color"] = color_scale(n_scaled).hexcode

@@ -104,7 +104,6 @@ class BotClient(discord.Client):
 
         # Loop through all the sites
         for i, path in enumerate(self.path_list):
-
             # Figure out if we want the caption
             if i == 0:
                 message = self.caption

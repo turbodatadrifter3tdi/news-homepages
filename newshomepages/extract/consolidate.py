@@ -91,7 +91,10 @@ def consolidate(
         qualified_files = [
             p
             for p in item_data["files"]
-            if (handle.lower() in p["name"].lower() and p["format"] in ["JSON", "JPEG", "HTML"])
+            if (
+                handle.lower() in p["name"].lower()
+                and p["format"] in ["JSON", "JPEG", "HTML"]
+            )
         ]
 
         # Loop through them
@@ -120,12 +123,12 @@ def consolidate(
     html_list = []
     print("🪆 Extracting files")
     for f in track(file_list):
-        name = f['file_name']
+        name = f["file_name"]
         if name.endswith(".jpg"):
-            if 'fullpage' in name:
-                f['type'] = 'fullpage'
+            if "fullpage" in name:
+                f["type"] = "fullpage"
             else:
-                f['type'] = 'cropped'
+                f["type"] = "cropped"
             screenshot_list.append(f)
         elif "accessibility" in name:
             a11y_list.append(f)

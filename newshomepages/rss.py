@@ -33,7 +33,6 @@ def bundles():
 
     # Loop through all bundles
     for bundle in track(bundle_list):
-
         # Get all of its sites
         site_list = utils.get_sites_in_bundle(bundle["slug"])
 
@@ -149,7 +148,6 @@ def countries():
 
     # Loop through all bundles
     for country_alpha2 in track(country_list):
-
         # Get all of its sites
         site_list = merged_df[merged_df.country == country_alpha2].to_dict(
             orient="records"
