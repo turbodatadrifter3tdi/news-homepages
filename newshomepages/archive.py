@@ -63,7 +63,7 @@ def cli(
         print(f"No files found for {data['handle']}")
         return
 
-    # Upload into an "item" keyed to the site's handle and year
+    # Upload each file into an "item" keyed to the site's handle and year
     handle = data["handle"]
     local_now = utils.get_local_time(data)
     site_identifier = f"{utils.safe_ia_handle(handle)}-{local_now.strftime('%Y')}"
@@ -71,14 +71,18 @@ def cli(
     print(
         f"📚 Saving timestamped `{handle}` assets to archive.org `{IA_COLLECTION}` collection's `{site_identifier}`"
     )
-    _upload(
-        data,
-        site_identifier,
-        site_metadata,
-        file_dict,
-        verbose,
-        timeout=int(timeout),
-    )
+    # We do them one by one to better catch exceptions and retry
+    for key, value in file_dict.items():
+        if verbose:
+            print(f"Uploading {value}")
+        _upload(
+            data,
+            site_identifier,
+            site_metadata,
+            {key: value},
+            verbose,
+            timeout=int(timeout),
+        )
 
     # Once that finishes, if there's a JPG file, symlink it as the latest image
     # ... assuming the user has asked for it with the --latest flag.
