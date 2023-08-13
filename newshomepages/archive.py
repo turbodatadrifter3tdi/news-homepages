@@ -1,6 +1,7 @@
+from __future__ import annotations
+
 import logging
 import os
-import typing
 from pathlib import Path
 
 import click
@@ -115,7 +116,7 @@ def cli(
     )
 
 
-def _get_item_metadata(data: typing.Dict) -> typing.Dict:
+def _get_item_metadata(data: dict) -> dict:
     """Convert a site's metadata into the format we'll use in its archive.org item."""
     # Verify we have an archive.org collection
     assert IA_COLLECTION
@@ -135,7 +136,7 @@ def _get_item_metadata(data: typing.Dict) -> typing.Dict:
     )
 
 
-def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
+def _get_file_dict(data: dict, input_dir: Path) -> dict:
     """Get a dictionary of timestamped files to upload to our archive.org collection."""
     # Set the input paths
     handle = utils.safe_ia_handle(data["handle"])
@@ -179,10 +180,10 @@ def _get_file_dict(data: typing.Dict, input_dir: Path) -> typing.Dict:
 
 @retry(tries=5, delay=90, jitter=(-30, 30))
 def _upload(
-    data: typing.Dict,
+    data: dict,
     identifier: str,
-    metadata: typing.Dict,
-    files: typing.Dict,
+    metadata: dict,
+    files: dict,
     verbose: bool = False,
     timeout: int = 60,
 ):
@@ -191,8 +192,12 @@ def _upload(
     assert IA_ACCESS_KEY
     assert IA_SECRET_KEY
 
-    # Set all the keyword arguments
-    kwargs = dict(
+    # Upload it
+    if verbose:
+        print("Posting to archive.org")
+
+    internetarchive.upload(
+        identifier,
         # Authentication
         access_key=IA_ACCESS_KEY,
         secret_key=IA_SECRET_KEY,
@@ -204,10 +209,6 @@ def _upload(
         verbose=verbose,
         request_kwargs=dict(timeout=timeout),
     )
-
-    # Upload it
-    print("Posting to archive.org")
-    internetarchive.upload(identifier, **kwargs)
 
 
 if __name__ == "__main__":
