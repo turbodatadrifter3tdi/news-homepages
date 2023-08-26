@@ -82,7 +82,6 @@ site: ## Build the site
 	$(call banner,    🏗️ Building site 🏗️)
 	@$(PYTHON) newshomepages.site latest-screenshots
 	@$(PYTHON) newshomepages.site accessibility-ranking
-	@$(PYTHON) newshomepages.site accessibility-ranking
 	@$(PYTHON) newshomepages.site performance-ranking
 	@$(PYTHON) newshomepages.site drudge
 	@$(PYTHON) newshomepages.site source-list

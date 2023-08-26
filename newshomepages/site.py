@@ -206,11 +206,13 @@ def accessibility_ranking():
         "accessibility_decile"
     ] = accessibility_df.accessibility_median.apply(_round)
     histogram_df = accessibility_df.accessibility_decile.value_counts().reset_index()
-    histogram_df["index"] = histogram_df["index"].astype(int)
+    histogram_df["accessibility_decile"] = histogram_df["accessibility_decile"].astype(
+        int
+    )
     histogram_df = histogram_df.merge(
-        pd.DataFrame(range(0, 101, 10), columns=["index"]),
+        pd.DataFrame(range(0, 101, 10), columns=["accessibility_decile"]),
         how="right",
-        on="index",
+        on="accessibility_decile",
     ).fillna(0)
 
     # Prep the ranking
@@ -273,11 +275,11 @@ def performance_ranking():
         _round
     )
     histogram_df = performance_df.performance_decile.value_counts().reset_index()
-    histogram_df["index"] = histogram_df["index"].astype(int)
+    histogram_df["performance_decile"] = histogram_df["performance_decile"].astype(int)
     histogram_df = histogram_df.merge(
-        pd.DataFrame(range(0, 101, 10), columns=["index"]),
+        pd.DataFrame(range(0, 101, 10), columns=["performance_decile"]),
         how="right",
-        on="index",
+        on="performance_decile",
     ).fillna(0)
 
     # Prep the ranking table
