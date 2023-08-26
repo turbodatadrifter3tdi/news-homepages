@@ -118,9 +118,6 @@ def cli(
 
 def _get_item_metadata(data: dict) -> dict:
     """Convert a site's metadata into the format we'll use in its archive.org item."""
-    # Verify we have an archive.org collection
-    assert IA_COLLECTION
-
     # Get the current year where the site is based,
     # since we segment each site's items by calendar year.
     now_year = utils.get_local_time(data).strftime("%Y")
