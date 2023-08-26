@@ -165,7 +165,6 @@ def drudge():
     out_dir = CHARTS_DIR / "drudge" / "top-words"
     out_dir.mkdir(parents=True, exist_ok=True)
     for d in track(dict_list):
-        print(d)
         _write_template(
             "drudge-top-words.svg", dict(obj=d), out_dir / f"{d['lemma'].lower()}.svg"
         )
