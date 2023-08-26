@@ -58,7 +58,7 @@ def drudge_entities(output_dir: str = "./"):
         doc = nlp(headline)
 
         # Parse out all the words
-        token_list = [token for token in doc]
+        token_list = [token.strip() for token in doc if token.strip()]
 
         # Remove stop words
         token_list = [t for t in token_list if not t.is_stop]
@@ -121,6 +121,8 @@ def drudge_entities(output_dir: str = "./"):
         "RISE",
         "DEAD",
         "SET",
+        "HOUSE",  # This usually refers to the White House
+        "\n",
     ]
     qualified_df = word_df[
         (~word_df.part_of_speech.isin(["SYM", "VERB"]))
@@ -156,6 +158,7 @@ def drudge_entities(output_dir: str = "./"):
             "HAVE",
             "MELONI",
             "ZERO",
+            "'",  # This is a weird one
         ]
         if lemma == "COVID":
             stop_verbs += ["TESTS", "TEST"]
