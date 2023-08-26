@@ -54,6 +54,10 @@ Commands
    :prog: mosaic
    :nested: full
 
+.. click:: newshomepages.robotstxt:cli
+   :prog: robotstxt
+   :nested: full
+
 .. click:: newshomepages.rss:cli
    :prog: rss
    :nested: full

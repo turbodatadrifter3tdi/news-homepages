@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import csv
 import json
 import re
@@ -58,9 +60,7 @@ def safe_ia_handle(handle: str) -> str:
     return s
 
 
-def write_csv(
-    dict_list: typing.List[typing.Dict], path: Path, verbose: bool = True
-) -> None:
+def write_csv(dict_list: list[dict], path: Path, verbose: bool = True) -> None:
     """Write a list of dictionaries to a CSV file at the provided path.
 
     Args:
@@ -115,9 +115,12 @@ def write_json(
 
 
 @retry(tries=3, delay=15, backoff=2)
-def get_url(url: str, timeout: int = 30):
+def get_url(url: str, timeout: int = 30, user_agent: str | None = None):
     """Get the provided URL."""
-    r = requests.get(url, timeout=timeout)
+    headers = {}
+    if user_agent:
+        headers["User-Agent"] = user_agent
+    r = requests.get(url, timeout=timeout, headers=headers)
     assert r.ok
     return r
 
@@ -138,7 +141,7 @@ def download_url(url: str, output_path: Path, timeout: int = 180):
                 f.write(chunk)
 
 
-def get_local_time(site: typing.Dict) -> datetime:
+def get_local_time(site: dict) -> datetime:
     """Get the current time in the provided site's timezone.
 
     Args:
@@ -156,7 +159,7 @@ def get_local_time(site: typing.Dict) -> datetime:
     return now.astimezone(tz)
 
 
-def parse_archive_url(url: str) -> typing.Dict:
+def parse_archive_url(url: str) -> dict:
     """Parse the handle and timestamp from an archive.org URL.
 
     Args:
@@ -199,7 +202,7 @@ def get_user_agent() -> str:
     return "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36"
 
 
-def get_site_list() -> typing.List[typing.Dict]:
+def get_site_list() -> list[dict]:
     """Get the full list of supported sites.
 
     Returns a list of dictionaries.
@@ -257,7 +260,7 @@ def get_site_df() -> pd.DataFrame:
     return df
 
 
-def get_bundle_list() -> typing.List[typing.Dict]:
+def get_bundle_list() -> list[dict]:
     """Get the full list of site bundles.
 
     Returns a list of dictionaries.
@@ -268,7 +271,7 @@ def get_bundle_list() -> typing.List[typing.Dict]:
     return bundle_list
 
 
-def get_country_list() -> typing.List[typing.Dict]:
+def get_country_list() -> list[dict]:
     """Get the full list of countries.
 
     Returns a list of dictionaries.
@@ -288,7 +291,7 @@ def get_country_df() -> pd.DataFrame:
     return country_df
 
 
-def get_language_list() -> typing.List[typing.Dict]:
+def get_language_list() -> list[dict]:
     """Get the list of languages.
 
     Returns a list of dictionaries.
@@ -308,7 +311,7 @@ def get_language_df() -> pd.DataFrame:
     ).sort_values("name")
 
 
-def get_site(handle: str) -> typing.Dict:
+def get_site(handle: str) -> dict:
     """Get the metadata for the provided site.
 
     Args:
@@ -323,7 +326,7 @@ def get_site(handle: str) -> typing.Dict:
         raise ValueError(f"The handle {handle} could not be found")
 
 
-def get_bundle(slug: str) -> typing.Dict:
+def get_bundle(slug: str) -> dict:
     """Get the metadata for the provided bundle.
 
     Args:
@@ -338,7 +341,7 @@ def get_bundle(slug: str) -> typing.Dict:
         raise ValueError(f"The slug {slug} could not be found")
 
 
-def get_country(code: str) -> typing.Dict:
+def get_country(code: str) -> dict:
     """Get the metadata for the provided country.
 
     Args:
@@ -353,7 +356,7 @@ def get_country(code: str) -> typing.Dict:
         raise ValueError(f"The country {code.upper()} could not be found")
 
 
-def batch(li: typing.List, n: int):
+def batch(li: list, n: int):
     """Yield n number of sequential chunks from l."""
     d, r = divmod(len(li), n)
     for i in range(n):
@@ -361,9 +364,7 @@ def batch(li: typing.List, n: int):
         yield li[si : si + (d + 1 if i < r else d)]
 
 
-def get_sites_in_batch(
-    batch_number: int, batches: int = 10
-) -> typing.List[typing.Dict]:
+def get_sites_in_batch(batch_number: int, batches: int = 10) -> list[dict]:
     """Get all the sites in the provided batch.
 
     Args:
@@ -379,7 +380,7 @@ def get_sites_in_batch(
     return batch_list[batch_number - 1]
 
 
-def get_sites_in_bundle(slug: str) -> typing.List[typing.Dict]:
+def get_sites_in_bundle(slug: str) -> list[dict]:
     """Get all the sites in the provided bundle.
 
     Args:
@@ -392,7 +393,7 @@ def get_sites_in_bundle(slug: str) -> typing.List[typing.Dict]:
     return [s for s in site_list if bundle["slug"] in s["bundle_list"]]
 
 
-def get_sites_in_country(slug: str) -> typing.List[typing.Dict]:
+def get_sites_in_country(slug: str) -> list[dict]:
     """Get all the sites in the provided country.
 
     Args:
@@ -404,7 +405,7 @@ def get_sites_in_country(slug: str) -> typing.List[typing.Dict]:
     return [s for s in site_list if slug.upper() == s["country"]]
 
 
-def get_sites_in_language(code: str) -> typing.List[typing.Dict]:
+def get_sites_in_language(code: str) -> list[dict]:
     """Get all the sites in the provided language.
 
     Args:
@@ -416,7 +417,7 @@ def get_sites_in_language(code: str) -> typing.List[typing.Dict]:
     return [s for s in site_list if code.lower() == s["language"].lower()]
 
 
-def get_accessibility_list() -> typing.List[typing.Dict[str, typing.Any]]:
+def get_accessibility_list() -> list[dict[str, typing.Any]]:
     """Get the full list of accessibility from our extracts.
 
     Returns a list of dictionaries.
@@ -432,7 +433,7 @@ def get_accessibility_df() -> pd.DataFrame:
     return _get_extract_files_df("accessibility-files.csv")
 
 
-def get_screenshot_list() -> typing.List[typing.Dict[str, typing.Any]]:
+def get_screenshot_list() -> list[dict[str, typing.Any]]:
     """Get the full list of screenshots from our extracts.
 
     Returns a list of dictionaries.
@@ -448,7 +449,7 @@ def get_screenshot_df() -> pd.DataFrame:
     return _get_extract_files_df("screenshot-files.csv")
 
 
-def get_hyperlink_list() -> typing.List[typing.Dict[str, typing.Any]]:
+def get_hyperlink_list() -> list[dict[str, typing.Any]]:
     """Get the full list of hyperlink from our extracts.
 
     Returns a list of dictionaries.
@@ -464,7 +465,7 @@ def get_hyperlink_df() -> pd.DataFrame:
     return _get_extract_files_df("hyperlink-files.csv")
 
 
-def get_lighthouse_list() -> typing.List[typing.Dict[str, typing.Any]]:
+def get_lighthouse_list() -> list[dict[str, typing.Any]]:
     """Get the full list of lighthouse audits from our extracts.
 
     Returns a list of dictionaries.
@@ -526,7 +527,7 @@ def _get_extract_files_df(name) -> pd.DataFrame:
     return df.sort_values("mtime", ascending=True)
 
 
-def get_screenshots_by_site(site: typing.Dict) -> typing.List[typing.Dict]:
+def get_screenshots_by_site(site: dict) -> list[dict]:
     """Get the list of screenshots for the provided site.
 
     Returns a list of dictionaries.
@@ -551,7 +552,7 @@ def get_screenshots_by_site(site: typing.Dict) -> typing.List[typing.Dict]:
     return sorted_list
 
 
-def get_javascript(handle: str) -> typing.Optional[str]:
+def get_javascript(handle: str) -> str | None:
     """Get the JavaScript file to run before the screenshot, if it exists.
 
     Args:
@@ -605,7 +606,7 @@ def numoji(number: int) -> str:
     return "".join(emoji_list)
 
 
-def chunk(iterable: typing.List, length: int) -> typing.List[typing.List]:
+def chunk(iterable: list, length: int) -> list[list]:
     """Split the provided list into chunks of the provided length.
 
     Args:
@@ -621,7 +622,7 @@ def chunk(iterable: typing.List, length: int) -> typing.List[typing.List]:
     return chunk_list
 
 
-def intcomma(value: typing.Union[int, str]) -> str:
+def intcomma(value: int | str) -> str:
     """Convert an integer to a string containing commas every three digits.
 
     For example, 3000 becomes '3,000' and 45000 becomes '45,000'.
