@@ -70,6 +70,7 @@ setup(
             "newshomepages-html=newshomepages.html:cli",
             "newshomepages-hyperlinks=newshomepages.hyperlinks:cli",
             "newshomepages-mosaic=newshomepages.mosaic:cli",
+            "newshomepages-rss=newshomepages.robotstxt:cli",
             "newshomepages-rss=newshomepages.rss:cli",
             "newshomepages-screenshot=newshomepages.screenshot:cli",
             "newshomepages-site=newshomepages.site:cli",
