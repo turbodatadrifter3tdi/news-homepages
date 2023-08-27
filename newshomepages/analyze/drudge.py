@@ -57,8 +57,8 @@ def drudge_entities(output_dir: str = "./"):
         # Read it into our NPL thing
         doc = nlp(headline)
 
-        # Parse out all the words
-        token_list = [token.strip() for token in doc if token.strip()]
+        # Parse out all the words, and remove empty ones
+        token_list = [token for token in doc if token.text.strip()]
 
         # Remove stop words
         token_list = [t for t in token_list if not t.is_stop]
