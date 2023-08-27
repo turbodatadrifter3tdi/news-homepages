@@ -41,16 +41,13 @@ def cli(handle: str, output_dir: str, timeout: str = "5"):
 def _get_robotstxt(
     site_url: str,
     timeout: int = 5,
-    user_agent: str = "NewsHomepagesBot (https://homepages.news)",
 ) -> str | None:
     """Get the raw robots.txt for a site."""
     # Create the robots.txt URL
     robotstxt_url = urlparse(site_url)._replace(path="robots.txt").geturl()
 
     # Set the headers
-    headers = {
-        "User-Agent": user_agent,
-    }
+    headers = {"User-Agent": utils.get_user_agent()}
 
     # Make the request
     r = requests.get(robotstxt_url, timeout=timeout, headers=headers)
