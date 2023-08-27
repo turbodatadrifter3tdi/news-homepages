@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 import click
 import requests
 from retry import retry
+from rich import print
 
 from . import utils
 
@@ -24,6 +25,7 @@ def cli(handle: str, output_dir: str, timeout: str = "5"):
 
     if robotstxt is None:
         # If there is no robots.txt, we drop out now
+        print(f":robot: No robots.txt for {handle}")
         return
 
     # Set the output path
