@@ -1,12 +1,16 @@
 import json
+import sqlite3
 import warnings
 from pathlib import Path
+from urllib.parse import urlparse
 
 import click
 import jinja2
 import numpy as np
 import pandas as pd
+import requests
 import spectra
+import sqlite_robotstxt
 from rich import print
 from rich.progress import track
 from slugify import slugify
@@ -303,6 +307,82 @@ def performance_ranking():
         site_list=site_list,
     )
     _write_template("performance.md", context)
+
+
+@cli.command()
+def robotstxt():
+    """Create the robotstxt page based on most recently scrape robots.txt files."""
+    # Read in our dataset
+    robotstxt_df = utils.get_extract_df("robotstxt-files.csv")
+    robotstxt_df["mtime"] = pd.to_datetime(robotstxt_df["mtime"])
+
+    # robotstxt-file has multiple robots.txt scrapes per day - consolidate to just the most recent one
+    latest_rows_index = robotstxt_df.groupby("identifier")["mtime"].idxmax()
+    robotstxt_df = robotstxt_df.loc[latest_rows_index]
+
+    # Merge sites.csv with robotstxt_df to get site name, URL, etc.
+    site_df = utils.get_site_df()
+    site_df.handle = site_df.handle.str.lower()
+    robotstxt_df.handle = robotstxt_df.handle.str.lower()
+    robotstxt_df = site_df.merge(robotstxt_df, on="handle", how="inner")
+
+    # calculate the full URL to the site's robots.txt file
+    # url_x because that's the original site_df["url"], which was renamed in the merge
+    robotstxt_df["robotstxt_url"] = robotstxt_df["url_x"].apply(
+        lambda url: urlparse(url)._replace(path="robots.txt").geturl()
+    )
+
+    # fetch the cached robots.txt file for the site
+    # url_y because that's the robotstxt_df["url"], which was renamed in the merge
+    robotstxt_df["robotstxt"] = robotstxt_df["url_y"].apply(
+        lambda url: requests.get(url).text
+    )
+
+    # Using the sqlite-robotsxt SQLite extension for parsing the robots.txt file
+    db = sqlite3.connect(":memory:")
+    db.enable_load_extension(True)
+    sqlite_robotstxt.load(db)
+    db.enable_load_extension(False)
+
+    # Only export a few columns to the SQLite database for simplicity
+    robotstxt_df[["handle", "name", "robotstxt_url", "robotstxt"]].to_sql(
+        "sites", con=db
+    )
+    #
+    db.execute(
+        """
+      CREATE TABLE rules AS
+      WITH rules AS (
+        SELECT
+          handle,
+          robotstxt_rules.user_agent,
+          group_concat(printf('%s: %s', rule_type, path),  char(10)) as rules
+        FROM sites
+        JOIN robotstxt_rules(sites.robotstxt)
+        GROUP BY 1, 2
+      )
+      SELECT
+        sites.handle,
+        name,
+        robotstxt_url,
+        rules.*
+      FROM sites
+      LEFT JOIN rules ON rules.handle = sites.handle
+    """
+    )
+
+    # export that rules SQLite table back to a dataframe
+    rules_df = pd.read_sql("select * from rules", con=db)
+
+    # Get only the rules that pertain to GPTBot
+    gptbot_rules_list = rules_df[rules_df["user_agent"] == "GPTBot"].to_dict(
+        orient="records"
+    )
+
+    context = dict(
+        gptbot_rules_list=gptbot_rules_list,
+    )
+    _write_template("robotstxt.md", context)
 
 
 @cli.command()

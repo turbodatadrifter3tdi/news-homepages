@@ -1,0 +1,30 @@
+```{include} _templates/nav.html
+
+```
+
+# robots.txt
+
+## GPTBot Blocking
+
+The following sites contain code in their `robots.txt` file that block [OpenAI's GPTBot](https://platform.openai.com/docs/gptbot),
+
+<table class="colwidths-auto docutils align-default">
+ <thead>
+  <tr>
+    <th class="head">Site</th>
+    <th class="head">robots.txt URL</th>
+    <th class="head">User-Agent</th>
+    <th class="head">Rule</th>
+  </tr>
+ </thead>
+ <tbody>
+  {% for obj in gptbot_rules_list %}
+  <tr>
+    <td>{{ obj.name }}</td>
+    <td>{{ obj.robotstxt_url }}</td>
+    <td>{{ obj.user_agent }}</td>
+    <td>{{ obj.rules }}</td>
+  </tr>
+  {% endfor %}
+ </tbody>
+</table>
