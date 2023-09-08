@@ -19,4 +19,5 @@ def test_sqlite_extensions():
     db.enable_load_extension(True)
     sqlite_robotstxt.load(db)
     db.enable_load_extension(False)
+    db.execute("select robotstxt_version()").fetchone()
     db.close()
