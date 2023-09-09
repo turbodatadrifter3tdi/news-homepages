@@ -327,6 +327,9 @@ def robotstxt():
         parse_dates=["date"],
     )
 
+    # Assert that only each handle has only one url
+    assert robotstxt_df.groupby("handle").url.nunique().all() == 1
+
     # Merge in site metatadat
     site_df = utils.get_site_df()
     site_df.handle = site_df.handle.str.lower()
