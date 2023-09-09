@@ -25,6 +25,7 @@ caption {
  <thead>
   <tr>
     <th class="head">Site</th>
+    <th class="head">Country</th>
     <th class="head">Archive</th>
   </tr>
  </thead>
@@ -34,6 +35,11 @@ caption {
     <td>
       <a href="https://palewi.re/docs/news-homepages/sites/{{ obj.handle.lower() }}.html">
         {{ obj.name }}
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/{{ obj.country.lower() }}.html">
+        {{ obj.flag }}
       </a>
     </td>
     <td><a href="{{ obj.url }}">robots.txt</a></td>
@@ -49,6 +55,7 @@ The following {{ allow_list|length }} sites have yet to instruct GPTBot to stay 
  <thead>
   <tr>
     <th class="head">Site</th>
+    <th class="head">Country</th>
     <th class="head">Archive</th>
   </tr>
  </thead>
@@ -58,6 +65,11 @@ The following {{ allow_list|length }} sites have yet to instruct GPTBot to stay 
     <td>
       <a href="https://palewi.re/docs/news-homepages/sites/{{ obj.handle.lower() }}.html">
         {{ obj.name }}
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/{{ obj.country.lower() }}.html">
+        {{ obj.flag }}
       </a>
     </td>
     <td><a href="{{ obj.url }}">robots.txt</a></td>
