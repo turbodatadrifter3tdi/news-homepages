@@ -339,14 +339,29 @@ def robotstxt():
     )
 
     # Get only the rules that pertain to GPTBot
-    gptbot_rules_list = merged_df[
+    disallow_list = merged_df[
         (merged_df.user_agent.str.upper().str.strip() == "GPTBOT")
         & (merged_df.rules.str.upper().str.contains("DISALLOW"))
-    ].to_dict(orient="records")
+    ]
 
+    # Get the sites that are not in the gptbot_rules_list list
+    allow_list = merged_df[~merged_df.handle.isin(disallow_list.handle.unique())][
+        [
+            "name",
+            "handle",
+            "url",
+        ]
+    ].drop_duplicates()
+
+    # Render the page
     context = dict(
         site_count=len(merged_df.handle.unique()),
-        gptbot_rules_list=sorted(gptbot_rules_list, key=lambda s: s["name"].lower()),
+        disallow_list=sorted(
+            disallow_list.to_dict(orient="records"), key=lambda s: s["name"].lower()
+        ),
+        allow_list=sorted(
+            allow_list.to_dict(orient="records"), key=lambda s: s["name"].lower()
+        ),
     )
     _write_template("robotstxt.md", context)
 
