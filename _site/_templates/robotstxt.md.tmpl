@@ -6,7 +6,7 @@
 
 The {{ disallow_list|length }} news organizations listed below have instructed [OpenAI's GPTBot](https://platform.openai.com/docs/gptbot) to not scan their sites, according to a continual survey of {{ "{:,.0f}".format(site_count) }} online publishers conducted by the [homepages.news](https://homepages.news) archive. That amounts to {{ "{:,.1f}".format((disallow_list|length / site_count)*100) }}% of the total.
 
-The artificial intelligence company [has suggested](https://www.theverge.com/2023/8/7/23823046/openai-data-scrape-block-ai) it will not train future editions of ChatGPT using sites that opt out of GPTBot's crawling via the [robots.txt](https://en.wikipedia.org/wiki/Robots.txt) convention.
+The artificial intelligence company [has suggested](https://www.theverge.com/2023/8/7/23823046/openai-data-scrape-block-ai) it will not train future editions of ChatGPT using sites that opt out of GPTBot crawls via the [robots.txt](https://en.wikipedia.org/wiki/Robots.txt) convention.
 
 Our archiving system gathers each news organization's robots.txt file twice per day. This page automatically updates with the latest results.
 
