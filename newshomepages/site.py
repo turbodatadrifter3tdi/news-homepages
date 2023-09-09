@@ -313,22 +313,36 @@ def robotstxt():
         "robotstxt-sample.csv",
         usecols=[
             "handle",
+            "url",
+            "date",
             "user_agent",
             "rules",
         ],
         dtype={
             "handle": str,
+            "url": str,
             "user_agent": str,
             "rules": str,
         },
+        parse_dates=["date"],
+    ).sort_values("handle")
+
+    # Merge in site metatadat
+    site_df = utils.get_site_df()
+    site_df.handle = site_df.handle.str.lower()
+    robotstxt_df.handle = robotstxt_df.handle.str.lower()
+    merged_df = site_df[["name", "handle"]].merge(
+        robotstxt_df, on="handle", how="inner"
     )
 
     # Get only the rules that pertain to GPTBot
-    gptbot_rules_list = robotstxt_df[robotstxt_df["user_agent"] == "GPTBot"].to_dict(
-        orient="records"
-    )
+    gptbot_rules_list = merged_df[
+        (merged_df.user_agent.str.upper().str.strip() == "GPTBOT")
+        & (merged_df.rules.str.contains("disallow"))
+    ].to_dict(orient="records")
 
     context = dict(
+        site_count=len(merged_df.handle.unique()),
         gptbot_rules_list=gptbot_rules_list,
     )
     _write_template("robotstxt.md", context)

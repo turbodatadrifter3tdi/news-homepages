@@ -4,24 +4,28 @@
 
 # Who blocks ChatGPT?
 
-The following {{ gptbot_rules_list|length }} sites blocked [OpenAI's GPTBot](https://platform.openai.com/docs/gptbot) in the most recent archive of their [`robots.txt`](https://en.wikipedia.org/wiki/Robots.txt) file. The artificial intelligence company [has said](https://www.theverge.com/2023/8/7/23823046/openai-data-scrape-block-ai) it will not use data gathered from sites that block it to train the models that power ChatGPT and other products.
+The following {{ gptbot_rules_list|length }} news organizations have instructed [OpenAI's GPTBot](https://platform.openai.com/docs/gptbot) not scan their site, according to a daily survey of {{ "{:,.0f}".format(site_count) }} sites by The News Homepages Archive.
+
+The artificial intelligence company [has suggested](https://www.theverge.com/2023/8/7/23823046/openai-data-scrape-block-ai) it will not train future editions of ChatGPT using sites that disallow access via the [`robots.txt`](https://en.wikipedia.org/wiki/Robots.txt) convention. Compliance with the standard is voluntary.
+
+This page updates each day with the latest results.
 
 <table class="colwidths-auto docutils align-default">
  <thead>
   <tr>
     <th class="head">Site</th>
-    <th class="head">robots.txt URL</th>
-    <th class="head">User-Agent</th>
-    <th class="head">Rule</th>
+    <th class="head">Archive</th>
   </tr>
  </thead>
  <tbody>
   {% for obj in gptbot_rules_list %}
   <tr>
-    <td>{{ obj.name }}</td>
-    <td>{{ obj.robotstxt_url }}</td>
-    <td>{{ obj.user_agent }}</td>
-    <td>{{ obj.rules }}</td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/{{ obj.handle.lower() }}.html">
+        {{ obj.name }}
+      </a>
+    </td>
+    <td><a href="{{ obj.url }}">robots.txt</a></td>
   </tr>
   {% endfor %}
  </tbody>
