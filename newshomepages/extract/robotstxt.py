@@ -25,6 +25,7 @@ def cli():
 @click.option("--language", "language", default=None)
 @click.option("--bundle", "bundle", default=None)
 @click.option("--days", "days", default=None)
+@click.option("--latest", "latest", default=False, is_flag=True)
 @click.option("-o", "--output-path", "output_path", default=None)
 def robotstxt(
     site=None,
@@ -32,6 +33,7 @@ def robotstxt(
     language=None,
     bundle=None,
     days=None,
+    latest=False,
     output_path=None,
 ):
     """Download and parse the provided site's robots.txt files."""
@@ -58,6 +60,9 @@ def robotstxt(
         slug = bundle.lower()
         handle_list = [s["handle"].lower() for s in site_list]
         filtered_df = df[df.handle.str.lower().isin(handle_list)].copy()
+    elif latest:
+        slug = "latest"
+        filtered_df = df.groupby("handle").tail(1)
     else:
         slug = "all"
         filtered_df = df
