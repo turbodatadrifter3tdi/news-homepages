@@ -336,18 +336,14 @@ def robotstxt():
     )
 
     # Get only the rules that pertain to GPTBot
-    gptbot_rules_list = (
-        merged_df[
-            (merged_df.user_agent.str.upper().str.strip() == "GPTBOT")
-            & (merged_df.rules.str.upper().str.contains("DISALLOW"))
-        ]
-        .sort_values("name")
-        .to_dict(orient="records")
-    )
+    gptbot_rules_list = merged_df[
+        (merged_df.user_agent.str.upper().str.strip() == "GPTBOT")
+        & (merged_df.rules.str.upper().str.contains("DISALLOW"))
+    ].to_dict(orient="records")
 
     context = dict(
         site_count=len(merged_df.handle.unique()),
-        gptbot_rules_list=gptbot_rules_list,
+        gptbot_rules_list=sorted(gptbot_rules_list, key=lambda s: s["name"].lower()),
     )
     _write_template("robotstxt.md", context)
 
