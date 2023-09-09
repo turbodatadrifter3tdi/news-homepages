@@ -325,7 +325,7 @@ def robotstxt():
             "rules": str,
         },
         parse_dates=["date"],
-    ).sort_values("handle")
+    )
 
     # Merge in site metatadat
     site_df = utils.get_site_df()
@@ -336,10 +336,14 @@ def robotstxt():
     )
 
     # Get only the rules that pertain to GPTBot
-    gptbot_rules_list = merged_df[
-        (merged_df.user_agent.str.upper().str.strip() == "GPTBOT")
-        & (merged_df.rules.str.contains("disallow"))
-    ].to_dict(orient="records")
+    gptbot_rules_list = (
+        merged_df[
+            (merged_df.user_agent.str.upper().str.strip() == "GPTBOT")
+            & (merged_df.rules.str.upper().str.contains("DISALLOW"))
+        ]
+        .sort_values("name")
+        .to_dict(orient="records")
+    )
 
     context = dict(
         site_count=len(merged_df.handle.unique()),
