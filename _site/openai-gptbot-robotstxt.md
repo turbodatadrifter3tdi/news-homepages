@@ -243,6 +243,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/alliancereview.html">
+        Alliance Review, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/alliancereview-2023/alliancereview-2023-09-08T20:48:38.696103-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/amarujalanews.html">
         Amar Ujala
       </a>
@@ -481,6 +495,34 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/baltimoresun.html">
+        Baltimore Sun, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/baltimoresun-2023/baltimoresun-2023-09-08T20:51:03.621730-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/barnpat.html">
+        Barnstable Patriot, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/barnpat-2023/barnpat-2023-09-09T06:18:42.660602-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/bcenquirer.html">
         Battle Creek Enquirer
       </a>
@@ -491,6 +533,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/bcenquirer-2023/bcenquirer-2023-09-08T20:54:30.666042-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/bctimes.html">
+        Beaver County Times, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/bctimes-2023/bctimes-2023-09-08T20:54:09.238365-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -803,6 +859,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/cantonrepdotcom.html">
+        Canton Repository, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/cantonrepdotcom-2023/cantonrepdotcom-2023-09-09T06:24:54.902124-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/capecodtimes.html">
         Cape Cod Times
       </a>
@@ -1055,6 +1125,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/dispatchalerts.html">
+        Columbus Dispatch, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/dispatchalerts-2023/dispatchalerts-2023-09-09T06:42:50.653333-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/memphisnews.html">
         Commercial Appeal
       </a>
@@ -1111,6 +1195,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thecut.html">
+        Cut, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thecut-2023/thecut-2023-09-08T20:25:19.348020-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/dailyamerican.html">
         Daily American
       </a>
@@ -1153,6 +1251,34 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thedailyherald.html">
+        Daily Herald, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thedailyherald-2023/thedailyherald-2023-09-08T21:37:40.147460-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/dailyjeff.html">
+        Daily Jeffersonian, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/dailyjeff-2023/dailyjeff-2023-09-09T06:35:26.890321-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/nydailynews.html">
         Daily News
       </a>
@@ -1163,6 +1289,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/nydailynews-2023/nydailynews-2023-09-09T07:44:23.696409-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thedailyrecord.html">
+        Daily Record, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thedailyrecord-2023/thedailyrecord-2023-09-08T20:24:58.129671-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -1219,6 +1359,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/dallasconews-2023/dallasconews-2023-09-09T05:35:59.952393-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/dbnewsjournal.html">
+        Daytona Beach News-Journal, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/dbnewsjournal-2023/dbnewsjournal-2023-09-08T21:29:28.485071-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -1289,6 +1443,34 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/dmregister-2023/dmregister-2023-09-09T05:40:27.212603-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/mydesert.html">
+        Desert Sun, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/mydesert-2023/mydesert-2023-09-09T04:25:46.236974-07:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/destinlog.html">
+        Destin Log, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/destinlog-2023/destinlog-2023-09-09T05:41:20.098782-05:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -1461,6 +1643,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/enterprisenews.html">
+        Enterprise, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/enterprisenews-2023/enterprisenews-2023-09-08T21:38:27.401930-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/espn.html">
         ESPN
       </a>
@@ -1517,6 +1713,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/hnnow.html">
+        Fall River Herald News, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/hnnow-2023/hnnow-2023-09-09T06:49:37.445101-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/thedailytimes.html">
         Farmington Daily Times
       </a>
@@ -1527,6 +1737,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/thedailytimes-2023/thedailytimes-2023-09-08T18:24:18.413008-06:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/fayobserver.html">
+        Fayetteville Observer, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/fayobserver-2023/fayobserver-2023-09-08T21:38:49.600564-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -1713,6 +1937,34 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/fresnobee.html">
+        Fresno Bee, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/fresnobee-2023/fresnobee-2023-09-09T03:51:13.273356-07:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/gadsdentimes.html">
+        Gadsden Times, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/gadsdentimes-2023/gadsdentimes-2023-09-08T20:41:21.160171-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/gainesvillesun.html">
         Gainesville Sun
       </a>
@@ -1723,6 +1975,34 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/gainesvillesun-2023/gainesvillesun-2023-09-09T06:47:08.756409-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/galesburg.html">
+        Galesburg Register-Mail, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/galesburg-2023/galesburg-2023-09-09T05:47:03.264603-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/gardner_news.html">
+        Gardner News, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/gardner_news-2023/gardner_news-2023-09-08T21:40:53.962284-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -1765,6 +2045,34 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/gen_republic-2023/gen_republic-2023-09-09T05:47:08.169665-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thegleanernews.html">
+        Gleaner, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thegleanernews-2023/thegleanernews-2023-09-08T19:25:20.427496-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/globeandmail.html">
+        Globe and Mail, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/ca.html">
+        🇨🇦
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/globeandmail-2023/globeandmail-2023-09-08T21:44:43.329616-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -1867,6 +2175,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/guardian.html">
+        Guardian, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
+        🇬🇧
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/guardian-2023/guardian-2023-09-09T02:51:54.321607+01:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/haaretzcom.html">
         Haaretz
       </a>
@@ -1937,6 +2259,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/rhherald.html">
+        Herald, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/rhherald-2023/rhherald-2023-09-09T08:02:19.561141-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/heraldmailnews.html">
         Herald-Mail Media
       </a>
@@ -1947,6 +2283,34 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/heraldmailnews-2023/heraldmailnews-2023-09-09T06:50:03.885189-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/theherald_sun.html">
+        Herald-Sun, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/theherald_sun-2023/theherald_sun-2023-09-08T08:24:16.500574-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/theheraldtimes.html">
+        Herald-Times, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/theheraldtimes-2023/theheraldtimes-2023-09-08T22:37:40.955432-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -1993,6 +2357,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/hornelltribune.html">
+        Hornell Evening Tribune, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/hornelltribune-2023/hornelltribune-2023-09-09T06:49:58.208771-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/houmatoday.html">
         Houma Today
       </a>
@@ -2021,6 +2399,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/hutchnews.html">
+        Hutchinson News, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/hutchnews-2023/hutchnews-2023-09-09T06:10:11.641726-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/idahostatesman.html">
         Idaho Statesman
       </a>
@@ -2031,6 +2423,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/idahostatesman-2023/idahostatesman-2023-09-09T05:14:06.873598-06:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/indystar.html">
+        Indianapolis Star, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/indystar-2023/indystar-2023-09-08T21:50:53.597120-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -2059,6 +2465,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/insideclimate-2023/insideclimate-2023-09-08T21:49:07.231238-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/theintellnews.html">
+        Intelligencer, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/theintellnews-2023/theintellnews-2023-09-08T20:24:14.118965-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -2115,6 +2535,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/irishtimes-2023/irishtimes-2023-09-09T12:11:01.494910+01:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/islandpacket.html">
+        Island Packet, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/islandpacket-2023/islandpacket-2023-09-08T21:53:41.935653-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -2231,6 +2665,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/knoxnews.html">
+        Knoxville News-Sentinel, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/knoxnews-2023/knoxnews-2023-09-08T21:54:51.157839-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/kpcc.html">
         KPCC
       </a>
@@ -2329,6 +2777,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/theledger.html">
+        Lakeland Ledger, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/theledger-2023/theledger-2023-09-08T22:40:28.661789-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/eaglegazette.html">
         Lancaster Eagle-Gazette
       </a>
@@ -2409,6 +2871,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/ldnews-2023/ldnews-2023-09-09T07:17:16.420332-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/ledgerenquirer.html">
+        Ledger-Enquirer, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/ledgerenquirer-2023/ledgerenquirer-2023-09-09T07:18:28.601257-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -2567,6 +3043,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/indedotcom.html">
+        Massillon Independent, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/indedotcom-2023/indedotcom-2023-09-09T07:10:05.636126-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/mcclatchydc.html">
         McClatchy DC
       </a>
@@ -2693,6 +3183,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/modbee.html">
+        Modesto Bee, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/modbee-2023/modbee-2023-09-08T19:06:33.865920-07:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/thenewsstar.html">
         Monroe News-Star
       </a>
@@ -2717,6 +3221,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/mgmadvertiser-2023/mgmadvertiser-2023-09-09T06:24:04.447182-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/mcall.html">
+        Morning Call, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/mcall-2023/mcall-2023-09-08T22:03:35.115103-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -2931,6 +3449,48 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thenewportdaily.html">
+        Newport Daily News, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thenewportdaily-2023/thenewportdaily-2023-09-08T08:23:34.271025-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/newsobserver.html">
+        News And Observer, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/newsobserver-2023/newsobserver-2023-09-08T22:10:23.447865-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thenewstribune.html">
+        News Tribune, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thenewstribune-2023/thenewstribune-2023-09-08T19:46:35.094063-07:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/news24.html">
         news24
       </a>
@@ -3001,6 +3561,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/norwichbulletin.html">
+        Norwich Bulletin, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/norwichbulletin-2023/norwichbulletin-2023-09-09T07:41:37.421466-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/npr.html">
         NPR
       </a>
@@ -3039,6 +3613,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/theoklahoman_-2023/theoklahoman_-2023-09-08T07:22:12.125967-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/theolympian.html">
+        Olympian, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/theolympian-2023/theolympian-2023-09-08T19:45:59.288065-07:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -3127,6 +3715,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/pbpost.html">
+        Palm Beach Post, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/pbpost-2023/pbpost-2023-09-08T22:11:51.306719-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/desertsunnews.html">
         Palm Springs Desert Sun
       </a>
@@ -3165,6 +3767,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/dailyrecord-2023/dailyrecord-2023-09-08T21:28:47.876294-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/patriotledger.html">
+        Patriot Ledger, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/patriotledger-2023/patriotledger-2023-09-09T07:50:19.995790-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -3323,6 +3939,48 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/progressindex.html">
+        Progress-Index, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/progressindex-2023/progressindex-2023-09-09T07:58:45.550243-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/projo.html">
+        Providence Journal, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/projo-2023/projo-2023-09-08T11:03:06.707566-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/chieftainnews.html">
+        Pueblo Chieftain, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/chieftainnews-2023/chieftainnews-2023-09-09T04:36:07.477091-06:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/reckonnews.html">
         Reckon
       </a>
@@ -3347,6 +4005,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/breakingnews_rs-2023/breakingnews_rs-2023-09-09T03:24:03.988469-07:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/registerguard.html">
+        Register Guard, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/registerguard-2023/registerguard-2023-09-08T19:20:57.889150-07:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -3547,6 +4219,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/salnews.html">
+        Salinas Californian, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/salnews-2023/salnews-2023-09-08T19:22:22.891343-07:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/mydelmarvanow.html">
         Salisbury Daily Times
       </a>
@@ -3585,6 +4271,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/sltrib-2023/sltrib-2023-09-08T20:30:35.636779-06:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/gosanangelo.html">
+        San Angelo Standard-Times, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/gosanangelo-2023/gosanangelo-2023-09-08T20:43:37.938758-05:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -3701,6 +4401,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/shelbystar.html">
+        Shelby Star, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/shelbystar-2023/shelbystar-2023-09-08T22:26:08.064254-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/shreveporttimes.html">
         Shreveport Times
       </a>
@@ -3725,6 +4439,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/argusleader-2023/argusleader-2023-09-08T19:50:52.876819-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/siskiyou_daily.html">
+        Siskiyou Daily News, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/siskiyou_daily-2023/siskiyou_daily-2023-09-08T17:18:54.269170-07:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -3799,6 +4527,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/spectrumnews.html">
+        Spectrum, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/spectrumnews-2023/spectrumnews-2023-09-08T18:18:25.736564-06:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/springfieldnl.html">
         Springfield News-Leader
       </a>
@@ -3813,6 +4555,20 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/staugrecord.html">
+        St. Augustine Record, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/staugrecord-2023/staugrecord-2023-09-08T22:37:58.426096-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/sctimes.html">
         St. Cloud Times
       </a>
@@ -3823,6 +4579,34 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/sctimes-2023/sctimes-2023-09-08T21:23:46.360768-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/sjrbreaking.html">
+        State Journal-Register, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/sjrbreaking-2023/sjrbreaking-2023-09-09T07:04:18.795000-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thestate.html">
+        State, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thestate-2023/thestate-2023-09-08T22:49:38.071723-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -4009,806 +4793,8 @@ caption {
 
   <tr>
     <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/texasmonthly.html">
-        Texas Monthly
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/texasmonthly-2023/texasmonthly-2023-09-08T19:21:08.038122-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/alliancereview.html">
-        The Alliance Review
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/alliancereview-2023/alliancereview-2023-09-08T20:48:38.696103-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/baltimoresun.html">
-        The Baltimore Sun
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/baltimoresun-2023/baltimoresun-2023-09-08T20:51:03.621730-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/barnpat.html">
-        The Barnstable Patriot
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/barnpat-2023/barnpat-2023-09-09T06:18:42.660602-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/bctimes.html">
-        The Beaver County Times
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/bctimes-2023/bctimes-2023-09-08T20:54:09.238365-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/cantonrepdotcom.html">
-        The Canton Repository
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/cantonrepdotcom-2023/cantonrepdotcom-2023-09-09T06:24:54.902124-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/dispatchalerts.html">
-        The Columbus Dispatch
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/dispatchalerts-2023/dispatchalerts-2023-09-09T06:42:50.653333-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thecut.html">
-        The Cut
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thecut-2023/thecut-2023-09-08T20:25:19.348020-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thedailyherald.html">
-        The Daily Herald
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thedailyherald-2023/thedailyherald-2023-09-08T21:37:40.147460-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/dailyjeff.html">
-        The Daily Jeffersonian
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/dailyjeff-2023/dailyjeff-2023-09-09T06:35:26.890321-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thedailyrecord.html">
-        The Daily Record
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thedailyrecord-2023/thedailyrecord-2023-09-08T20:24:58.129671-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/dbnewsjournal.html">
-        The Daytona Beach News-Journal
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/dbnewsjournal-2023/dbnewsjournal-2023-09-08T21:29:28.485071-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/mydesert.html">
-        The Desert Sun
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/mydesert-2023/mydesert-2023-09-09T04:25:46.236974-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/destinlog.html">
-        The Destin Log
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/destinlog-2023/destinlog-2023-09-09T05:41:20.098782-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/enterprisenews.html">
-        The Enterprise
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/enterprisenews-2023/enterprisenews-2023-09-08T21:38:27.401930-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/hnnow.html">
-        The Fall River Herald News
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/hnnow-2023/hnnow-2023-09-09T06:49:37.445101-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/fayobserver.html">
-        The Fayetteville Observer
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/fayobserver-2023/fayobserver-2023-09-08T21:38:49.600564-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/fresnobee.html">
-        The Fresno Bee
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/fresnobee-2023/fresnobee-2023-09-09T03:51:13.273356-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/gadsdentimes.html">
-        The Gadsden Times
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/gadsdentimes-2023/gadsdentimes-2023-09-08T20:41:21.160171-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/galesburg.html">
-        The Galesburg Register-Mail
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/galesburg-2023/galesburg-2023-09-09T05:47:03.264603-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/gardner_news.html">
-        The Gardner News
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/gardner_news-2023/gardner_news-2023-09-08T21:40:53.962284-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thegleanernews.html">
-        The Gleaner
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thegleanernews-2023/thegleanernews-2023-09-08T19:25:20.427496-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/globeandmail.html">
-        The Globe and Mail
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/ca.html">
-        🇨🇦
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/globeandmail-2023/globeandmail-2023-09-08T21:44:43.329616-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/guardian.html">
-        The Guardian
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
-        🇬🇧
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/guardian-2023/guardian-2023-09-09T02:51:54.321607+01:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/rhherald.html">
-        The Herald
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/rhherald-2023/rhherald-2023-09-09T08:02:19.561141-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/theherald_sun.html">
-        The Herald-Sun
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/theherald_sun-2023/theherald_sun-2023-09-08T08:24:16.500574-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/theheraldtimes.html">
-        The Herald-Times
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/theheraldtimes-2023/theheraldtimes-2023-09-08T22:37:40.955432-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/hornelltribune.html">
-        The Hornell Evening Tribune
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/hornelltribune-2023/hornelltribune-2023-09-09T06:49:58.208771-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/hutchnews.html">
-        The Hutchinson News
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/hutchnews-2023/hutchnews-2023-09-09T06:10:11.641726-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/indystar.html">
-        The Indianapolis Star
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/indystar-2023/indystar-2023-09-08T21:50:53.597120-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/theintellnews.html">
-        The Intelligencer
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/theintellnews-2023/theintellnews-2023-09-08T20:24:14.118965-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/islandpacket.html">
-        The Island Packet
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/islandpacket-2023/islandpacket-2023-09-08T21:53:41.935653-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/knoxnews.html">
-        The Knoxville News-Sentinel
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/knoxnews-2023/knoxnews-2023-09-08T21:54:51.157839-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/theledger.html">
-        The Lakeland Ledger
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/theledger-2023/theledger-2023-09-08T22:40:28.661789-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/ledgerenquirer.html">
-        The Ledger-Enquirer
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/ledgerenquirer-2023/ledgerenquirer-2023-09-09T07:18:28.601257-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/indedotcom.html">
-        The Massillon Independent
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/indedotcom-2023/indedotcom-2023-09-09T07:10:05.636126-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/modbee.html">
-        The Modesto Bee
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/modbee-2023/modbee-2023-09-08T19:06:33.865920-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/mcall.html">
-        The Morning Call
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/mcall-2023/mcall-2023-09-08T22:03:35.115103-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thenewportdaily.html">
-        The Newport Daily News
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thenewportdaily-2023/thenewportdaily-2023-09-08T08:23:34.271025-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/newsobserver.html">
-        The News And Observer
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/newsobserver-2023/newsobserver-2023-09-08T22:10:23.447865-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thenewstribune.html">
-        The News Tribune
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thenewstribune-2023/thenewstribune-2023-09-08T19:46:35.094063-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/norwichbulletin.html">
-        The Norwich Bulletin
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/norwichbulletin-2023/norwichbulletin-2023-09-09T07:41:37.421466-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/theolympian.html">
-        The Olympian
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/theolympian-2023/theolympian-2023-09-08T19:45:59.288065-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/pbpost.html">
-        The Palm Beach Post
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/pbpost-2023/pbpost-2023-09-08T22:11:51.306719-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/patriotledger.html">
-        The Patriot Ledger
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/patriotledger-2023/patriotledger-2023-09-09T07:50:19.995790-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/progressindex.html">
-        The Progress-Index
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/progressindex-2023/progressindex-2023-09-09T07:58:45.550243-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/projo.html">
-        The Providence Journal
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/projo-2023/projo-2023-09-08T11:03:06.707566-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/chieftainnews.html">
-        The Pueblo Chieftain
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/chieftainnews-2023/chieftainnews-2023-09-09T04:36:07.477091-06:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/registerguard.html">
-        The Register Guard
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/registerguard-2023/registerguard-2023-09-08T19:20:57.889150-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/salnews.html">
-        The Salinas Californian
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/salnews-2023/salnews-2023-09-08T19:22:22.891343-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/gosanangelo.html">
-        The San Angelo Standard-Times
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/gosanangelo-2023/gosanangelo-2023-09-08T20:43:37.938758-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/shelbystar.html">
-        The Shelby Star
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/shelbystar-2023/shelbystar-2023-09-08T22:26:08.064254-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/siskiyou_daily.html">
-        The Siskiyou Daily News
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/siskiyou_daily-2023/siskiyou_daily-2023-09-08T17:18:54.269170-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/spectrumnews.html">
-        The Spectrum
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/spectrumnews-2023/spectrumnews-2023-09-08T18:18:25.736564-06:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/staugrecord.html">
-        The St. Augustine Record
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/staugrecord-2023/staugrecord-2023-09-08T22:37:58.426096-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thestate.html">
-        The State
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thestate-2023/thestate-2023-09-08T22:49:38.071723-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/sjrbreaking.html">
-        The State Journal-Register
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/sjrbreaking-2023/sjrbreaking-2023-09-09T07:04:18.795000-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/telegraphga.html">
-        The Telegraph
+        Telegraph, The
       </a>
     </td>
     <td>
@@ -4821,8 +4807,8 @@ caption {
 
   <tr>
     <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/timestelegram.html">
-        The Times Telegram
+      <a href="https://palewi.re/docs/news-homepages/sites/texasmonthly.html">
+        Texas Monthly
       </a>
     </td>
     <td>
@@ -4830,49 +4816,7 @@ caption {
         🇺🇸
       </a>
     </td>
-    <td><a href="https://archive.org/download/timestelegram-2023/timestelegram-2023-09-08T08:27:55.865576-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/cjonline.html">
-        The Topeka Capital-Journal
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/cjonline-2023/cjonline-2023-09-09T05:25:42.047134-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/slotribune.html">
-        The Tribune
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/slotribune-2023/slotribune-2023-09-09T05:08:07.086290-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/lohud.html">
-        The Westchester County Journal News
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/lohud-2023/lohud-2023-09-08T21:58:15.341937-04:00.robots.txt">robots.txt</a></td>
+    <td><a href="https://archive.org/download/texasmonthly-2023/texasmonthly-2023-09-08T19:21:08.038122-05:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -4947,6 +4891,34 @@ caption {
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/timestelegram.html">
+        Times Telegram, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/timestelegram-2023/timestelegram-2023-09-08T08:27:55.865576-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/cjonline.html">
+        Topeka Capital-Journal, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/cjonline-2023/cjonline-2023-09-09T05:25:42.047134-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/tcpalm.html">
         Treasure Coast
       </a>
@@ -4985,6 +4957,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/tci_newsroom-2023/tci_newsroom-2023-09-08T20:18:48.549984-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/slotribune.html">
+        Tribune, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/slotribune-2023/slotribune-2023-09-09T05:08:07.086290-07:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -5349,6 +5335,20 @@ caption {
       </a>
     </td>
     <td><a href="https://archive.org/download/wbur-2023/wbur-2023-09-08T21:00:50.686179-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/lohud.html">
+        Westchester County Journal News, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/lohud-2023/lohud-2023-09-08T21:58:15.341937-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -6727,6 +6727,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/berkeleyside.html">
+        Berkeleyside, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/berkeleyside-2023/berkeleyside-2023-09-09T03:18:11.889413-07:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/berkshireeagle.html">
         Berkshire Eagle
       </a>
@@ -6807,6 +6821,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/bhamwatch-2023/bhamwatch-2023-09-09T05:20:22.631132-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/bistrib.html">
+        Bismarck Tribune, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/bistrib-2023/bistrib-2023-09-08T19:59:45.976608-05:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -7017,6 +7045,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/brooklynpaper-2023/brooklynpaper-2023-09-08T20:55:21.855336-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/brunswick_news.html">
+        Brunswick News, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/brunswick_news-2023/brunswick_news-2023-09-09T06:22:23.968862-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -7581,6 +7623,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thecityny.html">
+        City, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thecityny-2023/thecityny-2023-09-08T20:23:48.531866-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/civic_lex.html">
         CivicLex
       </a>
@@ -7889,6 +7945,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/courier_tribune.html">
+        Courier-Tribune, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/courier_tribune-2023/courier_tribune-2023-09-09T06:35:49.688210-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/cqnow.html">
         CQ
       </a>
@@ -8165,6 +8235,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/dailyneb-2023/dailyneb-2023-09-09T05:36:24.820586-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/jdnews.html">
+        Daily News - Jacksonville, NC, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/jdnews-2023/jdnews-2023-09-09T07:10:01.827283-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -8529,6 +8613,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/thedispatch-2023/thedispatch-2023-09-09T10:37:13.346327-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/lexdispatch.html">
+        Dispatch, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/lexdispatch-2023/lexdispatch-2023-09-08T21:59:16.927172-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -9457,6 +9555,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/georgiastraight.html">
+        Georgia Straight, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/ca.html">
+        🇨🇦
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/georgiastraight-2023/georgiastraight-2023-09-08T18:41:02.893464-07:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/gizmodo.html">
         Gizmodo
       </a>
@@ -9663,6 +9775,34 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/highcountrynews-2023/highcountrynews-2023-09-08T19:49:23.842229-06:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thehilltimes.html">
+        Hill Times, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/ca.html">
+        🇨🇦
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thehilltimes-2023/thehilltimes-2023-09-08T22:39:14.151109-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thehill.html">
+        Hill, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thehill-2023/thehill-2023-09-08T22:36:33.856327-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -9877,6 +10017,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/independent.html">
+        Independent, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
+        🇬🇧
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/independent-2023/independent-2023-09-09T12:11:18.690915+01:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/independent_ie.html">
         Independent.ie
       </a>
@@ -9943,6 +10097,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/infoamazoniabr-2023/infoamazoniabr-2023-09-09T08:10:42.568304-03:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/theinformation.html">
+        Information, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/theinformation-2023/theinformation-2023-09-08T19:37:30.488831-07:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -10465,6 +10633,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/kinstonfp.html">
+        Kinston/Jones Free Press, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/kinstonfp-2023/kinstonfp-2023-09-08T21:55:36.143674-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/kitv4.html">
         KITV4
       </a>
@@ -10853,6 +11035,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/lacrossetribune-2023/lacrossetribune-2023-09-09T06:17:46.006502-05:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/lagrangenews.html">
+        LaGrange Daily News, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/lagrangenews-2023/lagrangenews-2023-09-09T07:15:27.408167-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -11315,6 +11511,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/mdjonline-2023/mdjonline-2023-09-08T22:01:51.747081-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/themarkup.html">
+        Markup, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/themarkup-2023/themarkup-2023-09-08T22:42:21.140249-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -11795,6 +12005,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thenation.html">
+        Nation, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thenation-2023/thenation-2023-09-09T08:24:13.290575-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/scotnational.html">
         National
       </a>
@@ -12103,6 +12327,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/timesherald.html">
+        Newnan Times-Herald, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/timesherald-2023/timesherald-2023-09-08T20:30:55.484329-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/wrdw_wagt.html">
         News 12 NBC 26
       </a>
@@ -12351,6 +12589,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/progressoms-2023/progressoms-2023-09-08T23:17:36.543532-03:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/oaklandside.html">
+        Oaklandside, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/oaklandside-2023/oaklandside-2023-09-09T04:45:46.669165-07:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -12897,6 +13149,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/postandcourier-2023/postandcourier-2023-09-08T22:18:32.993430-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thepostregister.html">
+        Post Register, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thepostregister-2023/thepostregister-2023-09-08T06:24:25.036746-06:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -13783,6 +14049,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thesanews.html">
+        South African, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/za.html">
+        🇿🇦
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thesanews-2023/thesanews-2023-09-08T14:25:33.085552+02:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/shillsalmanac.html">
         South Hills Almanac
       </a>
@@ -14007,6 +14287,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/wvstatejournal.html">
+        State Journal, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/wvstatejournal-2023/wvstatejournal-2023-09-08T22:54:28.695371-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/sltimes.html">
         Storm Lake Times
       </a>
@@ -14045,6 +14339,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/studyfindsorg-2023/studyfindsorg-2023-09-08T20:20:11.867583-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thesun.html">
+        Sun, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
+        🇬🇧
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thesun-2023/thesun-2023-09-08T13:30:45.312968+01:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -14119,6 +14427,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
 
   <tr>
     <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/telegraph.html">
+        Telegraph, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
+        🇬🇧
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/telegraph-2023/telegraph-2023-09-09T01:19:36.200046+01:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://palewi.re/docs/news-homepages/sites/telemundochi.html">
         Telemundo Chicago
       </a>
@@ -14185,384 +14507,6 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/thahakhabar-2023/thahakhabar-2023-09-09T06:04:23.710397+05:45.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/berkeleyside.html">
-        The Berkeleyside
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/berkeleyside-2023/berkeleyside-2023-09-09T03:18:11.889413-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/bistrib.html">
-        The Bismarck Tribune
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/bistrib-2023/bistrib-2023-09-08T19:59:45.976608-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/brunswick_news.html">
-        The Brunswick News
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/brunswick_news-2023/brunswick_news-2023-09-09T06:22:23.968862-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thecityny.html">
-        The City
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thecityny-2023/thecityny-2023-09-08T20:23:48.531866-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/courier_tribune.html">
-        The Courier-Tribune
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/courier_tribune-2023/courier_tribune-2023-09-09T06:35:49.688210-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/jdnews.html">
-        The Daily News - Jacksonville, NC
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/jdnews-2023/jdnews-2023-09-09T07:10:01.827283-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/lexdispatch.html">
-        The Dispatch
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/lexdispatch-2023/lexdispatch-2023-09-08T21:59:16.927172-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/georgiastraight.html">
-        The Georgia Straight
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/ca.html">
-        🇨🇦
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/georgiastraight-2023/georgiastraight-2023-09-08T18:41:02.893464-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thehill.html">
-        The Hill
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thehill-2023/thehill-2023-09-08T22:36:33.856327-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thehilltimes.html">
-        The Hill Times
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/ca.html">
-        🇨🇦
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thehilltimes-2023/thehilltimes-2023-09-08T22:39:14.151109-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/independent.html">
-        The Independent
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
-        🇬🇧
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/independent-2023/independent-2023-09-09T12:11:18.690915+01:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/theinformation.html">
-        The Information
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/theinformation-2023/theinformation-2023-09-08T19:37:30.488831-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/kinstonfp.html">
-        The Kinston/Jones Free Press
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/kinstonfp-2023/kinstonfp-2023-09-08T21:55:36.143674-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/lagrangenews.html">
-        The LaGrange Daily News
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/lagrangenews-2023/lagrangenews-2023-09-09T07:15:27.408167-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/themarkup.html">
-        The Markup
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/themarkup-2023/themarkup-2023-09-08T22:42:21.140249-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thenation.html">
-        The Nation
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thenation-2023/thenation-2023-09-09T08:24:13.290575-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/timesherald.html">
-        The Newnan Times-Herald
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/timesherald-2023/timesherald-2023-09-08T20:30:55.484329-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/oaklandside.html">
-        The Oaklandside
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/oaklandside-2023/oaklandside-2023-09-09T04:45:46.669165-07:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thepostregister.html">
-        The Post Register
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thepostregister-2023/thepostregister-2023-09-08T06:24:25.036746-06:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thesanews.html">
-        The South African
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/za.html">
-        🇿🇦
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thesanews-2023/thesanews-2023-09-08T14:25:33.085552+02:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/wvstatejournal.html">
-        The State Journal
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/wvstatejournal-2023/wvstatejournal-2023-09-08T22:54:28.695371-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thesun.html">
-        The Sun
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
-        🇬🇧
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thesun-2023/thesun-2023-09-08T13:30:45.312968+01:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/telegraph.html">
-        The Telegraph
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
-        🇬🇧
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/telegraph-2023/telegraph-2023-09-09T01:19:36.200046+01:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thetimes.html">
-        The Times
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
-        🇬🇧
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thetimes-2023/thetimes-2023-09-09T01:34:19.284384+01:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/timesenterprise.html">
-        The Times-Enterprise
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/timesenterprise-2023/timesenterprise-2023-09-08T22:44:23.834039-04:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/thetriibe.html">
-        The TriiBE
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/thetriibe-2023/thetriibe-2023-09-08T07:28:12.204310-05:00.robots.txt">robots.txt</a></td>
-  </tr>
-
-  <tr>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/sites/theweek.html">
-        The Week
-      </a>
-    </td>
-    <td>
-      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
-        🇺🇸
-      </a>
-    </td>
-    <td><a href="https://archive.org/download/theweek-2023/theweek-2023-09-08T08:26:08.400649-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -14647,6 +14591,34 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/time-2023/time-2023-09-09T08:27:19.946463-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thetimes.html">
+        Times, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/gb.html">
+        🇬🇧
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thetimes-2023/thetimes-2023-09-09T01:34:19.284384+01:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/timesenterprise.html">
+        Times-Enterprise, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/timesenterprise-2023/timesenterprise-2023-09-08T22:44:23.834039-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -14773,6 +14745,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/thejaxtrib-2023/thejaxtrib-2023-09-08T20:23:48.353847-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/thetriibe.html">
+        TriiBE, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/thetriibe-2023/thetriibe-2023-09-08T07:28:12.204310-05:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>
@@ -15235,6 +15221,20 @@ The following 727 sites have yet to ask GPTBot to stay away.
       </a>
     </td>
     <td><a href="https://archive.org/download/weatherchannel-2023/weatherchannel-2023-09-08T22:53:24.098804-04:00.robots.txt">robots.txt</a></td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/sites/theweek.html">
+        Week, The
+      </a>
+    </td>
+    <td>
+      <a href="https://palewi.re/docs/news-homepages/countries/us.html">
+        🇺🇸
+      </a>
+    </td>
+    <td><a href="https://archive.org/download/theweek-2023/theweek-2023-09-08T08:26:08.400649-04:00.robots.txt">robots.txt</a></td>
   </tr>
 
   <tr>

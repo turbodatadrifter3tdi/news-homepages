@@ -339,6 +339,11 @@ def robotstxt():
         robotstxt_df, on="handle", how="inner"
     )
 
+    # If the `name` field starts with "The ", move it to the end after a comma
+    merged_df["name"] = merged_df.name.apply(
+        lambda s: s if not s.startswith("The ") else s[4:] + ", The"
+    )
+
     # Get only the rules that pertain to GPTBot
     disallow_list = merged_df[
         (merged_df.user_agent.str.upper().str.strip() == "GPTBOT")
