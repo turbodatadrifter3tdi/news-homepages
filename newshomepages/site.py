@@ -322,10 +322,10 @@ def robotstxt():
         dtype={
             "handle": str,
             "url": str,
+            "date": str,
             "user_agent": str,
             "rules": str,
         },
-        parse_dates=["date"],
     )
 
     # Assert that only each handle has only one url
@@ -381,7 +381,9 @@ def robotstxt():
             allow_list.to_dict(orient="records"), key=lambda s: s["name"].lower()
         ),
     )
-    _write_template("robotstxt.md", context)
+    _write_template(
+        "openai-gptbot-robotstxt.md", context, output_name="openai-gptbot-robotstxt.md"
+    )
 
 
 @cli.command()
