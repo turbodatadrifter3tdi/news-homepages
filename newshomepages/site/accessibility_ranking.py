@@ -6,7 +6,7 @@ import pandas as pd
 from rich import print
 
 from .. import utils
-from .utils import _write_template
+from .utils import _get_cached_url, _write_template
 
 
 @click.group()
@@ -16,15 +16,15 @@ def cli():
 
 
 # Generate a distribution for our chart
-def _round(val):
-    return np.floor(np.floor(val * 1000) / 100) * 10
+def _round(val: float) -> int:
+    return int(np.floor(np.floor(val * 1000) / 100) * 10)
 
 
 @cli.command()
 def accessibility_ranking():
     """Create page ranking sites by Lighthouse accessibility score."""
     # Get the data
-    accessibility_df = utils.get_extract_df(
+    accessibility_df = _get_cached_url(
         "lighthouse-analysis.csv",
         usecols=[
             "handle",
@@ -45,15 +45,22 @@ def accessibility_ranking():
         ~pd.isnull(accessibility_df.accessibility_median)
     ].copy()
 
+    # Convert rank to an integer
+    accessibility_df.accessibility_rank = accessibility_df.accessibility_rank.astype(
+        int
+    )
+
     # Calculate the grand total
     median = accessibility_df.accessibility_median.median() * 100
 
     accessibility_df[
         "accessibility_decile"
     ] = accessibility_df.accessibility_median.apply(_round)
-    histogram_df = accessibility_df.accessibility_decile.value_counts().reset_index()
-    histogram_df["accessibility_decile"] = histogram_df["accessibility_decile"].astype(
-        int
+    histogram_df = (
+        accessibility_df.groupby("accessibility_decile")
+        .size()
+        .rename("n")
+        .reset_index()
     )
     histogram_df = histogram_df.merge(
         pd.DataFrame(range(0, 101, 10), columns=["accessibility_decile"]),

@@ -7,7 +7,7 @@ As part of its archiving routine, our system conducts routine audits of code qua
 
 The value is the weighted average of a basket of speed and efficiency metrics gathered by Lighthouse. Scores of 90 or greater are considered good. Scores of 50 to 89 are described as needing improvement. Scores below 50 are rated as poor.
 
-This past week the median across all sites was {{ median|int }}. Here's the distribution of scores.
+This past week the median across all sites was {{ median|int }}. Here's the distribution of scores:
 
 <div id="vis" style="width: 100%; height: 250px;"></div>
   <script>
@@ -124,7 +124,7 @@ This past week the median across all sites was {{ median|int }}. Here's the dist
       "type": "quantitative"
     },
     "y": {
-      "field": "performance_decile",
+      "field": "n",
       "title": "Number of sites",
       "type": "quantitative"
     }
@@ -140,7 +140,7 @@ This past week the median across all sites was {{ median|int }}. Here's the dist
     vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
   </script>
 
-Here's a ranking of all sites from best to worst.
+Here's a ranking of all sites from best to worst:
 
 <table class="colwidths-auto docutils align-default">
  <thead>
@@ -155,7 +155,7 @@ Here's a ranking of all sites from best to worst.
   <tr>
     <td>{{ obj.performance_rank }}</td>
     <td>
-        <a href="https://palewi.re/docs/news-homepages/sites/{{ obj.handle.lower() }}.html">
+        <a href="../sites/{{ obj.handle.lower() }}.html">
             {{ obj.name }}
         </a>
     </td>

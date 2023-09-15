@@ -4,6 +4,8 @@ from pathlib import Path
 
 import jinja2
 import pandas as pd
+from retry import retry
+from rich import print
 
 from .. import utils
 
@@ -52,3 +54,32 @@ def _count_by_date(df: pd.DataFrame, field: str) -> pd.DataFrame:
 
     # Return it back
     return trimmed
+
+
+@retry(tries=3, delay=15, backoff=2)
+def _get_cached_url(name: str, usecols=None, dtype=None) -> pd.DataFrame:
+    """Read in the requested extracts CSV as a dataframe."""
+    # Check if the file is already in our local cache
+    cache_dir = Path("~/.cache/news-homepages").expanduser()
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    cache_path = cache_dir / name
+    if cache_path.exists():
+        print(f"Using cached copy of {name}")
+        df = pd.read_csv(
+            cache_path,
+            usecols=usecols,
+            dtype=dtype,
+        )
+    else:
+        # If not, download it, first by setting the URL
+        url = f"https://archive.org/download/news-homepages-extracts/{name}"
+        print(f"Fetching {url}")
+        df = pd.read_csv(
+            url,
+            usecols=usecols,
+            dtype=dtype,
+        )
+        df.to_csv(cache_path, index=False)
+
+    # Return the dataframe
+    return df

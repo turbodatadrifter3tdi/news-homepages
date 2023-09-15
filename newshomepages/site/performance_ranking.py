@@ -6,7 +6,7 @@ import pandas as pd
 from rich import print
 
 from .. import utils
-from .utils import _write_template
+from .utils import _get_cached_url, _write_template
 
 
 @click.group()
@@ -19,7 +19,7 @@ def cli():
 def performance_ranking():
     """Create page ranking sites by Lighthouse performance score."""
     # Read in our dataset
-    performance_df = utils.get_extract_df(
+    performance_df = _get_cached_url(
         "lighthouse-analysis.csv",
         usecols=[
             "handle",
@@ -35,6 +35,9 @@ def performance_ranking():
         },
     )
 
+    # Convert the rank to an integer
+    performance_df.performance_rank = performance_df.performance_rank.astype(int)
+
     # Filter out nulls
     performance_df = performance_df[
         ~pd.isnull(performance_df.performance_median)
@@ -44,14 +47,15 @@ def performance_ranking():
     median = performance_df.performance_median.median() * 100
 
     # Generate a distribution for our chart
-    def _round(val):
-        return np.floor(np.floor(val * 1000) / 100) * 10
+    def _round(val: float) -> int:
+        return int(np.floor(np.floor(val * 1000) / 100) * 10)
 
     performance_df["performance_decile"] = performance_df.performance_median.apply(
         _round
     )
-    histogram_df = performance_df.performance_decile.value_counts().reset_index()
-    histogram_df["performance_decile"] = histogram_df["performance_decile"].astype(int)
+    histogram_df = (
+        performance_df.groupby("performance_decile").size().rename("n").reset_index()
+    )
     histogram_df = histogram_df.merge(
         pd.DataFrame(range(0, 101, 10), columns=["performance_decile"]),
         how="right",
