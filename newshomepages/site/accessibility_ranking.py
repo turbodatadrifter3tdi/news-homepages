@@ -6,7 +6,7 @@ import pandas as pd
 from rich import print
 
 from .. import utils
-from .utils import _get_cached_url, _write_template
+from .utils import _write_template
 
 
 @click.group()
@@ -24,7 +24,7 @@ def _round(val: float) -> int:
 def accessibility_ranking():
     """Create page ranking sites by Lighthouse accessibility score."""
     # Get the data
-    accessibility_df = _get_cached_url(
+    accessibility_df = utils.get_extract_df(
         "lighthouse-analysis.csv",
         usecols=[
             "handle",

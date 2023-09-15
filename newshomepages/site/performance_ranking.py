@@ -6,7 +6,7 @@ import pandas as pd
 from rich import print
 
 from .. import utils
-from .utils import _get_cached_url, _write_template
+from .utils import _write_template
 
 
 @click.group()
@@ -19,7 +19,7 @@ def cli():
 def performance_ranking():
     """Create page ranking sites by Lighthouse performance score."""
     # Read in our dataset
-    performance_df = _get_cached_url(
+    performance_df = utils.get_extract_df(
         "lighthouse-analysis.csv",
         usecols=[
             "handle",
