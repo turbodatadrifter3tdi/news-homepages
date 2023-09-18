@@ -1,7 +1,7 @@
 ```{include} _templates/nav.html
 ```
 
-# News Homepages
+# homepages.news
 
 An open-source archive that gathers, saves, shares and analyzes news homepages
 
