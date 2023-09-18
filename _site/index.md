@@ -17,6 +17,7 @@ performance
 drudge
 openai-gptbot-robotstxt
 extracts
+status-report
 ```
 
 ## Directory
@@ -29,7 +30,6 @@ sources
 countries
 languages
 bundles
-status-report
 ```
 
 ## About
