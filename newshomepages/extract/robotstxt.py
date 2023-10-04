@@ -117,7 +117,6 @@ def robotstxt(
         return data
 
     # fetch the cached robots.txt file for the site
-    # url_y because that's the robotstxt_df["url"], which was renamed in the merge
     filtered_df["robotstxt"] = filtered_df["url"].apply(_get_url)
 
     # Using the sqlite-robotsxt SQLite extension for parsing the robots.txt file
