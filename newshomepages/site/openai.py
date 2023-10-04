@@ -1,5 +1,5 @@
+"""Create a page tracking AI blockers based on most recently scraped robots.txt files."""
 import click
-import iso3166
 import pandas as pd
 from rich import print
 
@@ -9,31 +9,19 @@ from .utils import _write_template
 
 @click.group()
 def cli():
-    """Create the openai page based on most recently scrape robots.txt files."""
+    """Create a page tracking AI blockers based on most recently scraped robots.txt files."""
     pass
 
 
 @cli.command()
-def openai():
-    """Create the openai page based on most recently scrape robots.txt files."""
+@click.option("--no-cache", "no_cache", default=False, is_flag=True)
+def openai(no_cache=False):
+    """Create a page tracking AI blockers based on most recently scraped robots.txt files."""
+    # Set our cache setting
+    use_cache = no_cache is False
+
     # Read in our dataset
-    robotstxt_df = utils.get_extract_df(
-        "robotstxt-sample.csv",
-        usecols=[
-            "handle",
-            "url",
-            "date",
-            "user_agent",
-            "rules",
-        ],
-        dtype={
-            "handle": str,
-            "url": str,
-            "date": str,
-            "user_agent": str,
-            "rules": str,
-        },
-    )
+    robotstxt_df = utils.get_extract_df("robotstxt-sample.csv", use_cache=use_cache)
 
     # Smooth out the handle for later joins
     robotstxt_df.handle = robotstxt_df.handle.str.lower()
@@ -66,7 +54,7 @@ def openai():
     # Merge in site metadata
     site_df = utils.get_site_df()
     site_df.handle = site_df.handle.str.lower()
-    merged_df = site_df[["name", "handle", "country"]].merge(
+    merged_df = site_df[["name", "handle", "country", "flag"]].merge(
         disallow_pivot, on="handle", how="left"
     )
     assert len(merged_df) == len(site_df)
@@ -82,17 +70,6 @@ def openai():
     merged_df["name"] = merged_df.name.apply(
         lambda s: s if not s.startswith("The ") else s[4:] + ", The"
     )
-
-    def flag_emoji(name):
-        alpha = iso3166.countries.get(name).alpha2
-
-        def box(ch):
-            return chr(ord(ch) + 0x1F1A5)
-
-        return box(alpha[0]) + box(alpha[1])
-
-    # Add the flag emoji
-    merged_df["flag"] = merged_df.country.apply(flag_emoji)
 
     # For each of the bots, count how many sites block it
     bot_counts = {}

@@ -182,6 +182,23 @@ def get_local_time(site: dict) -> datetime:
     return now.astimezone(tz)
 
 
+def get_flag_emoji(alpha2: str) -> str:
+    """Get the flag emoji for the provided country.
+
+    Args:
+        alpha2 (str): The two-letter ISO code for the country.
+
+    Returns:
+        A string containing the emoji.
+    """
+    assert len(alpha2) == 2
+
+    def _box(ch):
+        return chr(ord(ch) + 0x1F1A5)
+
+    return _box(alpha2[0]) + _box(alpha2[1])
+
+
 def parse_archive_url(url: str) -> dict:
     """Parse the handle and timestamp from an archive.org URL.
 
@@ -296,6 +313,9 @@ def get_site_df() -> pd.DataFrame:
     # Use the country ISO code to pull the country name
     df["country_name"] = df.country.apply(lambda x: iso3166.countries.get(x).name)
 
+    # Use the country ISO code to get the flag emoji
+    df["flag"] = df.country.apply(get_flag_emoji)
+
     # Do the same for the language
     df["language_name"] = df.language.apply(
         lambda x: iso639.Language.from_part1(x).name
@@ -333,6 +353,7 @@ def get_country_df() -> pd.DataFrame:
     country_df["timezone_list"] = country_df.alpha2.apply(
         lambda x: pytz.country_timezones.get(x, [])
     )
+    country_df["flag"] = country_df.alpha2.apply(get_flag_emoji)
     return country_df
 
 
