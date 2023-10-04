@@ -111,7 +111,7 @@ def robotstxt(
                 print(f":pencil: Writing to cached file {output_path}")
 
             # Wait a bit
-            time.sleep(0.25)
+            time.sleep(0.05)
 
         # Return dataframe
         return data
