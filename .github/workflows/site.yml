@@ -32,26 +32,34 @@ jobs:
 
       - id: install-python-dependencies
         name: Install Python dependencies
-        run: pipenv install --dev --python=`which python`
+        run: pipenv sync --dev
         shell: bash
 
-      - id: make
-        name: Make
+      - id: render-templates
+        name: Render site templates
         run: pipenv run make site
         shell: bash
 
-      - id: build-docs
-        name: Build
-        uses: ammaraskar/sphinx-action@master
-        with:
-          docs-folder: "_site/"
+      - id: build-site
+        name: Build site
+        run: cd _site && pipenv run make html
+        shell: bash
 
-      - id: upload-docs
-        name: Upload
-        uses: shallwefootball/s3-upload-action@master
+      - id: configure-aws
+        name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws_key_id: ${{ secrets.PALEWIRE_DOCS_AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.PALEWIRE_DOCS_AWS_SECRET_ACCESS_KEY }}
-          aws_bucket: ${{ secrets.PALEWIRE_DOCS_AWS_BUCKET }}
-          source_dir: _site/_build/html/
-          destination_dir: news-homepages
+          aws-access-key-id: ${{ secrets.PALEWIRE_DOCS_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.PALEWIRE_DOCS_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - id: npm-deploy
+        name: Upload the prepared files
+        uses: datadesk/delivery-deploy-action@v1
+        with:
+          bucket: ${{ secrets.PALEWIRE_DOCS_AWS_BUCKET }}
+          base-path: news-homepages
+          dir: _site/_build/html/
+          should-cache: false
+          use-accelerate-endpoint: false
+          public: true
