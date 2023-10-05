@@ -223,7 +223,6 @@ Field | Description
 :---- | :----------
 `identifier` | The unique identifier for the Internet Archive item
 `handle` | The Twitter handle of the outlet. Can be used to merge with other files
-`file_name` | The name of the file in the Internet Archive item
 `date` | The date when the file was captured
 `url` | The URL to archived file on archive.org
 `user_agent` | A user agent declared in the robots.txt file
