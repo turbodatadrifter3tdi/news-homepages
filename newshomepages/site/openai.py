@@ -35,6 +35,7 @@ def openai(no_cache=False):
         # "CHATGPT-USER",
         "CCBOT",
         "GOOGLE-EXTENDED",
+        # "CLAUDE-WEB"
     ]
 
     # Filter down to rules that make that list

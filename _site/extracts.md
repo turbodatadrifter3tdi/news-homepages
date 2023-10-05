@@ -204,14 +204,30 @@ URL: [archive.org/download/news-homepages-extracts/robotstxt-files.csv](https://
 
 Field | Description
 :---- | :----------
-`identifier` | The unique identifier created by Internet Archive
+`identifier` |The unique identifier for the Internet Archive item
 `handle` | The Twitter handle of the outlet. Can be used to merge with other files
-`file_name` | The name of the file in the Internet Archive
+`file_name` | The name of the file in the Internet Archive item
 `url` | The URL of the file
 `mtime` | The time the file was last modified by the Internet Archive in UTC time
 `size` | The size of the file in bytes
 `md5` | A [checksum](https://en.wikipedia.org/wiki/Checksum) for the file created using [md5](https://en.wikipedia.org/wiki/Md5sum) hashing
 `sha1` | A [checksum](https://en.wikipedia.org/wiki/Checksum) for the file created using [sh1](https://en.wikipedia.org/wiki/Sha1sum) hashing
+
+## robotstxt-sample.csv
+
+The rules extracted from the latest robots.txt file archived for each site.
+
+URL: [archive.org/download/news-homepages-extracts/robotstxt-sample.csv](https://archive.org/download/news-homepages-extracts/robotstxt-sample.csv)
+
+Field | Description
+:---- | :----------
+`identifier` | The unique identifier for the Internet Archive item
+`handle` | The Twitter handle of the outlet. Can be used to merge with other files
+`file_name` | The name of the file in the Internet Archive item
+`date` | The date when the file was captured
+`url` | The URL to archived file on archive.org
+`user_agent` | A user agent declared in the robots.txt file
+`rules` | The rules declared for the user agent
 
 ## wayback-files.csv
 
