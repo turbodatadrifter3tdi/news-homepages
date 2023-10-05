@@ -67,7 +67,6 @@ setup(
             "newshomepages-batch=newshomepages.batch:cli",
             "newshomepages-discorder=newshomepages.discorder:cli",
             "newshomepages-extract=newshomepages.extract:cli",
-            "newshomepages-html=newshomepages.html:cli",
             "newshomepages-hyperlinks=newshomepages.hyperlinks:cli",
             "newshomepages-mosaic=newshomepages.mosaic:cli",
             "newshomepages-robotstxt=newshomepages.robotstxt:cli",
