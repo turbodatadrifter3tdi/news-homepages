@@ -42,10 +42,6 @@ Commands
    :prog: extract
    :nested: full
 
-.. click:: newshomepages.html:cli
-   :prog: html
-   :nested: full
-
 .. click:: newshomepages.hyperlinks:cli
    :prog: hyperlinks
    :nested: full
