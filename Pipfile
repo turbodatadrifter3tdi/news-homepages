@@ -57,6 +57,8 @@ xlwt = "*"
 pytest-env = "*"
 pytest-cov = "*"
 pytest-optional-tests = "*"
+pytest-vcr = "*"
+pytest-xdist = "*"
 
 [requires]
 python_version = "3.9"

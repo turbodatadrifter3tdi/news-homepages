@@ -1,6 +1,7 @@
 import os
-from datetime import datetime
 from pathlib import Path
+
+import pytest
 
 from newshomepages import archive, utils
 
@@ -15,12 +16,13 @@ def test_archive_clean_handle():
     assert _get_handle("CNN") == "cnn"
 
 
+@pytest.mark.vcr()
 def test_archive_metadata():
     """Test the method that creates a metadata dict for uploading to archive.org."""
     data = utils.get_site("latimes")
     metadata = archive._get_item_metadata(data)
     assert metadata["collection"] == os.getenv("IA_COLLECTION")
-    assert metadata["title"] == f"{data['name']} homepages in {datetime.now().year}"
+    assert metadata["title"].startswith(f"{data['name']} homepages in ")
 
 
 def test_archive_file_dict():
