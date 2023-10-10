@@ -1,7 +1,7 @@
 ---
 name: Report a broken site
 about: Is a screenshot busted? Are there popups or ads in the way? Let's get it fixed.
-title: Fix [SITE]
+title: "[Fix site]: "
 labels: bug, good first issue, help wanted
 assignees: ''
 
