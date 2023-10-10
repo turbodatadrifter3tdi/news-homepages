@@ -3,9 +3,10 @@
 
 # Adding sites and bundles
 
-```{contents} Sections
-:local:
-:depth: 1
+This page explains how to add new sites and bundles to the project by making a code contribution to the open-source repository.
+
+```{note}
+If you lack the technical skills or time to add sources yourself, you can always make a request of the project's maintainers by [filling out this form](https://github.com/palewire/news-homepages/issues/new?assignees=palewire&labels=enhancement%2Cgood+first+issue%2Chelp+wanted&projects=&template=add-a-site.yaml&title=%5BAdd+site%5D%3A+) on GitHub or by emailing [b@palewi.re](mailto:b@palewi.re).
 ```
 
 ## Adding a site
@@ -79,8 +80,4 @@ jobs:
     with:
       bundle: your-bundle-slug
     secrets: inherit
-```
-
-```{note}
-If you lack the technical skills or time to add sources yourself, you can always make a request of the project's maintainers by [submitting a feature request](https://github.com/palewire/news-homepages/issues) on GitHub or by emailing [b@palewi.re](mailto:b@palewi.re).
 ```
