@@ -87,7 +87,6 @@ setup(
         "python-telegram-bot",
         "discord.py",
         "playwright",
-        "savepagenow",
         "bs4",
         "html5lib",
         "jinja2",
