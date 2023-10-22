@@ -62,7 +62,7 @@ setup(
     entry_points={
         "console_scripts": [
             "newshomepages-accessibility=newshomepages.accessibility:cli",
-            "newshomepages-analyze=newshomepages.adstxt:cli",
+            "newshomepages-adstxt=newshomepages.adstxt:cli",
             "newshomepages-analyze=newshomepages.analyze:cli",
             "newshomepages-archive=newshomepages.archive:cli",
             "newshomepages-batch=newshomepages.batch:cli",
