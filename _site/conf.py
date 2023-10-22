@@ -11,7 +11,7 @@ sys.path.insert(0, str(THIS_DIR.parent))
 extensions = [
     "myst_parser",
     "sphinx.ext.autodoc",
-    "sphinxcontrib.napoleon",
+    "sphinx.ext.napoleon",
     "sphinx_click",
 ]
 templates_path = ["_templates"]
