@@ -9,21 +9,35 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - Mozilla/5.0 (Macintosh; Intel Mac OS X 12_4) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/103.0.0.0 Safari/537.36
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/117.0.0.0 Safari/537.36
     method: GET
     uri: https://www.latimes.com/robots.txt
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA+2UsW4bMQyGdwN+B88HyLd7KVIEyNQiQJMH0Em0RPROJETaF+fpI9cZrLPcrB06
-        3v/9IiVR/70KZGMDJN1tuvXqEcWOI827TS9gs4uVlMEhg7SQizYFGDLNpWBFNGL2bLOeCjmig4p2
-        X3BHaY+hX6y5qJXo390+LGwtTUHUKEw8Wq1bnUndSInR9d23uhEAj5h+o+8b9yWHEEqdRdP7TI4B
-        p3L/nMlVIOIR6gYB1ITyAfm0zzZMZWb1xIKYIqxXr1czfSIKIwyk5ifMUm/LHIIz3TbqNFbADnRY
-        3IQbuOXs7oGB+27RzHpRyqdGEUliLNcaR1L6PG1dOdvk+TCMKBHTzcv4K5ZIzI1FbZ0tesMkKkv/
-        PdLIRfc/LP9mWIQpCWXwN4/hCtRZeplRFXIJ03r18Olfen6AR3seUIIs5pK++26P4uhPvast3ET4
-        +eV7w/ILy2As7zZRlWXX9/M8b8uccALZOpp6uRi2b+e8felO5fdgrpZ8ABfrXJEZBgAA
+      string: "User-agent: *\r\nDisallow: /search\r\nDisallow: /recipes/search\r\nDisallow:
+        /changebrowser\r\nDisallow: /thirdpartyservice\r\nDisallow: /*/thirdpartyservice\r\nDisallow:
+        /config/\r\nDisallow: /*/config\r\nDisallow: /dzcfg\r\nDisallow: /*/dzcfg\r\nDisallow:
+        /*/test-template\r\nDisallow: /test/\r\nDisallow: /topic/*?\r\nDisallow: /deeplinkid/\r\nDisallow:
+        /searchsuggest\r\nDisallow: /*/searchsuggest\r\nDisallow: /svgimageproc\r\nDisallow:
+        /hive/\r\nDisallow: /get-galleryfragment*\r\nDisallow: /gs-*\r\n\r\nUser-agent:
+        Googlebot-News\r\nDisallow: /*-ugc-*.html\r\nDisallow: /about/\r\nDisallow:
+        /cbp-*.html\r\nDisallow: /*/cbp-*.html\r\nDisallow: /bp/*\r\nDisallow: /*-adstory.html\r\nDisallow:
+        /*sns-ap\r\nDisallow: /*photogallery\r\nDisallow: /brandpublishing/\r\nDisallow:
+        /*/brandpublishing/\r\nDisallow: /shopping/\r\nDisallow: /*/shopping/\r\nDisallow:
+        /paid-posts/\r\nDisallow: /*/paid-posts/\r\nDisallow: /search\r\nDisallow:
+        /*/search\r\nDisallow: /changebrowser\r\nDisallow: /thirdpartyservice\r\nDisallow:
+        /*/thirdpartyservice\r\nDisallow: /config/\r\nDisallow: /*/config\r\nDisallow:
+        /dzcfg\r\nDisallow: /*/dzcfg\r\nDisallow: /*/test-template\r\nDisallow: /test/\r\nDisallow:
+        /topic/*?\r\nDisallow: /deeplinkid/\r\nDisallow: /searchsuggest\r\nDisallow:
+        /*/searchsuggest\r\nDisallow: /svgimageproc\r\nDisallow: /hive/\r\nDisallow:
+        /get-galleryfragment*\r\nDisallow: /sponsored/\r\nDisallow: /*/sponsored/\r\n\r\nUser-agent:
+        Twitterbot\r\nAllow: /\r\n\r\nUser-agent: Mediapartners-Google\r\nAllow: /\r\n\r\nUser-agent:
+        discobot\r\nDisallow: /\r\n\r\nUser-agent: GPTBot\r\nDisallow: /\r\n\r\nSitemap:
+        https://www.latimes.com/sitemap.xml\r\nSitemap: https://www.latimes.com/news-sitemap.xml"
     headers:
+      Age:
+      - '55'
       Alt-Svc:
       - h3=":443"; ma=86400
       Cache-Control:
@@ -39,7 +53,7 @@ interactions:
       Content-Type:
       - text/plain
       Date:
-      - Mon, 09 Oct 2023 14:50:23 GMT
+      - Fri, 20 Oct 2023 18:39:30 GMT
       Server:
       - N/A
       Strict-Transport-Security:
@@ -47,13 +61,13 @@ interactions:
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 82aead0d8a841048b40ef44eb4a53bd0.cloudfront.net (CloudFront)
+      - 1.1 9fd0fd3ab227f7918e7e92e96b386326.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - vVWLiKb-V9jYpvDeoCIUO9svQKwS5eR-xwMG24j-vIEzw7-dDLWKWQ==
+      - y9vxqrJX3wr6gbjjq5oFBKtcBPppMz4ahryo02CJgEos-vd0F40kdg==
       X-Amz-Cf-Pop:
-      - JNB50-C1
+      - ORD51-C1
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
     status:
       code: 200
       message: OK
