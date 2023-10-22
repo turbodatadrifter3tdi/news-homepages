@@ -8,5 +8,5 @@ from newshomepages import adstxt
 def test_adstxt_cli(tmp_path):
     """Test a single ads.txt request."""
     runner = CliRunner()
-    result = runner.invoke(adstxt.cli, ["latimes", "-o", tmp_path])
+    result = runner.invoke(adstxt.cli, ["reuters", "-o", tmp_path])
     assert result.exit_code == 0

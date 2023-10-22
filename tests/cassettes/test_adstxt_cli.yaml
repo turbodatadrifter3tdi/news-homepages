@@ -1,0 +1,368 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/117.0.0.0 Safari/537.36
+    method: GET
+    uri: https://www.reuters.com/ads.txt
+  response:
+    body:
+      string: ''
+    headers:
+      Akamai-True-TTL:
+      - '-1'
+      Cache-Control:
+      - private, max-age=60
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Sun, 22 Oct 2023 18:22:54 GMT
+      Expires:
+      - Sun, 22 Oct 2023 18:23:54 GMT
+      Location:
+      - https://a.pub.network/reuters-com/ads.txt
+      Server:
+      - AkamaiGHost
+      Server-Timing:
+      - cdn-cache; desc=HIT
+      - edge; dur=1
+      - ak_p; desc="1697998974719_387977615_625184592_632_11094_6_0_-";dur=1
+      Set-Cookie:
+      - reuters-geo={"country":"-", "region":"-"}; path=/; secure
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 cae77502d3847ca96378af9649c50cb4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - RbakwU-58XDCpkJpn5ozhC8HG8qvkqkkOCM-G68NRVm2TZC2b-EG7Q==
+      X-Amz-Cf-Pop:
+      - EWR50-C1
+      X-Cache:
+      - Miss from cloudfront
+      x-arc-request-id:
+      - 0.8f112017.1697998974.25438f50
+    status:
+      code: 301
+      message: Moved Permanently
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/117.0.0.0 Safari/537.36
+    method: GET
+    uri: https://a.pub.network/reuters-com/ads.txt
+  response:
+    body:
+      string: "OWNERDOMAIN=thomsonreuters.com\nMANAGERDOMAIN=freestar.com\nfreestar.com,
+        792, DIRECT\n\n# Freestar.io ads.txt File\n# Last updated 10-17-23\n\n\n#
+        ads.txt to be placed in the root level of the domain\n# example: yourdomain.com/ads.txt\n#freestar\n\n#GoogleAdX\ngoogle.com,
+        pub-3605257360853185, RESELLER, f08c47fec0942fa0\n\n#AdaptMX\namxrtb.com,
+        105199372, DIRECT\nindexexchange.com,191503,RESELLER,50b1c356f2c5c8fc\nappnexus.com,12290,RESELLER,f5ab79cb980f11d1\nyahoo.com,49648,RESELLER\npubmatic.com,
+        158355, RESELLER\nrubiconproject.com, 23844, RESELLER\nlijit.com, 260380,
+        RESELLER\n\n#Amazon\naps.amazon.com,0ab198dd-b265-462a-ae36-74e163ad6159,DIRECT\ninmobi.com,c9b845dbfad04876ae2e709f93b08258,RESELLER,83e75a7ae333ca9d\nonetag.com,770a440e65869c2,RESELLER\n\n#Baidu\nmediago.io,
+        00f72035e8740ca084673e227e8e7bf7, DIRECT #display\nmediago.io, 904e4a584b24025f618a32f9bcff9cc9,
+        DIRECT #native\n\n#Blockthrough Demand\nblockthrough.com, 5714937848528896,
+        DIRECT\nonetag.com, 75804861b76a852, RESELLER\nContextweb.com, 562926, RESELLER,
+        89ff185a4c4e857c\n\n#Colossus\nsupply.colossusssp.com, 433, DIRECT, 6c5b49d96ec1b458\nappnexus.com,
+        10490, RESELLER, f5ab79cb980f11d1\nyieldmo.com, 3078438591206989879, RESELLER\n\n#Connatix\nconnatix.com,
+        101804, DIRECT, 2af98acdee0e81ed\ngoogle.com, pub-1929615694373103, RESELLER,
+        f08c47fec0942fa0\nrubiconproject.com, 19564, RESELLER, 0bfd66d529a55807\npubmatic.com,
+        156592, RESELLER, 5d62403b186f2ace\npubmatic.com, 163106, RESELLER, 5d62403b186f2ace\ngoogle.com,
+        pub-5717092533913515, RESELLER, f08c47fec0942fa0 #NPMpartners\ngannett.com,
+        22597229605, RESELLER\nopenx.com, 539496816, RESELLER, 6a698e2ec38604c6\nindexexchange.com,
+        190549, RESELLER, 50b1c356f2c5c8fc\ntriplelift.com, 12200, RESELLER, 6c33edb13117fd86\ntelaria.com,
+        cd009, RESELLER, 1a4e959a1b50034a\nfreewheel.tv, 1064705, RESELLER\nmedia.net,
+        8CUP5F2LD, RESELLER\n\n#Criteo\ncriteo.com, B-061740, DIRECT, 9fac4a4a87c2a44f\nthemediagrid.com,
+        I1ZD25, DIRECT, 35d5010d7789b49d\n\n#Fluct\nadingo.jp, 23401, DIRECT\npubmatic.com,
+        156313, RESELLER, 5d62403b186f2ace\n\n#Gumgum\ngumgum.com, 12907, DIRECT,
+        ffdef49475d318a9\nrubiconproject.com, 23434, RESELLER, 0bfd66d529a55807\npubmatic.com,
+        157897, RESELLER, 5d62403b186f2ace\nappnexus.com, 2758, RESELLER, f5ab79cb980f11d1\ncontextweb.com,
+        558355, RESELLER, 89ff185a4c4e857c\nopenx.com, 537149485, RESELLER, 6a698e2ec38604c6\ngoogle.com,
+        pub-3848273848634341, RESELLER, f08c47fec0942fa0\n\n#Improve Digital\nimprovedigital.com,
+        1965, DIRECT #ob\n\n#IndexExchange\nindexexchange.com, 184310, DIRECT, 50b1c356f2c5c8fc
+        #prebid\nindexexchange.com, 186431, DIRECT, 50b1c356f2c5c8fc #ob\nindexexchange.com,
+        193334, DIRECT, 50b1c356f2c5c8fc #tam\nindexexchange.com, 184310, RESELLER,
+        50b1c356f2c5c8fc #prebid\nindexexchange.com, 186431, RESELLER, 50b1c356f2c5c8fc
+        #ob\nindexexchange.com, 193334, RESELLER, 50b1c356f2c5c8fc #tam\n\n#Infolinks\ninfolinks.com,
+        3323352, DIRECT\nappnexus.com, 3251, RESELLER\npubmatic.com, 156872, RESELLER,
+        5d62403b186f2ace\nsonobi.com, 0e0a64d7d3, RESELLER, d1a215d9eb5aee9e\nsovrn.com,
+        268479, RESELLER, fafdf38b16bf6b2b\nindexexchange.com, 191306, RESELLER\n\n#InMobi\ninmobi.com,
+        f32f386d1d654f8e82774703799d146b, DIRECT, 83e75a7ae333ca9d #ob\n\n#JustPremium\ngumgum.com,
+        15340, RESELLER, ffdef49475d318a9\nappnexus.com, 2758, RESELLER, f5ab79cb980f11d1\nopenx.com,
+        537149485, RESELLER, 6a698e2ec38604c6\n\n#Magnite\nrubiconproject.com, 16924,
+        DIRECT, 0bfd66d529a55807 #prebid #tam\nrubiconproject.com, 17486, DIRECT,
+        0bfd66d529a55807 #ob\n\n#Media.net\nmedia.net, 8CUJ8GUQF, DIRECT #prebid\nmedia.net,
+        8CUACKN9M, DIRECT #tam\nmedia.net, 8CUFH1GPH, DIRECT #ob\npubmatic.com, 159463,
+        RESELLER, 5d62403b186f2ace\nrubiconproject.com, 19396, Reseller, 0bfd66d529a55807\nopenx.com,
+        537100188, RESELLER, 6a698e2ec38604c6\nonetag.com, 5d49f482552c9b6, Reseller\n\n#MediaGrid\nthemediagrid.com,
+        6VZ9I7, DIRECT, 35d5010d7789b49d\nthemediagrid.com, SRU5VK, DIRECT, 35d5010d7789b49d\n\n#Nativo\nnativo.com,
+        5764, DIRECT, 59521ca7cc5e9fee #tam\nappnexus.com, 8035, RESELLER, f5ab79cb980f11d1\npubmatic.com,
+        156500, RESELLER, 5d62403b186f2ace\ncontextweb.com, 560921, RESELLER, 89ff185a4c4e857c\nopenx.com,
+        540709535, RESELLER, 6a698e2ec38604c6\nrubiconproject.com, 16156, RESELLER,
+        0bfd66d529a55807\nZeta.com, 989, RESELLER\n\n#Ogury\nogury.com, 5111a14e-6753-43d0-9d4d-64177a0dfa68,
+        RESELLER\nappnexus.com, 11470, RESELLER\npubmatic.com, 163238, RESELLER, 5d62403b186f2ace\nsmartadserver.com,
+        4537, RESELLER, 060d053dcf45cbf3 #equativ\nrubiconproject.com, 25198, RESELLER,
+        0bfd66d529a55807 #magnite\n\n#Onetag\nonetag.com, 65e2f0d9f4ee117-OB, DIRECT
+        #ob\n\n#OpenX\nopenx.com, 539181723, DIRECT, 6a698e2ec38604c6\nopenx.com,
+        539618221, DIRECT, 6a698e2ec38604c6\nopenx.com, 539900106, DIRECT, 6a698e2ec38604c6\nopenx.com,
+        545709546, DIRECT, 6a698e2ec38604c6\n\n#Primis\nprimis.tech, 27975, DIRECT\npubmatic.com,
+        156595, RESELLER, 5d62403b186f2ace\ngoogle.com, pub-1320774679920841, RESELLER,
+        f08c47fec0942fa0\nrubiconproject.com, 20130, RESELLER, 0bfd66d529a55807\nopenx.com,
+        540258065, RESELLER, 6a698e2ec38604c6\nfreewheel.tv, 19129, RESELLER\nfreewheel.tv,
+        19133, RESELLER\nindexexchange.com, 191923, RESELLER, 50b1c356f2c5c8fc\nsharethrough.com,
+        flUyJowI, RESELLER, d53b998a7bd4ecd2\ntriplelift.com, 8210, RESELLER, 6c33edb13117fd86\nMedia.net,
+        8CU695QH7, RESELLER\nvideo.unrulymedia.com, 2338962694, RESELLER\nyahoo.com,
+        59260, RESELLER\n\n#Pubmatic\npubmatic.com, 156696, DIRECT, 5d62403b186f2ace
+        #prebid\npubmatic.com, 157235, DIRECT, 5d62403b186f2ace #ob\npubmatic.com,
+        160726, DIRECT, 5d62403b186f2ace #tam\n\n#PubNative\nlkqd.net, 446, DIRECT,
+        59c49fa9598a0117\n\n#PulsePoint\nContextweb.com,560313,DIRECT,89ff185a4c4e857c\n\n#Rise\nrisecodes.com,
+        61df247711c68300011cd447, DIRECT\npubmatic.com, 160295, RESELLER, 5d62403b186f2ace\nxandr.com,
+        14082, RESELLER\nrubiconproject.com, 23876, RESELLER, 0bfd66d529a55807\nsharethrough.com,
+        5926d422, RESELLER, d53b998a7bd4ecd2\nsonobi.com, 4a289cdd79, RESELLER, d1a215d9eb5aee9e\nopenx.com,
+        537140488, RESELLER, 6a698e2ec38604c6\nthemediagrid.com, 4DQHAP, RESELLER,
+        35d5010d7789b49d\n\n#Sharethrough\nsharethrough.com, c3cac6b7, DIRECT, d53b998a7bd4ecd2
+        #prebid #tam\nsharethrough.com, ab571f55, DIRECT, d53b998a7bd4ecd2 #ob\npubmatic.com,
+        156557, RESELLER\nrubiconproject.com, 18694, RESELLER, 0bfd66d529a55807\nopenx.com,
+        540274407, RESELLER, 6a698e2ec38604c6\nsmaato.com, 1100047713, RESELLER, 07bcf65f187117b4\nyahoo.com,
+        59531, RESELLER, e1a5b5b6e3255540\n\n#Smaato\nsmaato.com, 1100054897, DIRECT,
+        07bcf65f187117b4\npubmatic.com, 156177, RESELLER, 5d62403b186f2ace\npubmatic.com,
+        156425, RESELLER, 5d62403b186f2ace\nopenx.com, 540421297, RESELLER, 6a698e2ec38604c6\nblis.com,86,RESELLER,61453ae19a4b73f4\nrubiconproject.com,
+        16928, RESELLER, 0bfd66d529a55807\nconversantmedia.com, 100246, RESELLER,
+        03113cd04947736d\nloopme.com, 2896, RESELLER, 6c8d5f95897a5a3b\n\n#Sonobi\nsonobi.com,
+        92e0ecff80, RESELLER, d1a215d9eb5aee9e #prebid\nsonobi.com, 9093867874, RESELLER,
+        d1a215d9eb5aee9e #ob\nsonobi.com, 867fd7d9c6, RESELLER, d1a215d9eb5aee9e #video\ncontextweb.com,
+        560606, RESELLER, 89ff185a4c4e857c\n\n#Sovrn\nlijit.com, 239429, DIRECT, fafdf38b16bf6b2b
+        #prebid #tam\nlijit.com, 239429-eb, DIRECT, fafdf38b16bf6b2b #ob\nopenx.com,
+        538959099, RESELLER, 6a698e2ec38604c6\npubmatic.com, 137711, RESELLER, 5d62403b186f2ace\npubmatic.com,
+        156212, RESELLER, 5d62403b186f2ace\nrubiconproject.com, 17960, RESELLER, 0bfd66d529a55807\nappnexus.com,
+        1019, RESELLER, f5ab79cb980f11d1\n\n#SpringServe\nspringserve.com, 1132, DIRECT,
+        a24eb641fc82e93d\nadvertising.com, 19623, RESELLER\nadvertising.com, 26282,
+        RESELLER\nappnexus.com, 10617, RESELLER\nappnexus.com, 1356, RESELLER, f5ab79cb980f11d1\nappnexus.com,
+        1908, RESELLER, f5ab79cb980f11d1\nappnexus.com, 2234, DIRECT\nappnexus.com,
+        9393, RESELLER\ngoogle.com, pub-5717092533913515, DIRECT, f08c47fec0942fa0
+        #NPMpartners\ngoogle.com, pub-9685734445476814, DIRECT, f08c47fec0942fa0\nindexexchange.com,
+        185192, RESELLER #EBDA\nlijit.com, 391309-eb, DIRECT, fafdf38b16bf6b2b\nlijit.com,
+        391309, DIRECT, fafdf38b16bf6b2b\nopenx.com, 537153564, DIRECT, 6a698e2ec38604c6\nopenx.com,
+        540226160, RESELLER, 6a698e2ec38604c6\nopenx.com, 540634634, RESELLER, 6a698e2ec38604c6\npubmatic.com,
+        157310, RESELLER, 5d62403b186f2ace\nrubiconproject.com, 17346, RESELLER, 0bfd66d529a55807
+        #EBDA\nrubiconproject.com, 21134, RESELLER, 0bfd66d529a55807\nsovrn.com, 391309,
+        DIRECT, fafdf38b16bf6b2b\n\n#Teads\nteads.tv, 8917, DIRECT, 15a9c44f6d26cbe1\nteads.tv,
+        25293, DIRECT, 15a9c44f6d26cbe1\n\n#Triplelift\ntriplelift.com, 5579, DIRECT,
+        6c33edb13117fd86\ntriplelift.com, 11420, DIRECT, 6c33edb13117fd86\ntriplelift.com,
+        11419, DIRECT, 6c33edb13117fd86\ntriplelift.com, 5579-EB, DIRECT, 6c33edb13117fd86\ntriplelift.com,
+        11419-EB, DIRECT, 6c33edb13117fd86\ntriplelift.com, 11420-EB, DIRECT, 6c33edb13117fd86\n\n#Undertone\nundertone.com,3617,
+        DIRECT #prebid\nrubiconproject.com, 22412, RESELLER, 0bfd66d529a55807\nopenx.com,
+        537153564, RESELLER, 6a698e2ec38604c6\npubmatic.com, 160318, RESELLER, 5d62403b186f2ace\nyahoo.com,
+        59262, RESELLER\nindexexchange.com, 197137, RESELLER, 50b1c356f2c5c8fc\n\n#Unruly\nvideo.unrulymedia.com,
+        3565817048, RESELLER\nvideo.unrulymedia.com, 2696396483, RESELLER #ob\n\n#Xandr\nappnexus.com,
+        7125, DIRECT\n\n#Yahoo\nYahoo.com, 57064, DIRECT, e1a5b5b6e3255540\nyahoo.com,
+        57064, RESELLER, e1a5b5b6e3255540\nyahoo.com, 59212, DIRECT, e1a5b5b6e3255540
+        #tam\nYahoo.com, 54621, DIRECT, e1a5b5b6e3255540 #ob\nappnexus.com, 11664
+        , RESELLER #banner\ncontextweb.com, 562258, RESELLER, 89ff185a4c4e857c\nindexexchange.com,
+        196845, RESELLER, 50b1c356f2c5c8fc\nindexexchange.com, 195924, RESELLER\nindexexchange.com,
+        184626, RESELLER, 50b1c356f2c5c8fc\nindexexchange.com, 183875, RESELLER, 50b1c356f2c5c8fc\nopenx.com,
+        537125356, RESELLER, 6a698e2ec38604c6\nopenx.com, 537143344, RESELLER\nopenx.com,
+        540236670, RESELLER\npubmatic.com, 156078, RESELLER, 5d62403b186f2ace\nPubmatic.com,
+        156084, RESELLER,  5d62403b186f2ace\nPubmatic.com, 156458, RESELLER, 5d62403b186f2ace\npubmatic.com,
+        156674, RESELLER, 5d62403b186f2ace #video\nrubiconproject.com, 17250, RESELLER,
+        0bfd66d529a55807\ntriplelift.com, 12396, RESELLER, 6c33edb13117fd86\ntriplelift.com,
+        2792, RESELLER, 6c33edb13117fd86\ntriplelift.com, 10044, RESELLER, 6c33edb13117fd86\ntriplelift.com,
+        13148, RESELLER, 6c33edb13117fd86\nxad.com, 240, RESELLER, 81cbf0a75a5e0e9a\n\n#Yieldmo\nyieldmo.com,
+        2396533383539662849, DIRECT #prebid\nyieldmo.com, 2753675785523896670, DIRECT
+        #tam\nyieldmo.com, 2266071064017274661, DIRECT #ob\ncontextweb.com, 561118,
+        RESELLER, 89ff185a4c4e857c\nappnexus.com, 7911, RESELLER\nrubiconproject.com,
+        17070, RESELLER, 0bfd66d529a55807\nrhythmone.com, 3463482822,RESELLER,a670c89d4a324e47\nvideo.unrulymedia.com,
+        3463482822, RESELLER\npubmatic.com, 160648, RESELLER, 5d62403b186f2ace\n\n#AMP\ngoogle.com,
+        pub-2318854337682975, RESELLER, f08c47fec0942fa0 #FS:UK #GoogleAdX\nrubiconproject.com,
+        14418, RESELLER, 0bfd66d529a55807 #FS:UK #Magnite\nappnexus.com, 3491, RESELLER,
+        f5ab79cb980f11d1 #FS:UK #Xandr\nopenx.com, 537148814, RESELLER, 6a698e2ec38604c6
+        #FS:UK #OpenX\npubmatic.com, 160573, RESELLER, 5d62403b186f2ace #FS:UK #PubmaticS2S\nadform.com,
+        2745, RESELLER #FS:UK #Adform\nthemediagrid.com, U5GW8M, RESELLER, 35d5010d7789b49d
+        #FS:UK #TheMediaGrid\nlijit.com, 300150, RESELLER, fafdf38b16bf6b2b #FS:UK
+        #Sovrn\nlijit.com, 300150-eb, RESELLER, fafdf38b16bf6b2b #FS:UK #Sovrn\nappnexus.com,
+        1019, RESELLER, f5ab79cb980f11d1 #FS:UK #Sovrn\nopenx.com, 538959099, RESELLER,
+        6a698e2ec38604c6 #FS:UK #Sovrn\npubmatic.com, 137711, RESELLER, 5d62403b186f2ace
+        #FS:UK #Sovrn\npubmatic.com, 156212, RESELLER, 5d62403b186f2ace #FS:UK #Sovrn\nrubiconproject.com,
+        17960, RESELLER, 0bfd66d529a55807 #FS:UK #Sovrn\namxrtb.com, 105199451, DIRECT
+        #FS:UK #AdaptMX\namxrtb.com, 105199451, RESELLER #FS:UK #AdaptMX\nappnexus.com,
+        12290, RESELLER, f5ab79cb980f11d1 #FS:UK #AdaptMX\nappnexus.com, 11786, RESELLER,
+        f5ab79cb980f11d1 #FS:UK #AdaptMX\nindexexchange.com, 191503, RESELLER, 50b1c356f2c5c8fc
+        #FS:UK #AdaptMX\nlijit.com, 260380, RESELLER, fafdf38b16bf6b2b #FS:UK #AdaptMX\nsovrn.com,
+        260380, RESELLER, fafdf38b16bf6b2b #FS:UK #AdaptMX\npubmatic.com, 158355,
+        RESELLER, 5d62403b186f2ace #FS:UK #AdaptMX\nappnexus.com, 9393, RESELLER,
+        f5ab79cb980f11d1 #Video #Display, f5ab79cb980f11d1 #FS:UK #AdaptMX\nappnexus.com,
+        11924, RESELLER, f5ab79cb980f11d1 #FS:UK #AdaptMX\nrubiconproject.com, 17960,
+        RESELLER, 0bfd66d529a55807 #FS:UK #AdaptMX\nyahoo.com, 49648, RESELLER #FS:UK
+        #AdaptMX\ntriplelift.com, 12507, RESELLER, 6c33edb13117fd86 #FS:UK #AdaptMX\ntriplelift.com,
+        11806, RESELLER, 6c33edb13117fd86 #FS:US #TripleLift #AMPDefault\ntriplelift.com,
+        11834, RESELLER, 6c33edb13117fd86 #FS:US #TripleLift #AMPStandard\ntriplelift.com,
+        11835, RESELLER, 6c33edb13117fd86 #FS:US #TripleLift #AMPSensitive\nrubiconproject.com,
+        18176, RESELLER, 0bfd66d529a55807 #FS:UK #Magnite\nindexexchange.com, 187297,
+        RESELLER, 50b1c356f2c5c8fc #FS:UK #IndexExchange\nopenx.com, 540038339, RESELLER,
+        6a698e2ec38604c6 #FS:UK #OpenX\npubmatic.com, 156938, RESELLER, 5d62403b186f2ace
+        #FS:UK #Pubmatic\nmedia.net, 8CUQD1K66, RESELLER #FS:UK #Media.net\nmedia.net,
+        8CUQD1K66, DIRECT #FS:UK #Media.net #ob\nmedia.net, 8CU8ZT2C4, DIRECT #FS:UK
+        #Media.net #amprtc\nrhythmone.com, 2130882134, RESELLER, a670c89d4a324e47
+        #FS:UK #Unruly\nsharethrough.com, SF9EV3Dp, RESELLER, d53b998a7bd4ecd2 #FS:UK
+        #Sharethrough\nsmaato.com, 1001012346, RESELLER #FS:UK #Smaato\nsovrn.com,
+        229584, RESELLER, fafdf38b16bf6b2b #FS:UK #Sovrn\nlijit.com, 229584, RESELLER,
+        fafdf38b16bf6b2b #FS:UK #Sovrn\nlijit.com, 229584-eb, RESELLER, fafdf38b16bf6b2b
+        #FS:UK #Sovrn\nyieldmo.com, 2599305682435907728, RESELLER #FS:UK #Yieldmo\nadingo.jp,
+        24375, RESELLER #FS:UK #Fluct\npubmatic.com, 156313, RESELLER, 5d62403b186f2ace
+        #FS:UK #Fluct\npubmatic.com, 158060, RESELLER, 5d62403b186f2ace #FS:UK #Fluct\npubmatic.com,
+        157962, RESELLER, 5d62403b186f2ace #FS:UK #Fluct\npubmatic.com, 158853, RESELLER,
+        5d62403b186f2ace #FS:UK #Fluct\nopenx.com, 540679900, RESELLER, 6a698e2ec38604c6
+        #FS:UK #Fluct\nappnexus.com, 7044, RESELLER, f5ab79cb980f11d1 #FS:UK #Fluct\nwebeyemob.com,
+        70080, RESELLER #FS:UK #Fluct\ncriteo.com, B-053760, RESELLER, 9fac4a4a87c2a44f
+        #FS:UK #Criteo\nthemediagrid.com, UVQ1H3, RESELLER, 35d5010d7789b49d #FS:UK
+        #Criteo\nmedia.net, 8CU8ZT2C4, RESELLER #FS:UK #Media.net\nopenx.com, 537100188,
+        RESELLER, 6a698e2ec38604c6 #FS:UK #Media.net\nonetag.com, 5d49f482552c9b6,
+        RESELLER #FS:UK #Media.net\npubmatic.com, 159463, RESELLER, 5d62403b186f2ace
+        #FS:UK #Media.net\nrubiconproject.com, 19396, RESELLER, 0bfd66d529a55807 #FS:UK
+        #Media.net\naps.amazon.com,16268e26-dabe-4bf4-a28f-b8f4ee192ed3,DIRECT #Amazon\npubmatic.com,160006,RESELLER,5d62403b186f2ace
+        #Amazon\npubmatic.com,160096,RESELLER,5d62403b186f2ace #Amazon\nrubiconproject.com,18020,RESELLER,0bfd66d529a55807
+        #Amazon\npubmatic.com,157150,RESELLER,5d62403b186f2ace #Amazon\nopenx.com,540191398,RESELLER,6a698e2ec38604c6
+        #Amazon\nappnexus.com,1908,RESELLER,f5ab79cb980f11d1 #Amazon\nsmaato.com,1100044650,RESELLER,07bcf65f187117b4
+        #Amazon\nad-generation.jp,12474,RESELLER,7f4ea9029ac04e53 #Amazon\ndistrictm.io,100962,RESELLER,3fd707be9c4527c3
+        #Amazon\nyieldmo.com,2719019867620450718,RESELLER #Amazon\nappnexus.com,3663,RESELLER,f5ab79cb980f11d1
+        #Amazon\nrhythmone.com,1654642120,RESELLER,a670c89d4a324e47 #Amazon\nyahoo.com,55029,RESELLER,e1a5b5b6e3255540
+        #Amazon\ngumgum.com,14141,RESELLER,ffdef49475d318a9 #Amazon\nadmanmedia.com,726,RESELLER
+        #Amazon\nsharethrough.com,7144eb80,RESELLER,d53b998a7bd4ecd2 #Amazon\nemxdgt.com,2009,RESELLER,1e1d41537f7cad7f
+        #Amazon\nappnexus.com,1356,RESELLER,f5ab79cb980f11d1 #Amazon\ncontextweb.com,562541,RESELLER,89ff185a4c4e857c
+        #Amazon\nsmartadserver.com,4125,RESELLER,060d053dcf45cbf3 #Amazon\nthemediagrid.com,JTQKMP,RESELLER,35d5010d7789b49d
+        #Amazon\nsovrn.com,375328,RESELLER,fafdf38b16bf6b2b #Amazon\nlijit.com,375328,RESELLER,fafdf38b16bf6b2b
+        #Amazon\nbeachfront.com,14804,RESELLER,e2541279e8e2ca4d #Amazon\nimprovedigital.com,2050,RESELLER
+        #Amazon\nmintegral.com,10043,RESELLER,0aeed750c80d6423 #Amazon\nsonobi.com,7f5fa520f8,RESELLER,d1a215d9eb5aee9e
+        #Amazon\nonetag.com,770a440e65869c2,RESELLER #Amazon\nmedia.net,8CUZ1MK22,RESELLER
+        #Amazon\nrisecodes.com,63832beef8189a00015cb6d3,RESELLER #Amazon\nmediago.io,045ac24b888bcf59a09731e7f0f2084f,RESELLER
+        #Amazon\nadyoulike.com,7463c359225e043c111036d7a29affa5,RESELLER #Amazon\nminutemedia.com,01gya4708ddm,RESELLER
+        #Amazon\nvisiblemeasures.com,1052,RESELLER #Amazon\nundertone.com,4205,RESELLER,d954590d0cb265b9
+        #Amazon\n\nprimis.tech, 27975, DIRECT #Primis\nprimis.tech, 31540, DIRECT
+        #Primis\npubmatic.com, 156595, RESELLER, 5d62403b186f2ace #Primis\ngoogle.com,
+        pub-1320774679920841, RESELLER, f08c47fec0942fa0 #Primis\nrubiconproject.com,
+        20130, RESELLER, 0bfd66d529a55807 #Primis\nopenx.com, 540258065, RESELLER,
+        6a698e2ec38604c6 #Primis\nfreewheel.tv, 19129, RESELLER #Primis\nfreewheel.tv,
+        19133, RESELLER #Primis\nindexexchange.com, 191923, RESELLER, 50b1c356f2c5c8fc
+        #Primis\nsharethrough.com, flUyJowI, RESELLER, d53b998a7bd4ecd2 #Primis\ntriplelift.com,
+        8210, RESELLER, 6c33edb13117fd86 #Primis\nMedia.net, 8CU695QH7, RESELLER #Primis\nvideo.unrulymedia.com,
+        2338962694, RESELLER #Primis\nyahoo.com, 59260, RESELLER #Primis\n\n# PUBLISHER
+        SPECIFIC ADS.TXT INFO BELOW THIS LINE\ndianomi.com,545,DIRECT,61e7d0a6019f7cfc\ngoogle.com,pub-3746578658400510,RESELLER,f08c47fec0942fa0\nindexexchange.com,185292,RESELLER\nindexexchange.com,181495,RESELLER\nfreeskreen.com,51,DIRECT,fe119a6acfd19070\ntremorhub.com,6s457-21tk9,DIRECT,1a4e959a1b50034a\nappnexus.com,1285,RESELLER\ngoogle.com,pub-8200574565762874,DIRECT,f08c47fec0942fa0\nrubiconproject.com,11384,DIRECT,0bfd66d529a55807\nrubiconproject.com,18644,DIRECT,0bfd66d529a55807\nAppNexus.com,8613,DIRECT,f5ab79cb980f11d1\nconnatix.com,101428,DIRECT,2af98acdee0e81ed\ntremorhub.com,cd009,RESELLER,1a4e959a1b50034a\nspotxchange.com,136839,RESELLER,7842df1d2fe2db34\nspotx.tv,136839,RESELLER,7842df1d2fe2db34\nopenx.com,539496816,RESELLER,6a698e2ec38604c6\nrubiconproject.com,19564,RESELLER,0bfd66d529a55807\ngoogle.com,pub-1929615694373103,RESELLER,f08c47fec0942fa0\nAppnexus.com,9733,RESELLER\nfreewheel.tv,1064705,RESELLER\nappnexus.com,7290,RESELLER\nindexexchange.com,184971,DIRECT\nrhythmone.com,301820969,DIRECT,a670c89d4a324e47\ntriplelift.com,720-EB,DIRECT,6c33edb13117fd86\nsmaato.com,1100036918,DIRECT,07bcf65f187117b4\nopenx.com,538986825,DIRECT,6a698e2ec38604c6\nAppnexus.com,8973,DIRECT\nyieldmo.com,2072471069101033082,DIRECT\nlijit.com,249634-eb,DIRECT,fafdf38b16bf6b2b\npubmatic.com,156592,RESELLER,5d62403b186f2ace\nimpact-ad.jp,3966,DIRECT\nyieldmo.com,9876350000,DIRECT\nmedia.net,8CU2UER0U,DIRECT\nvideo.unrulymedia.com,301820969,DIRECT\ntelaria.com,6s457-21tk9,DIRECT,1a4e959a1b50034a\n###
+        AMX\namxrtb.com, 105199716, DIRECT\nappnexus.com, 12290, RESELLER\nlijit.com,
+        260380, RESELLER\npubmatic.com, 161527, RESELLER\nrubiconproject.com, 23844,
+        RESELLER\nadform.com, 2865, RESELLER\nsmartadserver.com, 3056, RESELLER\nrubiconproject.com,
+        17960, RESELLER\n\n### UNDERTONE\nundertone.com, 4159, DIRECT\nopenx.com,
+        537153564, RESELLER, 6a698e2ec38604c6\nrubiconproject.com, 22412, RESELLER,
+        0bfd66d529a55807\npubmatic.com, 160318, RESELLER, 5d62403b186f2ace\nyahoo.com,
+        59262, RESELLER\nindexexchange.com, 197137, RESELLER, 50b1c356f2c5c8fc\n\n\ntriplelift.com,10057,
+        DIRECT, 6c33edb13117fd86\n#Freestar Schain Update - Very Important Do NOT
+        Remove\nfreestar.com, 792, DIRECT\n\ninmobi.com, 64d831e7ed4840ac8ea2283745f07d75,
+        RESELLER, 83e75a7ae333ca9d\ngoogle.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0\nsmartadserver.com,
+        3630, RESELLER\nloopme.com, 11186, RESELLER, 6c8d5f95897a5a3b\nsynacor.com,
+        82461, RESELLER, e108f11b2cdf7d5b\n\ndeployads.com, 1548, DIRECT #Sortable\nsortable.com,
+        1548, DIRECT #Sortable\n\nyahoo.com, 59382, DIRECT, e1a5b5b6e3255540\nthemediagrid.com,
+        DXW9CT, DIRECT, 35d5010d7789b49d\nrubiconproject.com, 14474, DIRECT, 0bfd66d529a55807\n\ndeployads.com,
+        1814, DIRECT #Freestar \nsortable.com, 1814, DIRECT #Freestar\n\ntheglobeandmail.com,
+        pub-8200574565762874, DIRECT\n\ngoogle.com, pub-3578014945201864, DIRECT,
+        f08c47fec0942fa0\n\nMANAGERDOMAIN=theglobeandmail.com, CA\nrubiconproject.com,
+        24730, RESELLER, 0bfd66d529a55807\nliveintent.com, 68518, DIRECT\nadform.com,
+        2921, DIRECT, 9f5210a2f0999e32\npubmatic.com, 162486, DIRECT, 5d62403b186f2ace\nopenx.com,
+        558595797, DIRECT, 6a698e2ec38604c6\nfreewheel.tv, 1585055, DIRECT\nfreewheel.tv,
+        1585058, DIRECTadform.com, 2921, DIRECT, 9f5210a2f0999e32\npubmatic.com, 162486,
+        DIRECT, 5d62403b186f2ace\nopenx.com, 558595797, DIRECT, 6a698e2ec38604c6\nfreewheel.tv,
+        1585055, DIRECT\nfreewheel.tv, 1585058, DIRECT\ndianomi.com, 545, DIRECT,
+        61e7d0a6019f7cfc\nfreewheel.tv, 1574417, RESELLER\n\npubmatic.com, 163106,
+        RESELLER, 5d62403b186f2ace\nfreewheel.tv, 1578381, RESELLER\n\nROOTDOMAIN=reuters.com\nSUBDOMAIN=jp.reuters.com\n\n#Reset
+        Digital\nresetdigital.co, 207, DIRECT\n\nYahoo.com, 59906, DIRECT, e1a5b5b6e3255540\npubmatic.com,
+        156458, RESELLER, 5d62403b186f2ace\npubmatic.com, 156078, RESELLER, 5d62403b186f2ace\ntriplelift.com,
+        12396, RESELLER, 6c33edb13117fd86\ntriplelift.com, 13148, RESELLER, 6c33edb13117fd86\nindexexchange.com,
+        196845, RESELLER, 50b1c356f2c5c8fc\nopenx.com, 544096208, RESELLER, 6a698e2ec38604c6\nappnexus.com,
+        13890, DIRECT \nsovrn.com, 399484, RESELLER, fafdf38b16bf6b2b\nlijit.com,
+        399484, DIRECT, fafdf38b16bf6b2b\ngumgum.com, 11645, RESELLER, ffdef49475d318a9\nopenx.com,
+        538959099, RESELLER, 6a698e2ec38604c6\nopenx.com, 539924617, RESELLER, 6a698e2ec38604c6\npubmatic.com,
+        137711, RESELLER, 5d62403b186f2ace\npubmatic.com, 156212, RESELLER, 5d62403b186f2ace\npubmatic.com,
+        156700, RESELLER, 5d62403b186f2ace\nrubiconproject.com, 17960, RESELLER, 0bfd66d529a55807\npubmatic.com,
+        163462, RESELLER, 5d62403b186f2ace\n\n-------------\n\nrubiconproject.com,
+        17250, RESELLER, 0bfd66d529a55807\ncontextweb.com, 561707, RESELLER, 89ff185a4c4e857c\ncontextweb.com,
+        562258, RESELLER, 89ff185a4c4e857c\nmedia.net, 8CUIHQJ4B, RESELLER\nyieldmo.com,
+        2825328808255496712, RESELLER\nsovrn.com, 378732, RESELLER, fafdf38b16bf6b2b\nEMXDGT.com,
+        1291, RESELLER, 1e1d41537f7cad7f\nEMXDGT.com, 273, RESELLER, 1e1d41537f7cad7f\ngumgum.com,
+        15563, RESELLER, ffdef49475d318a9\n33across.com, 0010b00002EdWnZAAV, RESELLER,
+        bbea06d9c4d2853c\n\n#Kargo\nkargo.com, 8803, DIRECT\nrubiconproject.com, 11864,
+        RESELLER, 0bfd66d529a55807\nappnexus.com, 8173, RESELLER, f5ab79cb980f11d1\ncontextweb.com,
+        562001, RESELLER, 89ff185a4c4e857c\nvideo.unrulymedia.com, 1858504412, RESELLER\n\nsupply.colossusssp.com,
+        332, RESELLER, 6c5b49d96ec1b458\ncontextweb.com, 561340, RESELLER, 89ff185a4c4e857c\n33across.com,
+        0015a00002y7TWTAA2, RESELLER, bbea06d9c4d2853c #33Across #hb #tag\ndidna.io,
+        494n1p17081a, RESELLER\ngoogle.com, pub-3565385483761681, RESELLER, f08c47fec0942fa0
+        #diDNA_google\nhcodemedia.com, 557, RESELLER\ngoogle.com, pub-7995104076770938,
+        DIRECT, f08c47fec0942fa0\nyieldmo.com, 3286586829842621292, RESELLER\nresetdigital.co,
+        210, RESELLER\nconversantmedia.com, 42111, RESELLER, 03113cd04947736d\ntvp.tv,
+        BC15, RESELLER, 1125b6434104a723\niqzone.com, IQ233, RESELLER\nappnexus.com,
+        9733, RESELLER\nsonobi.com, 2b12be22c9, RESELLER, d1a215d9eb5aee9e\nsharethrough.com,
+        KnLYRz1v, RESELLER, d53b998a7bd4ecd2\nvideo.unrulymedia.com, 687806135, RESELLER"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - '*'
+      Age:
+      - '8'
+      CF-Cache-Status:
+      - DYNAMIC
+      CF-RAY:
+      - 81a3c4b9af8d0dc7-EWR
+      Cache-Control:
+      - public, max-age=60
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - text/plain
+      Date:
+      - Sun, 22 Oct 2023 18:22:55 GMT
+      ETag:
+      - W/"44081690dec9630f8bf7c1f6676a5b8e"
+      Expires:
+      - Sun, 22 Oct 2023 18:23:47 GMT
+      Last-Modified:
+      - Tue, 17 Oct 2023 15:35:56 GMT
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      X-GUploader-UploadID:
+      - ABPtcPq2-uSBEHeYH8GOf0knF_cEi7aESYnsd6HT4cBmRPAwDKCTot8wDvA7gEs9_B2QNWplAUGI1rbtQhl8pinlowpP7w
+      x-goog-generation:
+      - '1697556956436633'
+      x-goog-hash:
+      - crc32c=d2nbcw==
+      - md5=RAgWkN7JYw+L98H2Z2pbjg==
+      x-goog-metageneration:
+      - '1'
+      x-goog-storage-class:
+      - MULTI_REGIONAL
+      x-goog-stored-content-encoding:
+      - identity
+      x-goog-stored-content-length:
+      - '22828'
+    status:
+      code: 200
+      message: OK
+version: 1
