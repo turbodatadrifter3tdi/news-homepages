@@ -95,6 +95,7 @@ def consolidate(
                 handle.lower() in p["name"].lower()
                 and (
                     p["format"] in ["JSON", "JPEG", "HTML"]
+                    or p["name"].lower().endswith("ads.txt")
                     or p["name"].lower().endswith("robots.txt")
                 )
             )
@@ -124,6 +125,7 @@ def consolidate(
     lighthouse_list = []
     wayback_list = []
     html_list = []
+    adstxt_list = []
     robotstxt_list = []
     print("🪆 Extracting files")
     for f in track(file_list):
@@ -144,6 +146,8 @@ def consolidate(
             wayback_list.append(f)
         elif name.endswith(".html"):
             html_list.append(f)
+        elif name.endswith("ads.txt"):
+            adstxt_list.append(f)
         elif name.endswith("robots.txt"):
             robotstxt_list.append(f)
         else:
@@ -156,6 +160,7 @@ def consolidate(
     utils.write_csv(lighthouse_list, output_path / "lighthouse-files.csv")
     utils.write_csv(wayback_list, output_path / "wayback-files.csv")
     utils.write_csv(html_list, output_path / "html-files.csv")
+    utils.write_csv(adstxt_list, output_path / "adstxt-files.csv")
     utils.write_csv(robotstxt_list, output_path / "robotstxt-files.csv")
 
     # Delete the zip file

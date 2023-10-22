@@ -143,6 +143,7 @@ def _get_file_dict(data: dict, input_dir: Path) -> dict:
     hyperlinks_path = input_dir / f"{handle}.hyperlinks.json"
     lighthouse_path = input_dir / f"{handle}.lighthouse.json"
     wayback_path = input_dir / f"{handle}.wayback.json"
+    adstxt_path = input_dir / f"{handle}.ads.txt"
     robotstxt_path = input_dir / f"{handle}.robots.txt"
     html_path = input_dir / f"{handle}.html"
 
@@ -169,6 +170,8 @@ def _get_file_dict(data: dict, input_dir: Path) -> dict:
         file_dict[f"{prefix}.lighthouse.json"] = lighthouse_path
     if wayback_path.exists():
         file_dict[f"{prefix}.wayback.json"] = wayback_path
+    if adstxt_path.exists():
+        file_dict[f"{prefix}.ads.txt"] = adstxt_path
     if robotstxt_path.exists():
         file_dict[f"{prefix}.robots.txt"] = robotstxt_path
     if html_path.exists():
