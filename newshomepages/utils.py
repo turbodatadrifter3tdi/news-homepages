@@ -905,6 +905,8 @@ def _get_common_blocking_javascript() -> str:
         ".sqs-popup-overlay",  # Overlay popup
         "#gcomPromo",  # Overlay found on Brazilian sites
         ".Campaign",
+        "#ad-Overlay",  # common ad tag
+        "#ad-Banner",  # common ad tag
     ]
     target_str = ",".join(target_list)
     return f"""

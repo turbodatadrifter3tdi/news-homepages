@@ -1,1 +1,3 @@
-document.querySelectorAll('#popup-interstitial-dialog').forEach((e) => e.remove());
+document.querySelectorAll(
+    '#popup-interstitial-dialog,#dialogContainer,#overlayContainer,#attentive_overlay'
+).forEach((e) => e.remove());
