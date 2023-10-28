@@ -1,10 +1,8 @@
-function getZ (el) {
-  const z = parseFloat(window.getComputedStyle(el).zIndex);
-  if (Number.isNaN(z)) {
-    return 0;
-  } else {
-    return z;
-  }
+const firstDiv = document.querySelector('div');
+if (firstDiv.innerHTML === '') {
+  firstDiv.remove();
 }
-const eleList = Array.from(document.querySelectorAll('body *'));
-eleList.filter(el => getZ(el) > 9000).forEach(el => el.remove());
+
+document.querySelectorAll(
+  '.v-adv,.voc-container-fw,.voc-container--bg-color'
+).forEach(el => el.remove())
