@@ -910,6 +910,8 @@ def _get_common_blocking_javascript() -> str:
         "#ymovrly",  # McClatchy takeover
         "#cc-grower",  # McClatchy takeover
         ".cc-grower",  # McClatchy takeover
+        ".donate-modal",
+        ".modal-backdrop",
     ]
     target_str = ",".join(target_list)
     return f"""
