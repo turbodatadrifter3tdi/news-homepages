@@ -912,6 +912,7 @@ def _get_common_blocking_javascript() -> str:
         ".cc-grower",  # McClatchy takeover
         ".donate-modal",
         ".modal-backdrop",
+        ".connext-modal-backdrop",
     ]
     target_str = ",".join(target_list)
     return f"""
