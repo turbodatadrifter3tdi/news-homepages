@@ -907,6 +907,9 @@ def _get_common_blocking_javascript() -> str:
         ".Campaign",
         "#ad-Overlay",  # common ad tag
         "#ad-Banner",  # common ad tag
+        "#ymovrly",  # McClatchy takeover
+        "#cc-grower",  # McClatchy takeover
+        ".cc-grower",  # McClatchy takeover
     ]
     target_str = ",".join(target_list)
     return f"""
