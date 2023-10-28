@@ -913,6 +913,7 @@ def _get_common_blocking_javascript() -> str:
         ".donate-modal",
         ".modal-backdrop",
         ".connext-modal-backdrop",
+        ".modal-backdrop",
     ]
     target_str = ",".join(target_list)
     return f"""
