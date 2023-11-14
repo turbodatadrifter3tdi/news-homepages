@@ -1,0 +1,31 @@
+name: "Archive and Slack: DailyMail.co.uk"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 10,16,22 * * *"
+
+jobs:
+  archive-site:
+    name: Archive bundle
+    uses: palewire/news-homepages/.github/workflows/archive-DailyMailUk.yml@si-branch
+    with:
+      handle: DailyMailUK
+    secrets: inherit
+
+  newsroom-slack:
+    name: Post to newsroom Slack
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    needs: [archive-site]
+    steps:
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v3
+
+      - id: slack
+        name: Post to Slack
+        uses: ./.github/actions/slack
+        with:
+          handle: DailyMailUK
+          webhook-url: ${{ secrets.SLACK_WEBHOOK_URL_YOUR_SITE_HANDLE_IN_CAPS }}
