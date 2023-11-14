@@ -2,35 +2,29 @@ name: "Archive and Slack: DailyMail.co.uk"
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   # - cron: "0 10,16,22 * * *"
-  #   - cron: "0 10,11,12,16,22 * * *"
-  #   - cron: "30 13 * * *"
   schedule:
     - cron: "*/5 * * * *"
 
-
 jobs:
   archive-site:
-    name: Archive bundle
-  #  uses: palewire/news-homepages/.github/workflows/archive-DailyMailUk.yml@si-branch
+    name: "Archive bundle"
     uses: turbodatadrifter3tdi/news-homepages/.github/workflows/archive-DailyMailUk.yml@si-branch
     with:
       handle: DailyMailUK
     secrets: inherit
 
   newsroom-slack:
-    name: Post to newsroom Slack
+    name: "Post to newsroom Slack"
     runs-on: ubuntu-latest
     timeout-minutes: 15
     needs: [archive-site]
     steps:
       - id: checkout
-        name: Checkout
+        name: "Checkout"
         uses: actions/checkout@v3
 
       - id: slack
-        name: Post to Slack
+        name: "Post to Slack"
         uses: ./.github/actions/slack
         with:
           handle: DailyMailUK
