@@ -62,4 +62,4 @@ jobs:
           TWINE_REPOSITORY_URL: https://upload.pypi.org/legacy/
           TWINE_CHECK_REPOSITORY: 1
           TWINE_CONFIG_FILE: pypirc
-          TWINE_VERIFY_METADATA: 1
+          verify-metadata: 1
