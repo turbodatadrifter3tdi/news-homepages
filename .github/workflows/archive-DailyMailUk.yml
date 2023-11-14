@@ -8,29 +8,25 @@ on:
 jobs:
   archive-site:
     name: "Archive bundle"
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Archive DailyMailUK
-        uses: turbodatadrifter3tdi/news-homepages/.github/workflows/archive-DailyMailUk.yml@si-branch
-        with:
-          handle: DailyMailUK
-        secrets: inherit
+    uses: turbodatadrifter3tdi/news-homepages/.github/workflows/archive-DailyMailUk.yml@si-branch
+    with:
+      handle: DailyMailUK
+    secrets: inherit
 
   newsroom-slack:
     name: "Post to newsroom Slack"
     runs-on: ubuntu-latest
     timeout-minutes: 15
     needs: [archive-site]
+    permissions:
+      id-token: write  # Add this line to grant the required permission
     steps:
-      - name: Checkout
+      - id: checkout
+        name: "Checkout"
         uses: actions/checkout@v3
 
-      - name: Post to Slack
+      - id: slack
+        name: "Post to Slack"
         uses: ./.github/actions/slack
         with:
           handle: DailyMailUK
