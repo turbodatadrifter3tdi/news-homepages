@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"
-
+### Add version tag
 jobs:
   archive-site:
     name: "Archive bundle"
@@ -34,32 +34,32 @@ jobs:
           handle: DailyMailUK
           webhook-url: ${{ secrets.SLACK_WEBHOOK_URL_YOUR_SITE_HANDLE_IN_CAPS }}
 
-  pypi-release:
-    name: "PyPI release"
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Checkout"
-        uses: actions/checkout@v3
+  # pypi-release:
+  #   name: "PyPI release"
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: "Checkout"
+  #       uses: actions/checkout@v3
 
-      - name: "Set up Python"
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+  #     - name: "Set up Python"
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: 3.8
 
-      - name: "Install dependencies"
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install setuptools wheel twine
+  #     - name: "Install dependencies"
+  #       run: |
+  #         python -m pip install --upgrade pip
+  #         python -m pip install setuptools wheel twine
 
-      - name: "Build and upload to PyPI"
-        run: |
-          python setup.py sdist bdist_wheel
-          twine upload --repository-url https://upload.pypi.org/legacy/ dist/* --verbose
-        env:
-          TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-          TWINE_NON_INTERACTIVE: 1
-          TWINE_REPOSITORY_URL: https://upload.pypi.org/legacy/
-          TWINE_CHECK_REPOSITORY: 1
-          TWINE_CONFIG_FILE: pypirc
-          TWINE_VERIFY_METADATA: 1
+  #     - name: "Build and upload to PyPI"
+  #       run: |
+  #         python setup.py sdist bdist_wheel
+  #         twine upload --repository-url https://upload.pypi.org/legacy/ dist/* --verbose
+  #       env:
+  #         TWINE_USERNAME: __token__
+  #         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+  #         TWINE_NON_INTERACTIVE: 1
+  #         TWINE_REPOSITORY_URL: https://upload.pypi.org/legacy/
+  #         TWINE_CHECK_REPOSITORY: 1
+  #         TWINE_CONFIG_FILE: pypirc
+  #         TWINE_VERIFY_METADATA: 1
